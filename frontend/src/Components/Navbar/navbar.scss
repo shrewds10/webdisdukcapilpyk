@@ -10,3 +10,27 @@
     --inputColor: hsl(330, 12%, 97%);
 }
 
+.navBarSection{
+    .header{
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: transparent;
+        width: 100%;
+        padding: 1rem;
+        z-index: 1000;
+        .logoDiv{
+            .logo{
+                color: white;
+                font-weight: 500;
+                cursor: pointer;
+                justify-content: center;
+                .icon{
+                    color: var(--PrimaryColor);
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+}

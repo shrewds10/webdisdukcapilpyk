@@ -1,5 +1,7 @@
 import React from 'react'
 import './navbar.css'
+import { AiFillCloseCircle } from "react-icons/ai";
+import { TbGridDots } from "react-icons/tb";
 
 const Navbar = () => {
   return (
@@ -31,7 +33,14 @@ const Navbar = () => {
             <li className="navItem">
               <a href="" className="navLink">Menu 4</a>
             </li>
-            </ul>
+          </ul>
+          <div className="closeNavbar">
+            <AiFillCloseCircle className='icon'/>
+          </div>
+        </div>
+
+        <div className="toogleNavbar">
+          <TbGridDots className='icon'/>
         </div>
       </div>
     </section>
