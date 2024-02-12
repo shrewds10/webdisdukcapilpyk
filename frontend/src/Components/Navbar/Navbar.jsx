@@ -1,22 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './navbar.css'
 import { AiFillCloseCircle } from "react-icons/ai";
 import { TbGridDots } from "react-icons/tb";
 
 const Navbar = () => {
+  const [active, setActive] = useState('navBar')
+  const showNav = () => {
+    setActive('navBar activeNavbar')
+  }
+
+  const closeNav = () => {
+    setActive('navBar')
+  }
   return (
     <section className='navBarSection'>
       <div className="header">
         <div className="logoDiv">
           <a href="#" className="logo">
-            <h3>
-              <img src={require('../../Assets/Logo Kota Payakumbuh.png')} alt="" />
-              Dinas Kependudukan dan Pencatatan Sipil Kota Payakumbuh
-            </h3>
+             <img src={require('../../Assets/Logo Kota Payakumbuh.png')} alt="" />              
           </a>
         </div>
 
-        <div className="navBar">
+        <div className={active}>
           <ul className="navLists flex">
             <li className="navItem">
               <a href="" className="navLink">Home</a>
@@ -34,12 +39,12 @@ const Navbar = () => {
               <a href="" className="navLink">Menu 4</a>
             </li>
           </ul>
-          <div className="closeNavbar">
+          <div onClick={closeNav} className="closeNavbar">
             <AiFillCloseCircle className='icon'/>
           </div>
         </div>
 
-        <div className="toogleNavbar">
+        <div onClick={showNav} className="toogleNavbar">
           <TbGridDots className='icon'/>
         </div>
       </div>

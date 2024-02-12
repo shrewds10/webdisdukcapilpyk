@@ -3,7 +3,11 @@ import './offer.css'
 
 const Offer = () => {
   return (
-    <div>Offer</div>
+    <section className='offer'>
+      <div>
+        <h3>Struktur Organisasi</h3>
+      </div>
+    </section>
   )
 }
 
