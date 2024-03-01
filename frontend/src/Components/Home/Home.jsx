@@ -13,11 +13,11 @@ const Home = () => {
             Terwujudnya Pelayanan Prima Melalui Penyelenggaraan Administrasi Kependudukan yang Tertib, Berkuaslitas dan Inovatif
           </p>
         </div>
-        <div className="moto grid">
+        {/* <div className="moto grid">
           <h3>MOTO : CANTIK</h3>
           <p>Cepat, Akurat, Nyaman, berbasis Teknologi Informasi, dan Kapabel </p>
           <img src="" alt="" />
-        </div>
+        </div> */}
       </div>
     </section>
   )

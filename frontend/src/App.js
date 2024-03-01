@@ -3,8 +3,8 @@ import "./app.css"
 import Navbar from './Components/Navbar/Navbar'
 import Home from './Components/Home/Home'
 import Popular from './Components/Popular/Popular'
-import Blog from './Components/Blog/Blog'
-import Offer from './Components/Offers/Offer'
+import News from './Components/News/News'
+import Layanan from './Components/Layanan/Layanan'
 import About from './Components/About/About'
 import Footer from './Components/Footer/Footer'
 
@@ -13,11 +13,12 @@ const App = () => {
     <>
       <Navbar/>
       <Home/>
-      <Popular/>
-      <Offer/>
+      {/* <Popular/> */}
+      <Layanan/>
+      <News/>
+      <Footer/>
       {/* <About/>
-      <Blog/>
-      <Footer/> */}
+       */}
     </>
   )
 }

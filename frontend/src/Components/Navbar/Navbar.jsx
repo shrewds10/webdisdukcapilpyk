@@ -24,7 +24,7 @@ const Navbar = () => {
         <div className={active}>
           <ul className="navLists flex">
             <li className="navItem">
-              <a href="" className="navLink">Home</a>
+              <a href="" className="navLink">Beranda</a>
             </li>
             <li className="navItem">
               <a href="" className="navLink">Menu 1</a>
@@ -44,7 +44,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div onClick={showNav} className="toogleNavbar">
+        <div onClick={showNav} className="toggleNavbar">
           <TbGridDots className='icon'/>
         </div>
       </div>

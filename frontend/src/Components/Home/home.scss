@@ -11,8 +11,8 @@
 }
 
 .home{
-    height: 80vh;
-    background: linear-gradient(rgba(33,33,33,0.522), rgba(33,33,33,0.522));
+    height:90vh;
+    background: linear-gradient(rgba(33,33,33,0.522), rgba(33,33,33,0.522)), url(../../Assets/background.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -24,6 +24,7 @@
     .secContainer{
         .homeText{
             text-align: center;
+            height: 350px;
             .title{
                 color: var(--whiteColor);
                 font-size: 22px;
@@ -31,17 +32,18 @@
                 line-height: 2.5rem;
             }
             .subTitle{
-                color: var(--wheiteColor);
+                color: var(--whiteColor);
                 opacity: .9;
                 font-size: 13px;
                 font-weight: 300;
                 padding: 1rem 0;
-                max-width: 70%;
+                max-width: 75%;
                 text-align: center;
                 margin: auto;
             }
         }
         .moto{
+            height: 60vh;
             width: 80%;
             border-radius: 1rem;
             padding: 2rem;
@@ -58,6 +60,31 @@
             }
             p{
                 text-align: center;
+            }
+        }
+    }
+} 
+
+@media screen and (min-width:480px){
+    .home{
+        .secContainer{
+            .homeCard{
+                               
+            }
+        }
+    }
+}
+
+@media screen and (min-width:556px){
+    .home{
+        .secContainer{
+            .homeText{
+                .title{
+                    font-size: 2rem;
+                }
+                .subTitle{
+                    font-size: 17px;
+                }
             }
         }
     }

@@ -4,6 +4,19 @@ import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
 import { IoIosPeople } from "react-icons/io";
 import { FaPeopleLine } from "react-icons/fa6";
 
+const bidang = [
+  {
+    icon: <IoIosPeople className='icon'/>,
+    title: "Pelayanan Administrasi Kependudukan",
+    description: "Meningkatkan pelayanan administasi kependudukan"
+  },
+  {
+    icon: <FaPeopleLine className='icon'/>,
+    title: "Pelayanan Administrasi Kependudukan",
+    description: "Meningkatkan pelayanan administasi kependudukan"
+  }
+]
+
 const Popular = () => {
   return (
     <section className='popular section container'>
@@ -15,26 +28,21 @@ const Popular = () => {
             </h3>
           </div>
           <div className="mainContent grid">
-            <div className="singleDestination">
-              <div className="destIcon">
-                <IoIosPeople className='icon'/>
-                <h3>Pelayanan Administrasi Kependudukan</h3>
-                <p>
-                  Meningkatkan pelayanan administasi kependudukan
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="mainContent grid">
-            <div className="singleDestination">
-              <div className="destIcon">
-                <FaPeopleLine className='icon'/>
-                <h3>Pengelolaan Informasi Administrasi Kependudukan dan Pemanfaatan Data</h3>
-                <p>
-                  Meningkatkan pelayanan administasi kependudukan
-                </p>
-              </div>
-            </div>
+            {
+              bidang.map(({icon, title, description})=>{
+                return(
+                  <div className="singleDestination">
+                    <div className="destIcon">
+                      {icon}
+                      <h3>{title}</h3>
+                      <p>
+                        {description}
+                      </p>                    
+                    </div>
+                  </div>
+                )   
+              })
+            }
           </div>
           <div className="iconsDiv flex">
             <BsArrowLeft className='icon leftIcon'/>

@@ -77,7 +77,38 @@
     left: 0;
   }
 }
-.navBarSection .header .toogleNavbar .icon {
+.navBarSection .header .toggleNavbar .icon {
   font-size: 30px;
   color: var(--whiteColor);
+}
+
+@media screen and (min-width: 769px) {
+  .toggleNavbar, .closeNavbar {
+    display: none;
+  }
+  .header {
+    padding: 1.5rem 2rem;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+  .header .navItem .navLink {
+    color: var(--whiteColor);
+    padding: 0 0.45rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+  .header .navItem .navLink:hover {
+    color: var(--PrimaryColor);
+  }
+}
+@media screen and (min-width: 960px) {
+  .header .navBar .navLists .navItem {
+    padding: 0 0.7rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header {
+    padding: 1rem 5.5rem !important;
+  }
 }/*# sourceMappingURL=navbar.css.map */
