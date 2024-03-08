@@ -1,10 +1,12 @@
 import React from 'react'
 import './home.css'
+import ParticlesContainer from '../ParticlesContainer'
 
 const Home = () => {
   return (
     <section className='home'>
       <div className="secContainer container">
+        <ParticlesContainer/>
         <div className="homeText">
           <h1 className="title">
             Dinas Kependudukan dan Pencatatan Sipil Kota Payakumbuh
