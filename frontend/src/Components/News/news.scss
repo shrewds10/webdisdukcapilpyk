@@ -15,7 +15,7 @@
         .singlePost{
             gap: 2rem;
             .imgDiv{
-                height: 200px;
+                height: 250px;
                 width: 100%;
                 border-radius: 1rem;
                 border: 5px solid var(--greyBg);
@@ -43,18 +43,18 @@
                     color: var(--textColor);
                     font-weight: 500;
                 }
-            }
-            a{
-                font-size: 15px;
-                color: var(--PrimaryColor);
-                font-weight: 600;
-                padding-top: .5rem;
-                width: max-content;
-                &:hover{
-                    color: var(--HoverColor);
+                a{
+                    font-size: 15px;
+                    color: var(--PrimaryColor);
                     font-weight: 600;
-                    .icon{
-                        transform: translateX(10px);
+                    padding-top: .5rem;
+                    width: max-content;
+                    &:hover{
+                        color: var(--HoverColor);
+                        font-weight: 600;
+                        .icon{
+                            transform: translateX(10px);
+                        }
                     }
                 }
             }
@@ -64,8 +64,8 @@
 
 @media screen and (min-width: 884px){
     .news{
-        .mainContainer{
-            grid-template-columns: 2,1fr;
+        .mainContent{
+            grid-template-columns: repeat(2,1fr);
         }
     }
 }

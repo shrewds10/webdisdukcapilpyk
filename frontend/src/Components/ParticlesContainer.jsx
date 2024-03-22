@@ -48,10 +48,10 @@ function ParticlesContainer(){
                 },
                 particles: {
                     color: {
-                        value: "#000",
+                        value: "#ffffff",
                     },
                     links: {
-                        color: "#000",
+                        color: "#ffffff",
                         distance: 250,
                         enable: true,
                         opacity: 0.5,
@@ -70,7 +70,7 @@ function ParticlesContainer(){
                     number: {
                         density: {
                             enable: true,
-                            area: 800,
+                            area: 1100,
                         },
                         value: 80,
                     },

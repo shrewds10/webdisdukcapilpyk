@@ -9,6 +9,9 @@
   --inputColor: hsl(330, 12%, 97%);
 }
 
+.layanan .secContainer .secIntro .secTitle {
+  font-size: 20px;
+}
 .layanan .secContainer .mainContent {
   gap: 1rem;
 }
@@ -21,9 +24,19 @@
 .layanan .secContainer .mainContent .singleLayanan .descLayanan {
   text-align: center;
   position: relative;
+  height: 270px;
   width: 100%;
 }
 .layanan .secContainer .mainContent .singleLayanan .descLayanan img {
+  height: 180px;
+  width: 100%;
   border-radius: 1rem;
-  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.layanan .secContainer .mainContent .singleLayanan .descLayanan h1 {
+  font-size: 18px;
+}
+.layanan .secContainer .mainContent .singleLayanan .descLayanan p {
+  font-size: 12px;
 }/*# sourceMappingURL=layanan.css.map */

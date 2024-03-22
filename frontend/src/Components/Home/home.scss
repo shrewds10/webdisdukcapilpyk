@@ -12,7 +12,7 @@
 
 .home{
     height:100vh;
-    background: linear-gradient(rgba(33,33,33,0.522), rgba(33,33,33,0.522)), url(../../Assets/background.jpg);
+    background: linear-gradient(rgba(33,33,33,0.522), rgba(33,33,33,0.522)), url(../../Assets/3387646.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -24,7 +24,7 @@
     .secContainer{
         .homeText{
             text-align: center;
-            height: 350px;
+            height: 170px;
             .title{
                 color: var(--whiteColor);
                 font-size: 22px;
@@ -80,12 +80,30 @@
         .secContainer{
             .homeText{
                 .title{
-                    font-size: 2rem;
+                    font-size: 2.5rem;
                 }
                 .subTitle{
-                    font-size: 17px;
+                    font-size: 18px;
                 }
             }
         }
     }
 }
+
+// @media screen and (min-width:720px){
+//     .home{
+//         .secContainer{
+//             .homeText{
+//                 padding: 1rem 10rem;
+//                 .title{
+//                     font-size: 3.5rem;
+//                     margin: auto;
+//                     line-height: 4rem;
+//                 }
+//                 .subTitle{
+//                     width: 70%;
+//                 }
+//             }
+//         }
+//     }
+// }

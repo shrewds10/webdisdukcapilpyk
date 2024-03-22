@@ -12,9 +12,20 @@ const Navbar = () => {
   const closeNav = () => {
     setActive('navBar')
   }
+
+  const [transparent, setTransparent] = useState('header')
+  const addBg = () => {
+    if(window.scrollY >= 10){
+      setTransparent('header activeHeader')
+    }else{
+      setTransparent('header')
+    }
+  }
+  window.addEventListener('scroll', addBg)
+
   return (
     <section className='navBarSection'>
-      <div className="header">
+      <div className={transparent}>
         <div className="logoDiv">
           <a href="#" className="logo">
              <img src={require('../../Assets/Logo Kota Payakumbuh.png')} alt="" />              
@@ -24,19 +35,19 @@ const Navbar = () => {
         <div className={active}>
           <ul className="navLists flex">
             <li className="navItem">
-              <a href="" className="navLink">Beranda</a>
+              <a href="" className="navLink">Home</a>
             </li>
             <li className="navItem">
-              <a href="" className="navLink">Menu 1</a>
+              <a href="" className="navLink">Profil</a>
             </li>
             <li className="navItem">
-              <a href="" className="navLink">Menu 2</a>
+              <a href="" className="navLink">Informasi</a>
             </li>
             <li className="navItem">
-              <a href="" className="navLink">Menu 3</a>
+              <a href="" className="navLink">Layanan Dukcapil</a>
             </li>
             <li className="navItem">
-              <a href="" className="navLink">Menu 4</a>
+              <a href="" className="navLink">Pengumuman</a>
             </li>
           </ul>
           <div onClick={closeNav} className="closeNavbar">

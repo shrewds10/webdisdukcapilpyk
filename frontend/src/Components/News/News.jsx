@@ -10,7 +10,7 @@ const news = [
     id: 1,
     img: img1,
     title: "Lorem ipsum dolor sit amet",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo tenetur, asperiores quis cum provident corporis dolore quam doloribus laudantium nihil mollitia iste nesciunt tempora odit eaque maxime, distinctio placeat perspiciatis.",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. consectetur adipisicing elit. consectetur adipisicing elit. Nemo tenetur, asperiores quis cum provident corporis dolore quam doloribus laudantium nihil mollitia iste nesciunt tempora odit eaque maxime, distinctio placeat perspiciatis.",
   },
   {
     id: 2,
@@ -38,31 +38,40 @@ const News = () => {
             
           </p>
         </div>
-        <div className="mainContent grid">
-          {
-            news.map(({id, title, img, desc})=>{
-              return(
-                <div className="singlePost grid">
-                  <div className="imgDiv">
-                    <img src={img} alt="Image Name" />
-                  </div>
-                  <div className="postDetails">
-                    <h3>
-                      {title}
-                    </h3>
-                    <p>
-                      {desc}
-                    </p>
-                  </div>
-                  <a href="#" className="flex">
-                    Read More
-                    <BsArrowRightShort className='icon'/>
-                  </a>
+      </div>
+      <div className="mainContent grid">
+        {
+          news.map(({id, title, img, desc})=>{
+            const maxLength = 10;
+            const descr = desc 
+            const truncateText = (descr) => {
+              if (descr.length <= maxLength) {
+                return descr;
+              }
+              return descr.slice(0, maxLength) + "..."; 
+            };
+
+            return(
+              <div className="singlePost grid">
+                <div className="imgDiv">
+                  <img src={img} alt="Image Name" />
                 </div>
-              )
-            })
-          }
-        </div>
+                <div className="postDetails">
+                  <h3>
+                    {title}
+                  </h3>
+                  <p>
+                    {descr}
+                  </p>
+                </div>
+                <a href="#" className="flex">
+                  Read More
+                  <BsArrowRightShort className='icon'/>
+                </a>
+              </div>
+            )
+          })
+        }
       </div>
     </section>
   )

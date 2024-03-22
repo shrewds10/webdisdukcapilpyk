@@ -12,13 +12,13 @@
 
 .navBarSection{
     .header{
+        background: transparent;
         position: fixed;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background: transparent;
         width: 100%;
-        padding: 1rem;
+        padding: .5rem 1rem;
         z-index: 1000;
         .logoDiv{
             .logo{
@@ -85,6 +85,18 @@
             }
         }
     }
+    .activeHeader{
+        .navLists{
+            .navItem{
+                .navLink{
+                    color: var(--textColor);
+                }
+            }
+        }
+        background: #fff;
+        background-size: cover;
+        box-shadow: 0 2px 8px 2px rgba(178,178,178,0.45);
+    }
 }
 
 @media screen and (min-width:769px){
@@ -124,6 +136,6 @@
 
 @media screen and (min-width:1024px){
     .header{
-        padding: 1rem 5.5rem !important;
+        padding: .5rem 5.5rem !important;
     }
 }

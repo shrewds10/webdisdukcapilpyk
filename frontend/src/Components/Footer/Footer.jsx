@@ -26,18 +26,23 @@ const Footer = () => {
           <span className="linkTitle">
             Informasi
           </span>
-          <li>
-            <a href="#">Menu 1</a>
-          </li>
-          <li>
-            <a href="#">Menu 2</a>
-          </li>
-          <li>
-            <a href="#">Menu 3</a>
-          </li>
-          <li>
-            <a href="#">Menu 4</a>
-          </li>
+          <ul>
+            <li className="navItem">
+                <a href="" className="navLink">Home</a>
+              </li>
+              <li className="navItem">
+                <a href="" className="navLink">Profil</a>
+              </li>
+              <li className="navItem">
+                <a href="" className="navLink">Informasi</a>
+              </li>
+              <li className="navItem">
+                <a href="" className="navLink">Layanan Dukcapil</a>
+              </li>
+              <li className="navItem">
+                <a href="" className="navLink">Pengumuman</a>
+             </li>
+          </ul>
         </div>
         <div className="footerLinks">
           <span className="linkTitle">
