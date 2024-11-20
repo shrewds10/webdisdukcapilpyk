@@ -1,0 +1,156 @@
+:root {
+  --PrimaryColor: hsl(26, 93%, 50%);
+  --HoverColor: hsl(26, 90%, 42%);
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(0, 0%, 18%);
+  --textColor: hsl(240, 1%, 48%);
+  --whiteColorDeam: hsl(0, 0%, 93%);
+  --greyBg: hsl(0, 0%, 96%);
+  --greyText: rgb(190, 190, 190);
+  --inputColor: hsl(330, 12%, 97%);
+}
+
+.navBarSection .header {
+  background: transparent;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  z-index: 1000;
+}
+.navBarSection .header .logoDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.navBarSection .header .logoDiv h3 {
+  color: white;
+  font-style: italic;
+  margin-left: 7px;
+  line-height: 1.2em;
+  font-size: 15px;
+  margin-bottom: 0.5em;
+}
+.navBarSection .header .logoDiv .logo {
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  justify-content: center;
+}
+.navBarSection .header .logoDiv .logo .icon {
+  color: var(--PrimaryColor);
+  font-size: 25px;
+}
+.navBarSection .header .logoDiv .logo img {
+  width: 35px;
+}
+@media screen and (max-width: 768px) {
+  .navBarSection .header .navBar {
+    background: var(--greyBg);
+    position: absolute;
+    height: -moz-max-content;
+    height: max-content;
+    padding: 1rem;
+    width: 100%;
+    top: 0;
+    left: -500%;
+    box-shadow: 0 2px 4px rgba(209, 209, 209, 0.904);
+    transition: 0.5s ease;
+    z-index: 1000;
+  }
+  .navBarSection .header .navLists {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+  }
+  .navBarSection .header .navLists .navItem {
+    padding: 1rem 0;
+  }
+  .navBarSection .header .navLists .navItem .navLink {
+    color: var(--textColor);
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  .navBarSection .header .navLists .navItem .navLink:hover {
+    color: var(--PrimaryColor);
+  }
+  .navBarSection .header .closeNavbar {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    color: var(--PrimaryColor);
+  }
+  .navBarSection .header .closeNavbar:hover .icon {
+    color: var(--HoverColor);
+  }
+  .navBarSection .header .activeNavbar {
+    left: 0;
+  }
+}
+.navBarSection .header .toggleNavbar .icon {
+  font-size: 30px;
+  color: var(--whiteColor);
+}
+.navBarSection .activeHeader {
+  background: #fff;
+  background-size: cover;
+  box-shadow: 0 2px 8px 2px rgba(178, 178, 178, 0.45);
+}
+.navBarSection .activeHeader .logoDiv h3 {
+  color: var(--textColor);
+}
+.navBarSection .activeHeader .navLists .navItem .dropdown-arrow {
+  font-size: 1.2rem;
+  font-weight: initial;
+  transform: 0.4s;
+}
+.navBarSection .activeHeader .navLists .navItem .dropdown-link {
+  padding: 1.25rem 1.25rem 1.25rem 2.5rem;
+  color: var(--textColor);
+  background-color: rgba(129, 129, 129, 0.7333333333);
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+}
+.navBarSection .activeHeader .navLists .navItem .dropdown-link:hover {
+  background-color: #fff;
+}
+.navBarSection .activeHeader .navLists .navItem .navLink {
+  color: var(--textColor);
+}
+
+@media screen and (min-width: 769px) {
+  .toggleNavbar, .closeNavbar {
+    display: none;
+  }
+  .header {
+    padding: 1.5rem 2rem;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+  .header .navItem .navLink {
+    color: var(--whiteColor);
+    padding: 0 0.45rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+  .header .navItem .navLink:hover {
+    color: var(--PrimaryColor);
+  }
+}
+@media screen and (min-width: 960px) {
+  .header .navBar .navLists .navItem {
+    padding: 0 0.7rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header {
+    padding: 0.5rem 5.5rem !important;
+  }
+}/*# sourceMappingURL=navbar.css.map */

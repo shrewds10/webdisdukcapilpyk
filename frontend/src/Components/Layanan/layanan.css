@@ -1,0 +1,42 @@
+:root {
+  --PrimaryColor: hsl(26, 93%, 50%);
+  --HoverColor: hsl(26, 90%, 42%);
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(0, 0%, 18%);
+  --textColor: hsl(240, 1%, 48%);
+  --greyBg: hsl(0, 0%, 96%);
+  --greyText: rgb(190, 190, 190);
+  --inputColor: hsl(330, 12%, 97%);
+}
+
+.layanan .secContainer .secIntro .secTitle {
+  font-size: 20px;
+}
+.layanan .secContainer .mainContent {
+  gap: 1rem;
+}
+.layanan .secContainer .mainContent .singleLayanan {
+  border-radius: 1rem;
+  overflow: hidden;
+  padding: 0.5rem;
+  box-shadow: 0 2px 8px 2px rgba(178, 178, 178, 0.6);
+}
+.layanan .secContainer .mainContent .singleLayanan .descLayanan {
+  text-align: center;
+  position: relative;
+  height: 270px;
+  width: 100%;
+}
+.layanan .secContainer .mainContent .singleLayanan .descLayanan img {
+  height: 180px;
+  width: 100%;
+  border-radius: 1rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.layanan .secContainer .mainContent .singleLayanan .descLayanan h1 {
+  font-size: 18px;
+}
+.layanan .secContainer .mainContent .singleLayanan .descLayanan p {
+  font-size: 12px;
+}/*# sourceMappingURL=layanan.css.map */
