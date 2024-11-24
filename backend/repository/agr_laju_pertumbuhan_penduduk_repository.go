@@ -7,5 +7,5 @@ import (
 )
 
 type AgrLajuPertumbuhanPendudukRepository interface {
-	Create(ctx *context.Context, tx *sql.Tx, agrLajuPertumbuhanPenduduk []entity.AgrLajuPertumbuhanPenduduk)
+	Create(ctx context.Context, tx *sql.Tx, agrLajuPertumbuhanPenduduk []entity.AgrLajuPertumbuhanPenduduk)
 }

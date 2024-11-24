@@ -18,9 +18,13 @@ func main() {
 	userRepository := repository.NewUserRepository()
 	userService := service.NewUserService(userRepository, db)
 	userController := controller.NewUserController(userService)
+	agrLajuPertumbuhanPendudukRepository := repository.NewAgrLajuPertumbuhanPendudukRepository()
+	agrLajuPertumbuhanPendudukService := service.NewAgrLajuPertumbuhanPendudukServiceService(agrLajuPertumbuhanPendudukRepository, db)
+	agrLajuPertumbuhanPendudukController := controller.NewAgrLajuPertumbuhanPendudukControll(agrLajuPertumbuhanPendudukService)
 	router := httprouter.New()
 
 	router.POST("/api/users", userController.Create)
+	router.POST("/api/agrlajupertumbuhanpenduduk", agrLajuPertumbuhanPendudukController.Create)
 
 	server := http.Server{
 		Addr:    "localhost:3000",

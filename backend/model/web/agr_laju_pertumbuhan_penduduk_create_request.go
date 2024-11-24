@@ -1,6 +1,6 @@
-package entity
+package web
 
-type AgrLajuPertumbuhanPenduduk struct {
+type AgrLajuPertumbuhanPendudukCreateRequest struct {
 	Kode     string
 	Semester int
 	Tahun    int
