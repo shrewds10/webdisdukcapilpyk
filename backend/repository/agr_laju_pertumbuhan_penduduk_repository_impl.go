@@ -29,3 +29,20 @@ func (agrLajuPertumbuhanPendudukRepository AgrLajuPertumbuhanPendudukRepositoryI
 		helper.PanicIfError(err)
 	}
 }
+
+func (agrLajuPertumbuhanPendudukRepository AgrLajuPertumbuhanPendudukRepositoryImpl) FindAll(ctx context.Context, tx *sql.Tx) []entity.AgrLajuPertumbuhanPenduduk {
+	sqlQuery := "SELECT * FROM AGR_ALJU_PERTUMBUHAN_PENDUDUK"
+	rows, err := tx.QueryContext(ctx, sqlQuery)
+	helper.PanicIfError(err)
+	defer rows.Close()
+
+	var agrLajuPertumbuhanPendudukAll []entity.AgrLajuPertumbuhanPenduduk
+	for rows.Next() {
+		agrLajuPertumbuhanPenduduk := entity.AgrLajuPertumbuhanPenduduk{}
+		err := rows.Scan(&agrLajuPertumbuhanPenduduk)
+		helper.PanicIfError(err)
+		agrLajuPertumbuhanPendudukAll = append(agrLajuPertumbuhanPendudukAll, agrLajuPertumbuhanPenduduk)
+	}
+
+	return agrLajuPertumbuhanPendudukAll
+}

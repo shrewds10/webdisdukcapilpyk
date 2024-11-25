@@ -8,4 +8,5 @@ import (
 
 type AgrLajuPertumbuhanPendudukRepository interface {
 	Create(ctx context.Context, tx *sql.Tx, agrLajuPertumbuhanPenduduk []entity.AgrLajuPertumbuhanPenduduk)
+	FindAll(ctx context.Context, tx *sql.Tx) []entity.AgrLajuPertumbuhanPenduduk
 }

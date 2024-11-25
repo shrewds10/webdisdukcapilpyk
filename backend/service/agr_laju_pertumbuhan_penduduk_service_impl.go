@@ -40,3 +40,12 @@ func (service AgrLajuPertumbuhanPendudukServiceImpl) Create(ctx context.Context,
 
 	service.repository.Create(ctx, tx, agrLajuPertumbuhanPendudukAll)
 }
+func (service AgrLajuPertumbuhanPendudukServiceImpl) FindAll(ctx context.Context) []web.AgrLajuPertumbuhanPendudukCreateRequest {
+	tx, err := service.db.Begin()
+	helper.PanicIfError(err)
+	defer helper.RollbackOrCommit(tx)
+
+	agrLajuPertumbuhanPendudukServiceAll := service.repository.FindAll(ctx, tx)
+
+	return helper.ToAgrLahuPertumbuhanPendudukResponse(agrLajuPertumbuhanPendudukServiceAll)
+}
