@@ -2,6 +2,7 @@ import Agama from "../Aggregate/Agama/Agama"
 import JumlahPenduduk from "../Aggregate/JumlahPenduduk/JumlahPenduduk"
 import KelompokUmur from "../Aggregate/KelompokUmur/KelompokUmur"
 import KepadatanPenduduk from "../Aggregate/KepadatanPenduduk/KepadatanPenduduk"
+import Pekerjaan from "../Aggregate/Pekerjaan/Pekerjaan"
 import Perkawinan from "../Aggregate/Perkawinan/Perkawinan"
 import PertumbuhanPenduduk from "../Aggregate/PertumbuhanPenduduk/PertumbuhanPenduduk"
 import './information.css'
@@ -28,6 +29,9 @@ const Information = () => {
                 <KelompokUmur/>
                 <Agama/>
                 <Perkawinan/>
+              </div>
+              <div className="ThiDescInformation">
+                <Pekerjaan/>
               </div>
             </div>
           </div>
