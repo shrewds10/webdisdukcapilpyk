@@ -38,6 +38,12 @@
                         flex-direction: row;
                         align-items: center;
                     }
+                    .thiDescInformation{
+                        display: flex;
+                        justify-content: center;
+                        flex-direction: row;
+                        align-items: center;
+                    }
                 }
             }
         }
@@ -68,6 +74,18 @@
                     display: flex;
                     justify-content: center;
                 }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 448px) {
+    .mainContent{
+        .barInformation{
+            .descInformation, .secDescInformation, .thiDescInformation{
+                grid-template-columns: repeat(2,1fr);
+                text-align: center;
+                align-items: flex-start; 
             }
         }
     }

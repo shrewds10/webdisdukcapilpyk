@@ -1,15 +1,15 @@
 import Chart from "react-apexcharts"
 import React, { useEffect, useState } from 'react'
-import './pekerjaan.css'
+import './pendidikan.css'
 
-const Pekerjaan = () => {
+const Pendidikan = () => {
 //   const [loading, setLoading] = useState(true)
 //   const [error, setError] = useState(null)
   const [barChartOptions, setPieChartOptions] = useState({
     series: [{
-        data: [27201,6567,1279,34452,6704,15,30,39267,447,2568,29433]
+        data: [13015, 8554, 8707, 10583, 26118, 158, 1497, 5426, 453, 13]
       }],
-        chart: {
+      chart: {
         type: 'bar',
         height: 350
       },
@@ -24,9 +24,9 @@ const Pekerjaan = () => {
         enabled: false
       },
       xaxis: {
-        categories: ['Belum/Tidak Bekerja', 'Aparatur/Pejabat Negara', 'Tenaga Pengajar', 'Wiraswasta', 
-            'Pertanian/Peternakan', 'Nelayan', 'Agama/Kepercayaan','Pelajar/Mahasiswa','Tenaga Kesehatan',
-            'Pensiunan', 'Lainnya'
+        categories: ['Tidak/Blm Sekolah', 'Belum Tamat SD/sederajat', 'Tamat SD/sederajat', 'SLTP/sederajat', 
+            'SLTA/sederajat', 'Diploma I dan II', 'Akademi/Diploma III/Sarjana Muda','Diploma IV/Strata I',
+            'StrataII','Strata III '
         ],
       }
   })
@@ -74,7 +74,7 @@ const Pekerjaan = () => {
   return (
     <div className="apexBarChart">
       <div className="secTitle">
-        <h3>Pekerjaan</h3>
+        <h3>Pendidikan</h3>
       </div>
       <div className='barChart'>
         <Chart
@@ -89,4 +89,4 @@ const Pekerjaan = () => {
   )
 }
 
-export default Pekerjaan
+export default Pendidikan

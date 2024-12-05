@@ -35,6 +35,12 @@
   flex-direction: row;
   align-items: center;
 }
+.mcInformation .information .secContainer .mainContent .barInformation .thiDescInformation {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
 .mcInformation .information .horContainer .horizontalInformation .descInformation {
   display: flex;
   justify-content: center;
@@ -45,4 +51,12 @@
 .mcInformation .information .tabContainer .tableInformation .descInformation {
   display: flex;
   justify-content: center;
+}
+
+@media screen and (max-width: 448px) {
+  .mainContent .barInformation .descInformation, .mainContent .barInformation .secDescInformation, .mainContent .barInformation .thiDescInformation {
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+    align-items: flex-start;
+  }
 }/*# sourceMappingURL=information.css.map */

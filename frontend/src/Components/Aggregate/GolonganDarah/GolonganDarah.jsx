@@ -1,33 +1,41 @@
 import Chart from "react-apexcharts"
 import React, { useEffect, useState } from 'react'
-import './pekerjaan.css'
+import './golongandarah.css'
 
-const Pekerjaan = () => {
+const GolonganDarah = () => {
 //   const [loading, setLoading] = useState(true)
 //   const [error, setError] = useState(null)
   const [barChartOptions, setPieChartOptions] = useState({
     series: [{
-        data: [27201,6567,1279,34452,6704,15,30,39267,447,2568,29433]
+        data: [13015, 8554, 8707, 10583, 26118, 158, 1497, 5426, 453, 13]
       }],
-        chart: {
+      chart: {
+        height: 350,
         type: 'bar',
-        height: 350
+        events: {
+          click: function(chart, w, e) {
+          }
+        }
       },
       plotOptions: {
         bar: {
-          borderRadius: 4,
-          borderRadiusApplication: 'end',
-          horizontal: true,
+          columnWidth: '45%',
+          distributed: true,
         }
       },
       dataLabels: {
         enabled: false
       },
+      legend: {
+        show: false
+      },
       xaxis: {
-        categories: ['Belum/Tidak Bekerja', 'Aparatur/Pejabat Negara', 'Tenaga Pengajar', 'Wiraswasta', 
-            'Pertanian/Peternakan', 'Nelayan', 'Agama/Kepercayaan','Pelajar/Mahasiswa','Tenaga Kesehatan',
-            'Pensiunan', 'Lainnya'
-        ],
+        categories: ['A', 'B', 'AB', 'O', 'A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-', 'Tidak Tahu'],
+      },
+      labels: {
+        style: {              
+          fontSize: '12px'
+        }
       }
   })
 
@@ -74,7 +82,7 @@ const Pekerjaan = () => {
   return (
     <div className="apexBarChart">
       <div className="secTitle">
-        <h3>Pekerjaan</h3>
+        <h3>GolonganDarah</h3>
       </div>
       <div className='barChart'>
         <Chart
@@ -89,4 +97,4 @@ const Pekerjaan = () => {
   )
 }
 
-export default Pekerjaan
+export default GolonganDarah

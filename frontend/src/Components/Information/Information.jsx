@@ -1,8 +1,10 @@
 import Agama from "../Aggregate/Agama/Agama"
+import GolonganDarah from "../Aggregate/GolonganDarah/GolonganDarah"
 import JumlahPenduduk from "../Aggregate/JumlahPenduduk/JumlahPenduduk"
 import KelompokUmur from "../Aggregate/KelompokUmur/KelompokUmur"
 import KepadatanPenduduk from "../Aggregate/KepadatanPenduduk/KepadatanPenduduk"
 import Pekerjaan from "../Aggregate/Pekerjaan/Pekerjaan"
+import Pendidikan from "../Aggregate/Pendidikan/Pendidikan"
 import Perkawinan from "../Aggregate/Perkawinan/Perkawinan"
 import PertumbuhanPenduduk from "../Aggregate/PertumbuhanPenduduk/PertumbuhanPenduduk"
 import './information.css'
@@ -30,8 +32,10 @@ const Information = () => {
                 <Agama/>
                 <Perkawinan/>
               </div>
-              <div className="ThiDescInformation">
+              <div className="thiDescInformation">
                 <Pekerjaan/>
+                <Pendidikan/>
+                <GolonganDarah/>
               </div>
             </div>
           </div>
