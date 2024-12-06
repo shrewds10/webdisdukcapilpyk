@@ -7,5 +7,5 @@ import (
 
 type AgrLajuPertumbuhanPendudukService interface {
 	Create(ctx context.Context, request []web.AgrLajuPertumbuhanPendudukCreateRequest)
-	FindAll(ctx context.Context) []web.AgrLajuPertumbuhanPendudukCreateRequest
+	FindAll(ctx context.Context) []web.AgrLajuPertumbuhanPendudukResponse
 }

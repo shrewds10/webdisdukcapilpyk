@@ -13,7 +13,7 @@ func ToUserResponse(user entity.User) web.UserResponse {
 	}
 }
 
-func ToAgrLahuPertumbuhanPendudukResponse(agrLajuPertumbuhanPendudukResponse entity.AgrLajuPertumbuhanPenduduk) web.AgrLajuPertumbuhanPendudukResponse {
+func ToAgrLajuPertumbuhanPendudukResponse(agrLajuPertumbuhanPendudukResponse entity.AgrLajuPertumbuhanPenduduk) web.AgrLajuPertumbuhanPendudukResponse {
 	return web.AgrLajuPertumbuhanPendudukResponse{
 		Kode:     agrLajuPertumbuhanPendudukResponse.Kode,
 		Semester: agrLajuPertumbuhanPendudukResponse.Semester,
@@ -23,10 +23,10 @@ func ToAgrLahuPertumbuhanPendudukResponse(agrLajuPertumbuhanPendudukResponse ent
 	}
 }
 
-func ToAgrLahuPertumbuhanPendudukResponses(agrLajuPertumbuhanPendudukAll []entity.AgrLajuPertumbuhanPenduduk) []web.AgrLajuPertumbuhanPendudukResponse {
+func ToAgrLajuPertumbuhanPendudukResponses(agrLajuPertumbuhanPendudukAll []entity.AgrLajuPertumbuhanPenduduk) []web.AgrLajuPertumbuhanPendudukResponse {
 	var agrLajuPertumbuhanPendudukResponses []web.AgrLajuPertumbuhanPendudukResponse
 	for _, agrLajuPertumbuhanPenduduk := range agrLajuPertumbuhanPendudukAll {
-		agrLajuPertumbuhanPendudukResponses = append(agrLajuPertumbuhanPendudukResponses, ToAgrLahuPertumbuhanPendudukResponse(agrLajuPertumbuhanPenduduk))
+		agrLajuPertumbuhanPendudukResponses = append(agrLajuPertumbuhanPendudukResponses, ToAgrLajuPertumbuhanPendudukResponse(agrLajuPertumbuhanPenduduk))
 	}
 	return agrLajuPertumbuhanPendudukResponses
 }
