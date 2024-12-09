@@ -18,13 +18,18 @@ func main() {
 	userRepository := repository.NewUserRepository()
 	userService := service.NewUserService(userRepository, db)
 	userController := controller.NewUserController(userService)
+
 	agrLajuPertumbuhanPendudukRepository := repository.NewAgrLajuPertumbuhanPendudukRepository()
 	agrLajuPertumbuhanPendudukService := service.NewAgrLajuPertumbuhanPendudukServiceService(agrLajuPertumbuhanPendudukRepository, db)
 	agrLajuPertumbuhanPendudukController := controller.NewAgrLajuPertumbuhanPendudukControll(agrLajuPertumbuhanPendudukService)
+
+	liveReportController := controller.NewLiveReportController()
+
 	router := httprouter.New()
 
 	router.POST("/api/users", userController.Create)
 	router.POST("/api/agrlajupertumbuhanpenduduk", agrLajuPertumbuhanPendudukController.Create)
+	router.POST("/api/livereport", liveReportController.Create)
 
 	server := http.Server{
 		Addr:    "localhost:3000",

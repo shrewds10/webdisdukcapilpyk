@@ -11,8 +11,19 @@ import (
 type LiveReportControllerImpl struct {
 }
 
-func (controller LiveReportControllerImpl) Create(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
-	liveReportResponse := web.LiveReportResponse{}
-	helper.JsonDecode(request, liveReportResponse)
+func NewLiveReportController() LiveReportController {
+	return &LiveReportControllerImpl{}
+}
 
+func (controller LiveReportControllerImpl) Create(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
+	liveReportCreateRequest := web.LiveReportCreateReqest{}
+	helper.JsonDecode(request, &liveReportCreateRequest)
+
+	liveReportResponse := web.WebResponse{
+		Code:   200,
+		Status: "OK",
+		Data:   liveReportCreateRequest,
+	}
+
+	helper.JsonEncode(writer, liveReportResponse)
 }

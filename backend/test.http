@@ -1,9 +1,23 @@
-POST http://localhost:3000/api/categories
-Content-Type: multipart/form-data
+POST http://localhost:3000/api/livereport
+Content-Type: application/json
 Accept: application/json
 
---boundary
-Content-Disposition: form-data; name="file"; filename="ImportUser.xlsx"
-Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
-
-< ./ImprtUser.xlsx
+{
+    "Perekaman":1,
+	"Cetak_Baru":1,
+	"Perubahan_Elemen":1,
+	"Pergantian_Rusak":1,
+	"Pergantian_Hilang":1,
+	"Perihal_Lainnya":1,
+	"Sisa_Blanko":1,
+	"Akta_Kelahiran_Dibawah_18":1,
+	"Akta_Kelahiran_Diatas_18":1,
+	"Akta_Kematian":1,
+	"Cetak_Kia":1,
+	"Kartu_Keluarga":1,
+	"Pindah":1,
+	"Datang":1,
+	"Aktivasi_Ikd":1,
+	"Total_Aktivasi_Ikd":1,
+	"Tanggal":1
+}
