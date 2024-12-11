@@ -96,6 +96,12 @@ input{
 }
 
 @media screen and (min-width:556px){
+    .mainContent, .barInformation, .descInformation{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media screen and (min-width:556px){
     .mainContent, .singlePost{
         grid-template-columns: repeat(2,1fr);
     }

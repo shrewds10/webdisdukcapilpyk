@@ -21,18 +21,14 @@ const Information = () => {
             </div>
           </div>
           <div className="mainContent">
-            <div className="barInformation">
+            <div className="Information">
               <div className="descInformation">
                 <JumlahPenduduk/>
                 <PertumbuhanPenduduk/>
                 <KepadatanPenduduk/>
-              </div>
-              <div className="secDescInformation">
                 <KelompokUmur/>
                 <Agama/>
                 <Perkawinan/>
-              </div>
-              <div className="thiDescInformation">
                 <Pekerjaan/>
                 <Pendidikan/>
                 <GolonganDarah/>
