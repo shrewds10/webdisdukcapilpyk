@@ -17,7 +17,8 @@ const Information = () => {
         <div className="secContainer">
           <div className='secIntro'>
             <div className="secTitle">
-              <h1> Profil Kependudukan Kota Payakumbuh</h1>
+              <h1> Profil Kependudukan</h1> 
+              <h1> Kota Payakumbuh</h1>
             </div>
           </div>
           <div className="mainContent">
