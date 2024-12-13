@@ -23,13 +23,14 @@ const Pendidikan = () => {
       dataLabels: {
         enabled: true,
         formatter: function (val, opts) {
-          return opts.w.config.series[opts.seriesIndex]
+          return 
         },
       },
       xaxis: {
-        categories: ['Tidak/Blm Sekolah', 'Belum Tamat SD/sederajat', 'Tamat SD/sederajat', 'SLTP/sederajat', 
+        categories: [
+            'Tidak/Blm Sekolah', 'Belum Tamat SD/sederajat', 'Tamat SD/sederajat', 'SLTP/sederajat', 
             'SLTA/sederajat', 'Diploma I dan II', 'Akademi/Diploma III/Sarjana Muda','Diploma IV/Strata I',
-            'StrataII','Strata III '
+            'StrataII','Strata III'
         ],
       }
   })
@@ -47,22 +48,21 @@ const Pendidikan = () => {
       const data = await response.json()
 
       if (data && data.length > 0) {
-        const tidakBelumBekerja = data[0][`TIDAK_BELUM_SEKOLAH`] ? parseInt(data[0][`TIDAK_BELUM_SEKOLAH`], 10) : 0 
+        const tidakBelumSekolah = data[0][`TIDAK_BELUM_SEKOLAH`] ? parseInt(data[0][`TIDAK_BELUM_SEKOLAH`], 10) : 0 
         const belumTamatSD = data[0][`BELUM_TAMAT_SD_SEDERAJAT`] ? parseInt(data[0][`BELUM_TAMAT_SD_SEDERAJAT`], 10) : 0 
-        const tamatSD = data[0][`BELUM_TAMAT_SD_SEDERAJAT`] ? parseInt(data[0][`BELUM_TAMAT_SD_SEDERAJAT`], 10) : 0 
-        const sltp = data[0][`TAMAT_SD_SEDERAJAT`] ? parseInt(data[0][`TAMAT_SD_SEDERAJAT`], 10) : 0 
-        const slta = data[0][`SLTP_SEDERAJAT`] ? parseInt(data[0][`SLTP_SEDERAJAT`], 10) : 0 
-        const diploma = data[0][`SLTA_SEDERAJAT`] ? parseInt(data[0][`SLTA_SEDERAJAT`], 10) : 0 
-        const akademi = data[0][`DIMPLOMA_I_II`] ? parseInt(data[0][`DIMPLOMA_I_II`], 10) : 0 
-        const diplomaIV = data[0][`AKADEMI_DIPLOMA_III_S_MUDA`] ? parseInt(data[0][`AKADEMI_DIPLOMA_III_S_MUDA`], 10) : 0 
-        const strataI = data[0][`DIPLOMA_IV_STRATA_I`] ? parseInt(data[0][`DIPLOMA_IV_STRATA_I`], 10) : 0 
+        const tamatSD = data[0][`TAMAT_SD_SEDERAJAT`] ? parseInt(data[0][`TAMAT_SD_SEDERAJAT`], 10) : 0 
+        const sltp = data[0][`SLTP_SEDERAJAT`] ? parseInt(data[0][`SLTP_SEDERAJAT`], 10) : 0 
+        const slta = data[0][`SLTA_SEDERAJAT`] ? parseInt(data[0][`SLTA_SEDERAJAT`], 10) : 0 
+        const diploma = data[0][`DIMPLOMA_I_II`] ? parseInt(data[0][`DIMPLOMA_I_II`], 10) : 0 
+        const akademi = data[0][`AKADEMI_DIPLOMA_III_S_MUDA`] ? parseInt(data[0][`AKADEMI_DIPLOMA_III_S_MUDA`], 10) : 0 
+        const diplomaIV = data[0][`DIPLOMA_IV_STRATA_I`] ? parseInt(data[0][`DIPLOMA_IV_STRATA_I`], 10) : 0 
         const strataII = data[0][`STRATA_II`] ? parseInt(data[0][`STRATA_II`], 10) : 0 
         const strataIII = data[0][`STRATA_III`] ? parseInt(data[0][`STRATA_III`], 10) : 0 
 
         setBarChartOptions((prevState) => ({
           ...prevState,
           series: [{
-            data: [tidakBelumBekerja, belumTamatSD, tamatSD, sltp, slta, diploma, akademi, diplomaIV, strataI, strataII, strataIII], 
+            data: [tidakBelumSekolah, belumTamatSD, tamatSD, sltp, slta, diploma, akademi, diplomaIV, strataII, strataIII], 
           }]
         }))
       }
