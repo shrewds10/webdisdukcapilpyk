@@ -19,7 +19,7 @@ const Information = () => {
   }
   
   const handleTahunChange = (event) => {
-    setSemester(event.target.value)
+    setTahun(event.target.value)
   }
 
   return (

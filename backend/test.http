@@ -18,6 +18,5 @@ Accept: application/json
 	"Pindah":1,
 	"Datang":1,
 	"Aktivasi_Ikd":1,
-	"Total_Aktivasi_Ikd":1,
-	"Tanggal":1
+	"Total_Aktivasi_Ikd":1
 }

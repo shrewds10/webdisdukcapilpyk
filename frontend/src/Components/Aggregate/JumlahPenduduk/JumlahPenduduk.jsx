@@ -38,7 +38,7 @@ const JumlahPenduduk = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('http://192.168.76.25/dkb/api/agregat/penduduk.php/?kode=13.76')
+      const response = await fetch('http://103.138.127.34:8001/dkb/api/agregat/penduduk.php/?kode=13.76')
       if (!response.ok) {
         throw new Error('Network response was not ok.')
       }

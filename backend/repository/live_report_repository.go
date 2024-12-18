@@ -3,9 +3,9 @@ package repository
 import (
 	"context"
 	"database/sql"
-	"net/http"
+	"go_import/model/entity"
 )
 
 type LiveReportRepository interface {
-	Create(ctx context.Context, tx *sql.Tx, request *http.Request)
+	Create(ctx context.Context, tx *sql.Tx, liveReport entity.LiveReport) entity.LiveReport
 }

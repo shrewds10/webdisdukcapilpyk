@@ -23,7 +23,9 @@ func main() {
 	agrLajuPertumbuhanPendudukService := service.NewAgrLajuPertumbuhanPendudukServiceService(agrLajuPertumbuhanPendudukRepository, db)
 	agrLajuPertumbuhanPendudukController := controller.NewAgrLajuPertumbuhanPendudukControll(agrLajuPertumbuhanPendudukService)
 
-	liveReportController := controller.NewLiveReportController()
+	liveReportRepository := repository.NewLiveReportRepository()
+	liveReportService := service.NewLiveReportService(db, liveReportRepository)
+	liveReportController := controller.NewLiveReportController(liveReportService)
 
 	router := httprouter.New()
 
