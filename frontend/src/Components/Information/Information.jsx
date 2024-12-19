@@ -33,15 +33,15 @@ const Information = () => {
             </div>
           </div>
           <div className="dropdownContainer">
-            <div className="box">
-              <label>Periode:</label>
+            <div>
+              <label>Periode :</label>
               <select value={semester} onChange={handleSemesterChange}>
                 <option value="1">Semester 1</option>
                 <option value="2">Semester 2</option>
               </select>
             </div>
-            <div className="box">
-              <label>Tahun:</label>
+            <div>
+              <label>Tahun :</label>
               <select value={tahun} onChange={handleTahunChange}>
                 <option value="2023">2023</option>
                 <option value="2024">2024</option>
