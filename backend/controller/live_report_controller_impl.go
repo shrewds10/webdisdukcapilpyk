@@ -23,13 +23,25 @@ func (controller LiveReportControllerImpl) Create(writer http.ResponseWriter, re
 	liveReportCreateRequest := web.LiveReportCreateReqest{}
 	helper.JsonDecode(request, &liveReportCreateRequest)
 
-	controller.service.Create(request.Context(), liveReportCreateRequest)
+	liveReport := controller.service.Create(request.Context(), liveReportCreateRequest)
 
 	liveReportResponse := web.WebResponse{
 		Code:   200,
 		Status: "OK",
-		Data:   liveReportCreateRequest,
+		Data:   liveReport,
 	}
 
 	helper.JsonEncode(writer, liveReportResponse)
+}
+
+func (controller LiveReportControllerImpl) FindAll(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
+	liveReportResponse := controller.service.FindAll(request.Context())
+
+	liveReportResponses := web.WebResponse{
+		Code:   200,
+		Status: "OK",
+		Data:   liveReportResponse,
+	}
+
+	helper.JsonEncode(writer, liveReportResponses)
 }

@@ -1,6 +1,6 @@
-package entity
+package web
 
-type LiveReport struct {
+type LiveReportUpdateRequest struct {
 	Id                        int
 	Perekaman                 int
 	Cetak_Baru                int

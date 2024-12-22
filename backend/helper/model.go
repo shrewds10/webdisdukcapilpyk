@@ -30,3 +30,35 @@ func ToAgrLajuPertumbuhanPendudukResponses(agrLajuPertumbuhanPendudukAll []entit
 	}
 	return agrLajuPertumbuhanPendudukResponses
 }
+
+func ToLiveReportResponse(liveReportResponse entity.LiveReport) web.LiveReportResponse {
+	return web.LiveReportResponse{
+		Perekaman:                 liveReportResponse.Perekaman,
+		Cetak_Baru:                liveReportResponse.Cetak_Baru,
+		Perubahan_Elemen:          liveReportResponse.Perubahan_Elemen,
+		Pergantian_Rusak:          liveReportResponse.Pergantian_Rusak,
+		Pergantian_Hilang:         liveReportResponse.Pergantian_Hilang,
+		Perihal_Lainnya:           liveReportResponse.Perihal_Lainnya,
+		Sisa_Blanko:               liveReportResponse.Sisa_Blanko,
+		Akta_Kelahiran_Dibawah_18: liveReportResponse.Akta_Kelahiran_Dibawah_18,
+		Akta_Kelahiran_Diatas_18:  liveReportResponse.Akta_Kelahiran_Diatas_18,
+		Akta_Kematian:             liveReportResponse.Akta_Kematian,
+		Cetak_Kia:                 liveReportResponse.Cetak_Kia,
+		Kartu_Keluarga:            liveReportResponse.Kartu_Keluarga,
+		Pindah:                    liveReportResponse.Pindah,
+		Datang:                    liveReportResponse.Datang,
+		Aktivasi_Ikd:              liveReportResponse.Aktivasi_Ikd,
+		Total_Aktivasi_Ikd:        liveReportResponse.Total_Aktivasi_Ikd,
+		Tanggal:                   liveReportResponse.Tanggal,
+	}
+}
+
+func ToLiveReportResponses(liveReportAll []entity.LiveReport) []web.LiveReportResponse {
+	var liveReportResponses []web.LiveReportResponse
+
+	for _, liveReportResponse := range liveReportAll {
+		liveReportResponses = append(liveReportResponses, ToLiveReportResponse(liveReportResponse))
+	}
+
+	return liveReportResponses
+}

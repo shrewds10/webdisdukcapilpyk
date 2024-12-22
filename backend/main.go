@@ -32,6 +32,7 @@ func main() {
 	router.POST("/api/users", userController.Create)
 	router.POST("/api/agrlajupertumbuhanpenduduk", agrLajuPertumbuhanPendudukController.Create)
 	router.POST("/api/livereport", liveReportController.Create)
+	router.GET("/api/livereport", liveReportController.FindAll)
 
 	server := http.Server{
 		Addr:    "localhost:3000",

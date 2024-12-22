@@ -17,5 +17,5 @@ type LiveReportCreateReqest struct {
 	Datang                    int
 	Aktivasi_Ikd              int
 	Total_Aktivasi_Ikd        int
-	Tanggal                   int
+	Tanggal                   string
 }

@@ -3,9 +3,9 @@ Content-Type: application/json
 Accept: application/json
 
 {
-    "Perekaman":1,
-	"Cetak_Baru":1,
-	"Perubahan_Elemen":1,
+    "Perekaman":2,
+	"Cetak_Baru":3,
+	"Perubahan_Elemen":4,
 	"Pergantian_Rusak":1,
 	"Pergantian_Hilang":1,
 	"Perihal_Lainnya":1,
@@ -20,3 +20,7 @@ Accept: application/json
 	"Aktivasi_Ikd":1,
 	"Total_Aktivasi_Ikd":1
 }
+
+### Get Data
+GET http://localhost:3000/api/livereport
+Accept: application/json

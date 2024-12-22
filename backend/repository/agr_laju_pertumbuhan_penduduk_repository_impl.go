@@ -30,6 +30,45 @@ func (agrLajuPertumbuhanPendudukRepository AgrLajuPertumbuhanPendudukRepositoryI
 	}
 }
 
+func (agrLajuPertumbuhanPendudukRepository AgrLajuPertumbuhanPendudukRepositoryImpl) Update(ctx context.Context, tx *sql.Tx, agrLajuPertumbuhanPenduduk entity.AgrLajuPertumbuhanPenduduk) entity.AgrLajuPertumbuhanPenduduk {
+	sqlQuery := `UPDATE AGR_LAJU_PERTUMBUHAN_PENDUDUK SET 
+		KODE = ? 
+		SEMESTER = ? 
+		TAHUN = ? 
+		PRIA = ? 
+		WANITA = ?
+		WHERE ID = ?`
+
+	_, err := tx.ExecContext(ctx, sqlQuery, agrLajuPertumbuhanPenduduk.Kode, agrLajuPertumbuhanPenduduk.Semester, agrLajuPertumbuhanPenduduk.Tahun, agrLajuPertumbuhanPenduduk.Pria, agrLajuPertumbuhanPenduduk.Wanita)
+	helper.PanicIfError(err)
+
+	return agrLajuPertumbuhanPenduduk
+}
+
+func (agrLajuPertumbuhanPendudukRepository AgrLajuPertumbuhanPendudukRepositoryImpl) Delete(ctx context.Context, tx *sql.Tx, agrLajuPertumbuhanPendudukId int) {
+	sqlQuery := "DELETE FROM AGR_LAJU_PERTUMBUHAN_PENDUDUK WHERE ID = ?"
+	_, err := tx.ExecContext(ctx, sqlQuery)
+	helper.PanicIfError(err)
+}
+
+func (agrLajuPertumbuhanPendudukRepository AgrLajuPertumbuhanPendudukRepositoryImpl) FindById(ctx context.Context, tx *sql.Tx, agrLajuPertumbuhanPendudukId int) entity.AgrLajuPertumbuhanPenduduk {
+	sqlQuery := "SELECT * FROM AGR_LAJU_PERTUMBUHAN_PENDUDUK WHERE ID = ?"
+	rows, err := tx.QueryContext(ctx, sqlQuery)
+	helper.PanicIfError(err)
+
+	agrLajuPertumbuhanPenduduk := entity.AgrLajuPertumbuhanPenduduk{}
+	if rows.Next() {
+		err := rows.Scan(
+			&agrLajuPertumbuhanPenduduk.KODE,
+			&agrLajuPertumbuhanPenduduk.SEMESTER,
+			&agrLajuPertumbuhanPenduduk.TAHUN,
+			&agrLajuPertumbuhanPenduduk.PRIA,
+			&agrLajuPertumbuhanPenduduk.WANITA,
+		)
+	}
+
+}
+
 func (agrLajuPertumbuhanPendudukRepository AgrLajuPertumbuhanPendudukRepositoryImpl) FindAll(ctx context.Context, tx *sql.Tx) []entity.AgrLajuPertumbuhanPenduduk {
 	sqlQuery := "SELECT * FROM AGR_ALJU_PERTUMBUHAN_PENDUDUK"
 	rows, err := tx.QueryContext(ctx, sqlQuery)

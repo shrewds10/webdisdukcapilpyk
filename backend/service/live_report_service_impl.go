@@ -7,6 +7,7 @@ import (
 	"go_import/model/entity"
 	"go_import/model/web"
 	"go_import/repository"
+	"time"
 )
 
 type LiveReportServiceImpl struct {
@@ -26,6 +27,9 @@ func (service LiveReportServiceImpl) Create(ctx context.Context, request web.Liv
 	helper.PanicIfError(err)
 	defer helper.RollbackOrCommit(tx)
 
+	now := time.Now()
+	Tanggal := now.Format("2006-01-02")
+
 	liveReport := entity.LiveReport{
 		Perekaman:                 request.Perekaman,
 		Cetak_Baru:                request.Cetak_Baru,
@@ -43,10 +47,19 @@ func (service LiveReportServiceImpl) Create(ctx context.Context, request web.Liv
 		Datang:                    request.Datang,
 		Aktivasi_Ikd:              request.Aktivasi_Ikd,
 		Total_Aktivasi_Ikd:        request.Total_Aktivasi_Ikd,
-		Tanggal:                   request.Tanggal,
+		Tanggal:                   Tanggal,
 	}
 
 	liveReportResponse := service.repository.Create(ctx, tx, liveReport)
 	return web.LiveReportResponse(liveReportResponse)
+}
 
+func (service LiveReportServiceImpl) FindAll(ctx context.Context) []web.LiveReportResponse {
+	tx, err := service.db.Begin()
+	helper.PanicIfError(err)
+	liveReport := service.repository.FindAll(ctx, tx)
+
+	liveReportResponses := helper.ToLiveReportResponses(liveReport)
+
+	return liveReportResponses
 }
