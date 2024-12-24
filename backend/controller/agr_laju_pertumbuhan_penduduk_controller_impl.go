@@ -51,7 +51,23 @@ func (controller AgrLajuPertumbuhanPendudukControllerImpl) Create(writer http.Re
 
 		agrLajuPertumbuhanPendudukAll = append(agrLajuPertumbuhanPendudukAll, agrLajuPertumbuhanPenduduk)
 	}
-
 	controller.service.Create(request.Context(), agrLajuPertumbuhanPendudukAll)
+}
+
+// func (agrLajuPertumbuhanPenduduk AgrLajuPertumbuhanPendudukControllerImpl) Update(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
+
+// }
+
+// func (agrLajuPertumbuhanPenduduk AgrLajuPertumbuhanPendudukControllerImpl) Delete(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
+
+// }
+
+func (controller AgrLajuPertumbuhanPendudukControllerImpl) FindById(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
+	agrLajuPertumbuhanPendudukId := params
+	controller.service.FindById(request.Context(), agrLajuPertumbuhanPendudukId)
 
 }
+
+// func (agrLajuPertumbuhanPenduduk AgrLajuPertumbuhanPendudukControllerImpl) FindAll(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
+
+// }

@@ -59,14 +59,15 @@ func (agrLajuPertumbuhanPendudukRepository AgrLajuPertumbuhanPendudukRepositoryI
 	agrLajuPertumbuhanPenduduk := entity.AgrLajuPertumbuhanPenduduk{}
 	if rows.Next() {
 		err := rows.Scan(
-			&agrLajuPertumbuhanPenduduk.KODE,
-			&agrLajuPertumbuhanPenduduk.SEMESTER,
-			&agrLajuPertumbuhanPenduduk.TAHUN,
-			&agrLajuPertumbuhanPenduduk.PRIA,
-			&agrLajuPertumbuhanPenduduk.WANITA,
+			&agrLajuPertumbuhanPenduduk.Kode,
+			&agrLajuPertumbuhanPenduduk.Semester,
+			&agrLajuPertumbuhanPenduduk.Tahun,
+			&agrLajuPertumbuhanPenduduk.Pria,
+			&agrLajuPertumbuhanPenduduk.Wanita,
 		)
+		helper.PanicIfError(err)
 	}
-
+	return agrLajuPertumbuhanPenduduk
 }
 
 func (agrLajuPertumbuhanPendudukRepository AgrLajuPertumbuhanPendudukRepositoryImpl) FindAll(ctx context.Context, tx *sql.Tx) []entity.AgrLajuPertumbuhanPenduduk {

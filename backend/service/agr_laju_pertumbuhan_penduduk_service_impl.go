@@ -21,25 +21,49 @@ func NewAgrLajuPertumbuhanPendudukServiceService(agrLajuPertumbuhanPendudukRepos
 	}
 }
 
-func (service AgrLajuPertumbuhanPendudukServiceImpl) Create(ctx context.Context, request []web.AgrLajuPertumbuhanPendudukCreateRequest) {
+func (service AgrLajuPertumbuhanPendudukServiceImpl) Create(ctx context.Context, agrLajuPertumbuhanPenduduk []web.AgrLajuPertumbuhanPendudukCreateRequest) {
 	tx, err := service.db.Begin()
 	helper.PanicIfError(err)
 	defer helper.RollbackOrCommit(tx)
 
 	var agrLajuPertumbuhanPendudukAll []entity.AgrLajuPertumbuhanPenduduk
-	for i := 0; i < len(request); i++ {
+	for i := 0; i < len(agrLajuPertumbuhanPenduduk); i++ {
 		agrLajuPertumbuhanPenduduk := entity.AgrLajuPertumbuhanPenduduk{
-			Kode:     request[i].Kode,
-			Semester: request[i].Semester,
-			Tahun:    request[i].Tahun,
-			Pria:     request[i].Pria,
-			Wanita:   request[i].Wanita,
+			Kode:     agrLajuPertumbuhanPenduduk[i].Kode,
+			Semester: agrLajuPertumbuhanPenduduk[i].Semester,
+			Tahun:    agrLajuPertumbuhanPenduduk[i].Tahun,
+			Pria:     agrLajuPertumbuhanPenduduk[i].Pria,
+			Wanita:   agrLajuPertumbuhanPenduduk[i].Wanita,
 		}
 		agrLajuPertumbuhanPendudukAll = append(agrLajuPertumbuhanPendudukAll, agrLajuPertumbuhanPenduduk)
 	}
-
 	service.repository.Create(ctx, tx, agrLajuPertumbuhanPendudukAll)
 }
+
+// func (service AgrLajuPertumbuhanPendudukServiceImpl) Update(ctx context.Context, agrLajuPertumbuhanPendudukId []web.AgrLajuPertumbuhanPendudukCreateRequest) web.AgrLajuPertumbuhanPendudukResponse {
+// 	tx, err := service.db.Begin()
+// 	helper.PanicIfError(err)
+// 	defer helper.RollbackOrCommit(tx)
+
+// 	service.repository.Update(ctx, tx)
+// }
+
+func (service AgrLajuPertumbuhanPendudukServiceImpl) FindById(ctx context.Context, agrLajuPertumbuhanPendudukId int) web.AgrLajuPertumbuhanPendudukResponse {
+	tx, err := service.db.Begin()
+	helper.PanicIfError(err)
+	defer helper.RollbackOrCommit(tx)
+
+	agrLajuPertumbuhanPenduduk := service.repository.FindById(ctx, tx, agrLajuPertumbuhanPendudukId)
+	agrLajuPertumbuhanPendudukResponse := web.AgrLajuPertumbuhanPendudukResponse{
+		Kode:     agrLajuPertumbuhanPenduduk.Kode,
+		Semester: agrLajuPertumbuhanPenduduk.Semester,
+		Tahun:    agrLajuPertumbuhanPenduduk.Tahun,
+		Pria:     agrLajuPertumbuhanPenduduk.Pria,
+		Wanita:   agrLajuPertumbuhanPenduduk.Wanita,
+	}
+	return agrLajuPertumbuhanPendudukResponse
+}
+
 func (service AgrLajuPertumbuhanPendudukServiceImpl) FindAll(ctx context.Context) []web.AgrLajuPertumbuhanPendudukResponse {
 	tx, err := service.db.Begin()
 	helper.PanicIfError(err)
