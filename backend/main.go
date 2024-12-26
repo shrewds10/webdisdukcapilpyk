@@ -30,7 +30,13 @@ func main() {
 	router := httprouter.New()
 
 	router.POST("/api/users", userController.Create)
+
 	router.POST("/api/agrlajupertumbuhanpenduduk", agrLajuPertumbuhanPendudukController.Create)
+	router.GET("/api/agrlajupertumbuhanpenduduk", agrLajuPertumbuhanPendudukController.FindById)
+	router.GET("/api/agrlajupertumbuhanpendudukall", agrLajuPertumbuhanPendudukController.FindAll)
+	router.PUT("/api/agrlajupertumbuhanpendudukupdate", agrLajuPertumbuhanPendudukController.Update)
+	router.DELETE("/api/agrlajupertumbuhanpenduduk", agrLajuPertumbuhanPendudukController.Delete)
+
 	router.POST("/api/livereport", liveReportController.Create)
 	router.GET("/api/livereport", liveReportController.FindAll)
 

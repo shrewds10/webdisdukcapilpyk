@@ -24,3 +24,30 @@ Accept: application/json
 ### Get Data
 GET http://localhost:3000/api/livereport
 Accept: application/json
+
+##	Agr Laju Pertumbuhan Penduduk
+### Update
+PUT http://localhost:3000/api/agrlajupertumbuhanpendudukupdate?kode=13.76&semester=2&tahun=24
+Content-Type: application/json
+Accept: application/json
+
+{
+	"Kode":"13.76",
+	"Semester":2,
+	"Tahun":24,
+	"Pria":21,
+	"Wanita":12
+}
+
+
+### Delete
+DELETE http://localhost:3000/api/agrlajupertumbuhanpendudukdelete?kode=13.76&semester=2&tahun=24
+Accept: application/json
+
+### Get
+GET http://localhost:3000/api/agrlajupertumbuhanpenduduk?kode=13.76&semester=2&tahun=24
+Accept: application/json
+
+### Get All
+GET http://localhost:3000/api/agrlajupertumbuhanpendudukall
+Accept: application/json

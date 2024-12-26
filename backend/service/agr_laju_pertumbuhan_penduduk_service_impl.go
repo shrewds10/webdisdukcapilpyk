@@ -40,20 +40,42 @@ func (service AgrLajuPertumbuhanPendudukServiceImpl) Create(ctx context.Context,
 	service.repository.Create(ctx, tx, agrLajuPertumbuhanPendudukAll)
 }
 
-// func (service AgrLajuPertumbuhanPendudukServiceImpl) Update(ctx context.Context, agrLajuPertumbuhanPendudukId []web.AgrLajuPertumbuhanPendudukCreateRequest) web.AgrLajuPertumbuhanPendudukResponse {
-// 	tx, err := service.db.Begin()
-// 	helper.PanicIfError(err)
-// 	defer helper.RollbackOrCommit(tx)
-
-// 	service.repository.Update(ctx, tx)
-// }
-
-func (service AgrLajuPertumbuhanPendudukServiceImpl) FindById(ctx context.Context, agrLajuPertumbuhanPendudukId int) web.AgrLajuPertumbuhanPendudukResponse {
+func (service AgrLajuPertumbuhanPendudukServiceImpl) Update(ctx context.Context, agrLajuPertumbuhanPenduduk web.AgrLajuPertumbuhanPendudukUpdateRequest) web.AgrLajuPertumbuhanPendudukResponse {
 	tx, err := service.db.Begin()
 	helper.PanicIfError(err)
 	defer helper.RollbackOrCommit(tx)
 
-	agrLajuPertumbuhanPenduduk := service.repository.FindById(ctx, tx, agrLajuPertumbuhanPendudukId)
+	agrLajuPertumbuhanPendudukUpdate := service.repository.FindById(ctx, tx, agrLajuPertumbuhanPenduduk.Kode, agrLajuPertumbuhanPenduduk.Semester, agrLajuPertumbuhanPenduduk.Tahun)
+	agrLajuPertumbuhanPendudukUpdate.Pria = agrLajuPertumbuhanPenduduk.Pria
+	agrLajuPertumbuhanPendudukUpdate.Wanita = agrLajuPertumbuhanPenduduk.Wanita
+
+	service.repository.Update(ctx, tx, agrLajuPertumbuhanPendudukUpdate)
+
+	agrLajuPertumbuhanPendudukResponse := web.AgrLajuPertumbuhanPendudukResponse{
+		Kode:     agrLajuPertumbuhanPendudukUpdate.Kode,
+		Semester: agrLajuPertumbuhanPendudukUpdate.Semester,
+		Tahun:    agrLajuPertumbuhanPendudukUpdate.Tahun,
+		Pria:     agrLajuPertumbuhanPendudukUpdate.Pria,
+		Wanita:   agrLajuPertumbuhanPendudukUpdate.Wanita,
+	}
+
+	return agrLajuPertumbuhanPendudukResponse
+}
+
+func (service AgrLajuPertumbuhanPendudukServiceImpl) Delete(ctx context.Context, kode string, semester, tahun int) {
+	tx, err := service.db.Begin()
+	helper.PanicIfError(err)
+	defer helper.RollbackOrCommit(tx)
+
+	service.repository.Delete(ctx, tx, kode, semester, tahun)
+}
+
+func (service AgrLajuPertumbuhanPendudukServiceImpl) FindById(ctx context.Context, kode string, semester int, tahun int) web.AgrLajuPertumbuhanPendudukResponse {
+	tx, err := service.db.Begin()
+	helper.PanicIfError(err)
+	defer helper.RollbackOrCommit(tx)
+
+	agrLajuPertumbuhanPenduduk := service.repository.FindById(ctx, tx, kode, semester, tahun)
 	agrLajuPertumbuhanPendudukResponse := web.AgrLajuPertumbuhanPendudukResponse{
 		Kode:     agrLajuPertumbuhanPenduduk.Kode,
 		Semester: agrLajuPertumbuhanPenduduk.Semester,
