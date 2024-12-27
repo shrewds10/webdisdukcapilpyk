@@ -66,13 +66,11 @@ func (controller AgrLajuPertumbuhanPendudukControllerImpl) Update(writer http.Re
 	tahunInt, err := strconv.Atoi(tahun)
 	helper.PanicIfError(err)
 
-	agrLajuPertumbuhanPendudukUpdate := web.AgrLajuPertumbuhanPendudukUpdateRequest{
-		Kode:     kode,
-		Semester: semesterInt,
-		Tahun:    tahunInt,
-		Pria:     2,
-		Wanita:   2,
-	}
+	agrLajuPertumbuhanPendudukUpdate := web.AgrLajuPertumbuhanPendudukUpdateRequest{}
+	helper.JsonDecode(request, &agrLajuPertumbuhanPendudukUpdate)
+	agrLajuPertumbuhanPendudukUpdate.Kode = kode
+	agrLajuPertumbuhanPendudukUpdate.Semester = semesterInt
+	agrLajuPertumbuhanPendudukUpdate.Tahun = tahunInt
 
 	agrLajuPertumbuhanPendudukResponse := controller.service.Update(request.Context(), agrLajuPertumbuhanPendudukUpdate)
 	agrLajuPertumbuhanPendudukUpdateResponse := web.WebResponse{

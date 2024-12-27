@@ -32,11 +32,8 @@ Content-Type: application/json
 Accept: application/json
 
 {
-	"Kode":"13.76",
-	"Semester":2,
-	"Tahun":24,
-	"Pria":21,
-	"Wanita":12
+	"Pria":524,
+	"Wanita":552
 }
 
 
