@@ -36,7 +36,6 @@ Accept: application/json
 	"Wanita":552
 }
 
-
 ### Delete
 DELETE http://localhost:3000/api/agrlajupertumbuhanpendudukdelete?kode=13.76&semester=2&tahun=24
 Accept: application/json
