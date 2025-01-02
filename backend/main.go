@@ -17,18 +17,21 @@ func main() {
 	userService := service.NewUserService(userRepository, db)
 	userController := controller.NewUserController(userService)
 
-	agrLajuPertumbuhanPendudukRepository := repository.NewAgrLajuPertumbuhanPendudukRepository()
-	agrLajuPertumbuhanPendudukService := service.NewAgrLajuPertumbuhanPendudukServiceService(agrLajuPertumbuhanPendudukRepository, db)
-	agrLajuPertumbuhanPendudukController := controller.NewAgrLajuPertumbuhanPendudukControll(agrLajuPertumbuhanPendudukService)
+	// agrLajuPertumbuhanPendudukRepository := repository.NewAgrLajuPertumbuhanPendudukRepository()
+	// agrLajuPertumbuhanPendudukService := service.NewAgrLajuPertumbuhanPendudukServiceService(agrLajuPertumbuhanPendudukRepository, db)
+	// agrLajuPertumbuhanPendudukController := controller.NewAgrLajuPertumbuhanPendudukControll(agrLajuPertumbuhanPendudukService)
 
 	liveReportRepository := repository.NewLiveReportRepository()
 	liveReportService := service.NewLiveReportService(db, liveReportRepository)
 	liveReportController := controller.NewLiveReportController(liveReportService)
 
-	router := app.NewRouter(agrLajuPertumbuhanPendudukController)
-
-	router.POST("/api/livereport", liveReportController.Create)
-	router.GET("/api/livereport", liveReportController.FindAll)
+	agrLajuPertumbuhanPendudukController := InitializedAgrLajuPertumbuhanPenduduk()
+	controllers := app.RouterController{
+		User:                       userController,
+		AgrLajuPertumbuhanPenduduk: agrLajuPertumbuhanPendudukController,
+		LiveReport:                 liveReportController,
+	}
+	router := app.NewRouter(controllers)
 
 	server := http.Server{
 		Addr:    "localhost:3000",

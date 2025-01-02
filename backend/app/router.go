@@ -1,29 +1,30 @@
 package app
 
 import (
-	"net/http"
+	"go_import/controller"
 
 	"github.com/julienschmidt/httprouter"
 )
 
-type RouterController interface {
-	Create(writer http.ResponseWriter, request *http.Request, params httprouter.Params)
-	Update(writer http.ResponseWriter, request *http.Request, params httprouter.Params)
-	Delete(writer http.ResponseWriter, request *http.Request, params httprouter.Params)
-	FindById(writer http.ResponseWriter, request *http.Request, params httprouter.Params)
-	FindAll(writer http.ResponseWriter, request *http.Request, params httprouter.Params)
+type RouterController struct {
+	AgrLajuPertumbuhanPenduduk controller.AgrLajuPertumbuhanPendudukController
+	LiveReport                 controller.LiveReportController
+	User                       controller.UserController
 }
 
 func NewRouter(controller RouterController) *httprouter.Router {
 	router := httprouter.New()
 
-	router.POST("/api/users", controller.Create)
+	router.POST("/api/users", controller.User.Create)
 
-	router.POST("/api/agrlajupertumbuhanpenduduk", controller.Create)
-	router.GET("/api/agrlajupertumbuhanpenduduk", controller.FindById)
-	router.GET("/api/agrlajupertumbuhanpendudukall", controller.FindAll)
-	router.PUT("/api/agrlajupertumbuhanpendudukupdate", controller.Update)
-	router.DELETE("/api/agrlajupertumbuhanpenduduk", controller.Delete)
+	router.POST("/api/agrlajupertumbuhanpenduduk", controller.AgrLajuPertumbuhanPenduduk.Create)
+	router.GET("/api/agrlajupertumbuhanpenduduk", controller.AgrLajuPertumbuhanPenduduk.FindById)
+	router.GET("/api/agrlajupertumbuhanpendudukall", controller.AgrLajuPertumbuhanPenduduk.FindAll)
+	router.PUT("/api/agrlajupertumbuhanpendudukupdate", controller.AgrLajuPertumbuhanPenduduk.Update)
+	router.DELETE("/api/agrlajupertumbuhanpenduduk", controller.AgrLajuPertumbuhanPenduduk.Delete)
+
+	router.POST("/api/livereport", controller.LiveReport.Create)
+	router.GET("/api/livereport", controller.LiveReport.FindAll)
 
 	return router
 }

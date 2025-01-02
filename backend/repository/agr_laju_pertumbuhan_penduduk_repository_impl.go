@@ -10,7 +10,7 @@ import (
 type AgrLajuPertumbuhanPendudukRepositoryImpl struct {
 }
 
-func NewAgrLajuPertumbuhanPendudukRepository() *AgrLajuPertumbuhanPendudukRepositoryImpl {
+func NewAgrLajuPertumbuhanPendudukRepository() AgrLajuPertumbuhanPendudukRepository {
 	return &AgrLajuPertumbuhanPendudukRepositoryImpl{}
 }
 
