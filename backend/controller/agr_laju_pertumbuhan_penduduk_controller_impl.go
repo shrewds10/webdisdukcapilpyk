@@ -1,9 +1,9 @@
 package controller
 
 import (
-	"go_import/helper"
-	"go_import/model/web"
-	"go_import/service"
+	"backend/helper"
+	"backend/model/web"
+	"backend/service"
 	"net/http"
 	"strconv"
 
@@ -15,7 +15,7 @@ type AgrLajuPertumbuhanPendudukControllerImpl struct {
 	service service.AgrLajuPertumbuhanPendudukService
 }
 
-func NewAgrLajuPertumbuhanPendudukControll(agrLajuPertumbuhanPendudukService service.AgrLajuPertumbuhanPendudukService) AgrLajuPertumbuhanPendudukController {
+func NewAgrLajuPertumbuhanPendudukController(agrLajuPertumbuhanPendudukService service.AgrLajuPertumbuhanPendudukService) AgrLajuPertumbuhanPendudukController {
 	return &AgrLajuPertumbuhanPendudukControllerImpl{
 		service: agrLajuPertumbuhanPendudukService,
 	}

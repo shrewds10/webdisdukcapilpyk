@@ -1,10 +1,10 @@
 package repository
 
 import (
+	"backend/helper"
+	"backend/model/entity"
 	"context"
 	"database/sql"
-	"go_import/helper"
-	"go_import/model/entity"
 )
 
 type LiveReportRepositoryImpl struct {

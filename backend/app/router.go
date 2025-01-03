@@ -1,7 +1,7 @@
 package app
 
 import (
-	"go_import/controller"
+	"backend/controller"
 
 	"github.com/julienschmidt/httprouter"
 )

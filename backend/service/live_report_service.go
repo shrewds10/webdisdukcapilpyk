@@ -1,8 +1,8 @@
 package service
 
 import (
+	"backend/model/web"
 	"context"
-	"go_import/model/web"
 )
 
 type LiveReportService interface {

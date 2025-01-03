@@ -1,9 +1,9 @@
 package controller
 
 import (
-	"go_import/helper"
-	"go_import/model/web"
-	"go_import/service"
+	"backend/helper"
+	"backend/model/web"
+	"backend/service"
 	"net/http"
 
 	"github.com/julienschmidt/httprouter"

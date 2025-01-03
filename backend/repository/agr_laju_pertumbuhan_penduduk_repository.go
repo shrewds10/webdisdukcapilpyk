@@ -3,7 +3,7 @@ package repository
 import (
 	"context"
 	"database/sql"
-	"go_import/model/entity"
+	"backend/model/entity"
 )
 
 type AgrLajuPertumbuhanPendudukRepository interface {

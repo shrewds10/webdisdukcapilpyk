@@ -1,11 +1,12 @@
 package main
 
 import (
-	"go_import/app"
-	"go_import/controller"
-	"go_import/helper"
-	"go_import/repository"
-	"go_import/service"
+	"backend/app"
+	"backend/controller"
+	"backend/helper"
+	"backend/injector"
+	"backend/repository"
+	"backend/service"
 	"net/http"
 
 	_ "github.com/go-sql-driver/mysql"
@@ -25,7 +26,7 @@ func main() {
 	liveReportService := service.NewLiveReportService(db, liveReportRepository)
 	liveReportController := controller.NewLiveReportController(liveReportService)
 
-	agrLajuPertumbuhanPendudukController := InitializedAgrLajuPertumbuhanPenduduk()
+	agrLajuPertumbuhanPendudukController := injector.InitializedAgrLajuPertumbuhanPenduduk()
 	controllers := app.RouterController{
 		User:                       userController,
 		AgrLajuPertumbuhanPenduduk: agrLajuPertumbuhanPendudukController,

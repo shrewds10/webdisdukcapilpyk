@@ -1,9 +1,9 @@
 package repository
 
 import (
+	"backend/model/entity"
 	"context"
 	"database/sql"
-	"go_import/model/entity"
 )
 
 type UserRepository interface {

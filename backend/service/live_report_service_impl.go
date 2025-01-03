@@ -1,12 +1,13 @@
 package service
 
 import (
+	"backend/helper"
+	"backend/model/entity"
+	"backend/model/web"
+	"backend/repository"
 	"context"
 	"database/sql"
-	"go_import/helper"
-	"go_import/model/entity"
-	"go_import/model/web"
-	"go_import/repository"
+
 	"time"
 )
 
