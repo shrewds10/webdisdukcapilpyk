@@ -11,14 +11,33 @@ import (
 	"backend/controller"
 	"backend/repository"
 	"backend/service"
+	"github.com/google/wire"
+	"net/http"
 )
 
 // Injectors from wire.go:
 
-func InitializedAgrLajuPertumbuhanPenduduk() controller.AgrLajuPertumbuhanPendudukController {
+func InitializedController() *http.Server {
 	agrLajuPertumbuhanPendudukRepository := repository.NewAgrLajuPertumbuhanPendudukRepository()
 	db := app.NewDB()
 	agrLajuPertumbuhanPendudukService := service.NewAgrLajuPertumbuhanPendudukServiceService(agrLajuPertumbuhanPendudukRepository, db)
 	agrLajuPertumbuhanPendudukController := controller.NewAgrLajuPertumbuhanPendudukController(agrLajuPertumbuhanPendudukService)
-	return agrLajuPertumbuhanPendudukController
+	userRepository := repository.NewUserRepository()
+	userService := service.NewUserService(userRepository, db)
+	userController := controller.NewUserController(userService)
+	liveReportRepository := repository.NewLiveReportRepository()
+	liveReportService := service.NewLiveReportService(db, liveReportRepository)
+	liveReportController := controller.NewLiveReportController(liveReportService)
+	routerController := app.NewFooBarController(agrLajuPertumbuhanPendudukController, userController, liveReportController)
+	router := app.NewRouter(routerController)
+	server := NewServer(router)
+	return server
 }
+
+// wire.go:
+
+var agrlajupertumbuhanpendudukSet = wire.NewSet(repository.NewAgrLajuPertumbuhanPendudukRepository, service.NewAgrLajuPertumbuhanPendudukServiceService, controller.NewAgrLajuPertumbuhanPendudukController)
+
+var userSet = wire.NewSet(repository.NewUserRepository, service.NewUserService, controller.NewUserController)
+
+var liveReportSet = wire.NewSet(repository.NewLiveReportRepository, service.NewLiveReportService, controller.NewLiveReportController)

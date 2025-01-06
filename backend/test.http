@@ -41,7 +41,7 @@ DELETE http://localhost:3000/api/agrlajupertumbuhanpendudukdelete?kode=13.76&sem
 Accept: application/json
 
 ### Get
-GET http://localhost:3000/api/agrlajupertumbuhanpenduduk?kode=13.76&semester=2&tahun=24
+GET http://localhost:3000/api/agrlajupertumbuhanpenduduk?kode=13.76&semester=2&tahun=23
 Accept: application/json
 
 ### Get All

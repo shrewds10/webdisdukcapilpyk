@@ -1,6 +1,7 @@
 package service
 
 import (
+	"backend/exception"
 	"backend/helper"
 	"backend/model/entity"
 	"backend/model/web"
@@ -45,7 +46,8 @@ func (service AgrLajuPertumbuhanPendudukServiceImpl) Update(ctx context.Context,
 	helper.PanicIfError(err)
 	defer helper.RollbackOrCommit(tx)
 
-	agrLajuPertumbuhanPendudukUpdate := service.repository.FindById(ctx, tx, agrLajuPertumbuhanPenduduk.Kode, agrLajuPertumbuhanPenduduk.Semester, agrLajuPertumbuhanPenduduk.Tahun)
+	agrLajuPertumbuhanPendudukUpdate, err := service.repository.FindById(ctx, tx, agrLajuPertumbuhanPenduduk.Kode, agrLajuPertumbuhanPenduduk.Semester, agrLajuPertumbuhanPenduduk.Tahun)
+
 	agrLajuPertumbuhanPendudukUpdate.Pria = agrLajuPertumbuhanPenduduk.Pria
 	agrLajuPertumbuhanPendudukUpdate.Wanita = agrLajuPertumbuhanPenduduk.Wanita
 
@@ -75,7 +77,11 @@ func (service AgrLajuPertumbuhanPendudukServiceImpl) FindById(ctx context.Contex
 	helper.PanicIfError(err)
 	defer helper.RollbackOrCommit(tx)
 
-	agrLajuPertumbuhanPenduduk := service.repository.FindById(ctx, tx, kode, semester, tahun)
+	agrLajuPertumbuhanPenduduk, err := service.repository.FindById(ctx, tx, kode, semester, tahun)
+	if err != nil {
+		panic(exception.NewErrorNotFound(err.Error()))
+	}
+
 	agrLajuPertumbuhanPendudukResponse := web.AgrLajuPertumbuhanPendudukResponse{
 		Kode:     agrLajuPertumbuhanPenduduk.Kode,
 		Semester: agrLajuPertumbuhanPenduduk.Semester,

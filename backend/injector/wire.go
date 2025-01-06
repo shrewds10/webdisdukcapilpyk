@@ -8,16 +8,39 @@ import (
 	"backend/controller"
 	"backend/repository"
 	"backend/service"
+	"net/http"
 
 	"github.com/google/wire"
 )
 
-func InitializedAgrLajuPertumbuhanPenduduk() controller.AgrLajuPertumbuhanPendudukController {
+var agrlajupertumbuhanpendudukSet = wire.NewSet(
+	repository.NewAgrLajuPertumbuhanPendudukRepository,
+	service.NewAgrLajuPertumbuhanPendudukServiceService,
+	controller.NewAgrLajuPertumbuhanPendudukController,
+)
+
+var userSet = wire.NewSet(
+	repository.NewUserRepository,
+	service.NewUserService,
+	controller.NewUserController,
+)
+
+var liveReportSet = wire.NewSet(
+	repository.NewLiveReportRepository,
+	service.NewLiveReportService,
+	controller.NewLiveReportController,
+)
+
+func InitializedController() *http.Server {
 	wire.Build(
 		app.NewDB,
-		repository.NewAgrLajuPertumbuhanPendudukRepository,
-		service.NewAgrLajuPertumbuhanPendudukServiceService,
-		controller.NewAgrLajuPertumbuhanPendudukController,
+		agrlajupertumbuhanpendudukSet,
+		userSet,
+		liveReportSet,
+		app.NewFooBarController,
+		app.NewRouter,
+		NewServer,
 	)
+
 	return nil
 }

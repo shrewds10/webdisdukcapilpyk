@@ -5,6 +5,7 @@ import (
 	"backend/model/entity"
 	"context"
 	"database/sql"
+	"errors"
 )
 
 type AgrLajuPertumbuhanPendudukRepositoryImpl struct {
@@ -51,7 +52,7 @@ func (agrLajuPertumbuhanPendudukRepository AgrLajuPertumbuhanPendudukRepositoryI
 	helper.PanicIfError(err)
 }
 
-func (agrLajuPertumbuhanPendudukRepository AgrLajuPertumbuhanPendudukRepositoryImpl) FindById(ctx context.Context, tx *sql.Tx, kode string, semester int, tahun int) entity.AgrLajuPertumbuhanPenduduk {
+func (agrLajuPertumbuhanPendudukRepository AgrLajuPertumbuhanPendudukRepositoryImpl) FindById(ctx context.Context, tx *sql.Tx, kode string, semester int, tahun int) (entity.AgrLajuPertumbuhanPenduduk, error) {
 	sqlQuery := "SELECT * FROM AGR_LAJU_PERTUMBUHAN_PENDUDUK WHERE KODE = ? AND SEMESTER = ? AND TAHUN = ?"
 	rows, err := tx.QueryContext(ctx, sqlQuery, kode, semester, tahun)
 	helper.PanicIfError(err)
@@ -67,8 +68,10 @@ func (agrLajuPertumbuhanPendudukRepository AgrLajuPertumbuhanPendudukRepositoryI
 			&agrLajuPertumbuhanPenduduk.Wanita,
 		)
 		helper.PanicIfError(err)
+		return agrLajuPertumbuhanPenduduk, nil
+	} else {
+		return agrLajuPertumbuhanPenduduk, errors.New("Data Not Found")
 	}
-	return agrLajuPertumbuhanPenduduk
 }
 
 func (agrLajuPertumbuhanPendudukRepository AgrLajuPertumbuhanPendudukRepositoryImpl) FindAll(ctx context.Context, tx *sql.Tx) []entity.AgrLajuPertumbuhanPenduduk {
