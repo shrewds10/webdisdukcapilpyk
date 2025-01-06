@@ -37,7 +37,7 @@ func NewRouter(controller *RouterController) *httprouter.Router {
 	router.POST("/api/livereport", controller.LiveReport.Create)
 	router.GET("/api/livereport", controller.LiveReport.FindAll)
 
-	router.PanicHandler = exception.NewErrorHandler
+	router.PanicHandler = exception.ErrorHandler
 
 	return router
 }

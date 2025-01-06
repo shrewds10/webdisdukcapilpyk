@@ -7,30 +7,28 @@ import (
 	"net/http"
 )
 
-type ErrorNotFound struct {
-	Tesaja string
+func ErrorHandler(writer http.ResponseWriter, request *http.Request, err interface{}) {
+	NotFoundError(writer, request, err)
+	InternalServerError(writer, request, err)
 }
 
-func NewErrorNotFound(err string) ErrorNotFound {
-	return ErrorNotFound{Tesaja: err}
-}
+func NotFoundError(writer http.ResponseWriter, request *http.Request, err interface{}) bool {
+	exception, ok := err.(NotFoundHandler)
+	if ok {
+		writer.Header().Add("Content-type", "application/json")
+		writer.WriteHeader(http.StatusBadRequest)
 
-// func NewErrorHandler(writer http.ResponseWriter, request *http.Request, err interface{}) {
-// 	// notFoundError(writer, request, err)
-// 	InternalServerError(writer, request, err)
-// }
-
-func NotFoundError(writer http.ResponseWriter, err interface{}) {
-	// writer.Header().Add("Content-type", "application/json")
-	// writer.WriteHeader(http.StatusBadRequest)
-
-	webResponse := web.WebResponse{
-		Code:   http.StatusBadRequest,
-		Status: "BAD REQUEST",
-		Data:   err,
+		webResponse := web.WebResponse{
+			Code:   http.StatusBadRequest,
+			Status: "BAD REQUEST",
+			Data:   exception.Error,
+		}
+		encoder := json.NewEncoder(writer)
+		encoder.Encode(webResponse)
+		return true
+	} else {
+		return false
 	}
-	encoder := json.NewEncoder(writer)
-	encoder.Encode(webResponse)
 }
 
 func InternalServerError(writer http.ResponseWriter, request *http.Request, err interface{}) {

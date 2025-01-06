@@ -79,7 +79,7 @@ func (service AgrLajuPertumbuhanPendudukServiceImpl) FindById(ctx context.Contex
 
 	agrLajuPertumbuhanPenduduk, err := service.repository.FindById(ctx, tx, kode, semester, tahun)
 	if err != nil {
-		panic(exception.NewErrorNotFound(err.Error()))
+		panic(exception.NewNotFoundHandler(err.Error()))
 	}
 
 	agrLajuPertumbuhanPendudukResponse := web.AgrLajuPertumbuhanPendudukResponse{
