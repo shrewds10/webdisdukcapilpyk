@@ -1,9 +1,9 @@
 package exception
 
-type NotFoundHandler struct {
+type NotFoundError struct {
 	Error string
 }
 
-func NewNotFoundHandler(err string) NotFoundHandler {
-	return NotFoundHandler{Error: err}
+func NewNotFoundError(err string) NotFoundError {
+	return NotFoundError{Error: err}
 }

@@ -8,12 +8,14 @@ import (
 )
 
 func ErrorHandler(writer http.ResponseWriter, request *http.Request, err interface{}) {
-	NotFoundError(writer, request, err)
+	if notFoundError(writer, request, err) {
+		return
+	}
 	InternalServerError(writer, request, err)
 }
 
-func NotFoundError(writer http.ResponseWriter, request *http.Request, err interface{}) bool {
-	exception, ok := err.(NotFoundHandler)
+func notFoundError(writer http.ResponseWriter, request *http.Request, err interface{}) bool {
+	exception, ok := err.(NotFoundError)
 	if ok {
 		writer.Header().Add("Content-type", "application/json")
 		writer.WriteHeader(http.StatusBadRequest)
