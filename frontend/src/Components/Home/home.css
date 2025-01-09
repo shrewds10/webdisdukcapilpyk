@@ -22,34 +22,36 @@
   margin: auto;
   position: relative;
 }
-.home .secContainer .homeText {
-  text-align: center;
-  height: 170px;
+.home .firContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: flex-start;
+  margin-top: 50px;
+}
+.home .secContainer {
+  flex: 1;
 }
 .home .secContainer .homeText .title {
   color: var(--whiteColor);
-  font-size: 22px;
   font-weight: 700;
   line-height: 2.5rem;
-}
-.home .secContainer .homeText .subTitle {
-  color: var(--whiteColor);
-  opacity: 0.9;
-  font-size: 13px;
-  font-weight: 300;
-  padding: 1rem 0;
-  max-width: 75%;
-  text-align: center;
-  margin: auto;
+  font-size: 35px;
+  text-align: left;
+  margin-left: 15px;
 }
 .home .secContainer .population {
-  margin-top: 50px;
+  margin-top: 30px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   position: relative;
   z-index: 1;
+}
+.home .secContainer .population .descPopulation {
+  margin-top: 10px;
 }
 .home .secContainer .population .descPopulation .desc {
   display: flex;
@@ -137,12 +139,6 @@
 .home .secContainer .moto p {
   text-align: center;
 }
-
-@media screen and (min-width: 556px) {
-  .home .secContainer .homeText .title {
-    font-size: 2.5rem;
-  }
-  .home .secContainer .homeText .subTitle {
-    font-size: 18px;
-  }
+.home .thiContainer {
+  flex: 2;
 }/*# sourceMappingURL=home.css.map */
