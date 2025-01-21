@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lobster&family=Smooch+Sans:wght@100..900&display=swap");
 :root {
   --PrimaryColor: hsl(26, 93%, 50%);
   --HoverColor: hsl(26, 90%, 42%);
@@ -30,15 +32,36 @@
   margin-top: 50px;
 }
 .home .secContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
   flex: 1;
 }
-.home .secContainer .homeText .title {
+.home .secContainer .homeText {
+  position: relative;
   color: var(--whiteColor);
   font-weight: 700;
   line-height: 2.5rem;
-  font-size: 35px;
+  font-size: 37px;
   text-align: left;
-  margin-left: 15px;
+}
+.home .secContainer .homeText .title {
+  font-family: "Dancing Script", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+.home .secContainer .homeText .secTitle {
+  margin-top: 20px;
+  font-size: 42px;
+  line-height: 0.8;
+  font-family: "Smooch Sans", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+.home .secContainer .homeText .secTitle br {
+  margin-bottom: 310px;
 }
 .home .secContainer .population {
   margin-top: 30px;
@@ -140,5 +163,21 @@
   text-align: center;
 }
 .home .thiContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
   flex: 2;
+  z-index: 1;
+}
+.home .thiContainer .slideshow-container {
+  position: relative;
+}
+.home .thiContainer .slideshow-container .slide img {
+  width: 85%;
+  border-radius: 1rem;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 2px 8px 2px rgba(178, 178, 178, 0.6);
+  transition: transform 1s ease-in-out;
 }/*# sourceMappingURL=home.css.map */

@@ -1,19 +1,35 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 import './home.css'
 import ParticlesContainer from '../ParticlesContainer'
-import { IoIosPeople, IoIosMan, IoIosWoman } from "react-icons/io";
-import Foto from '../../Assets/2.jpg'
+import { IoIosPeople, IoIosMan, IoIosWoman } from "react-icons/io"
+import Foto1 from '../../Assets/1.jpg'
+import Foto2 from '../../Assets/2.jpg'
 
 const Home = () => {
+  const [currentImage, setCurrentImage] = useState(0)
+  const images = [
+    Foto1,
+    Foto2
+  ]
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage(prev => (prev + 1) % images.length)
+    }, 5000)
+
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <section className='home'>
       <div className="firContainer">
         <div className="secContainer">
-          <ParticlesContainer/>
+          {/* <ParticlesContainer/> */}
           <div className="homeText">
             <h1 className="title">
-              Dinas Kependudukan dan Pencatatan Sipil <br/> Kota Payakumbuh
+              Selamat Datang di
             </h1>
+            <h2 className='secTitle'>Website Disdukcapil <br/>Kota Payakumbuh</h2>
           </div>
           <div className='population'>
             <div className='descPopulation'>
@@ -60,16 +76,9 @@ const Home = () => {
           </div> */}
         </div>
         <div className="thiContainer">
-          <h1>test1</h1>
           <div class="slideshow-container">
             <div class="slide fade">
-              <img src={Foto} alt="Image Default" />
-            </div>
-            <div class="slide fade">
-              {/* <img src="image2.jpg" alt="Slide 2"> */}
-            </div>
-            <div class="slide fade">
-              {/* <img src="image3.jpg" alt="Slide 3"> */}
+              <img src={images[currentImage]} alt="Image Default" className='gambar'/>
             </div>
           </div>
         </div>
