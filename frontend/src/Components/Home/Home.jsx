@@ -2,8 +2,8 @@ import React,{useState, useEffect} from 'react'
 import './home.css'
 import ParticlesContainer from '../ParticlesContainer'
 import { IoIosPeople, IoIosMan, IoIosWoman } from "react-icons/io"
-import Foto1 from '../../Assets/1.jpg'
-import Foto2 from '../../Assets/2.jpg'
+import Foto1 from '../../Assets/1.png'
+import Foto2 from '../../Assets/2.png'
 
 const Home = () => {
   const [currentImage, setCurrentImage] = useState(0)
