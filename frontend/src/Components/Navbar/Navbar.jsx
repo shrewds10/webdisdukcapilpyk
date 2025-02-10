@@ -40,9 +40,10 @@ const Navbar = () => {
               <a href="" className="navLink">Home</a>
             </li>
             <li className="navItem">
-              <div className='dropdown-item'>
-                Profil <i className='dropdown-arrow'><IoIosArrowDown/></i>
-              </div>
+            <a href="#" className="navLink">
+              Profil <span className="iconLink"><IoIosArrowDown /></span>
+            </a>
+              
               {/* <ul className='dropdown-menu'>
                 <li>
                   <a href="" className="dropdown-link">Visi dan Misi</a>
@@ -56,13 +57,16 @@ const Navbar = () => {
               </ul> */}
             </li>
             <li className="navItem">
-              <a href="" className="navLink">Informasi</a>
+              <a href="" className="navLink">Layanan Kami</a>
             </li>
             <li className="navItem">
-              <a href="" className="navLink">Layanan Dukcapil</a>
+              <a href="" className="navLink">Berita</a>
             </li>
             <li className="navItem">
-              <a href="" className="navLink">Pengumuman</a>
+              <a href="" className="navLink">Kontak dan Pengaduan</a>
+            </li>
+            <li className="navItem">
+              <a href="" className="navLink">FAQ</a>
             </li>
           </ul>
           <div onClick={closeNav} className="closeNavbar">
