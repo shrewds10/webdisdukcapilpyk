@@ -118,7 +118,7 @@
   font-size: 1.1rem;
 }
 .navBarSection .navBar .navLists .navItem .dropdownMenu .dropdownLink:hover {
-  background-color: #17569e;
+  background-color: #022c5c;
 }
 .navBarSection .navBar .navLists .navItem:hover .dropdownMenu {
   display: flex;

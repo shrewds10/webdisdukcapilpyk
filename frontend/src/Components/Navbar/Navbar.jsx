@@ -66,9 +66,23 @@ const Navbar = () => {
                 <div className="group1">
                   <li><a href="" className="dropdownLink"><span className='iconDropdownLink'><IoBookSharp/></span>Standar Pelayanan</a></li>
                   <li><a href="" className="dropdownLink"><span className='iconDropdownLink'><ImBooks/></span>Buku Profil</a></li>
+                  <li><a href="" className="dropdownLink"><span className='iconDropdownLink'><ImBooks/></span>LKJiP</a></li>
                 </div>
                 <div className="group2">
                   <li><a href="" className="dropdownLink"><span className='iconDropdownLink'><ImBooks/></span>Buku Agregat Kependudukan</a></li>
+                  <li><a href="" className="dropdownLink"><span className='iconDropdownLink'><ImBooks/></span>Rencana Strategis</a></li>
+                  <li><a href="" className="dropdownLink"><span className='iconDropdownLink'><ImBooks/></span>Rencana Kerja</a></li>
+                </div>
+              </ul>
+            </li>
+            <li className="navItem">
+              <a href="#" className="navLink">
+                Persyaratan <span className="iconLink"><IoIosArrowDown /></span>
+              </a>
+              <ul className='dropdownMenu'>
+                <div className="group1">
+                  <li><a href="" className="dropdownLink"><span className='iconDropdownLink'><IoBookSharp/></span>Dokumen Kependudukan</a></li>
+                  <li><a href="" className="dropdownLink"><span className='iconDropdownLink'><ImBooks/></span>Dokumen Pencatatan Sipil</a></li>
                 </div>
               </ul>
             </li>
