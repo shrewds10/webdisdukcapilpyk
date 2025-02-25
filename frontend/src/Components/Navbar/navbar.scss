@@ -96,32 +96,96 @@
                     .group2 {
                         display: flex;
                         flex-direction: column; 
-                    }
-                    li {
-                        display: block;
-                        box-sizing: border-box;
-                        padding: 5px;
-                        white-space: nowrap;
-                    }
-                    .dropdownLink {
-                        display: flex;
-                        align-items: center;
-                        padding: 5px;
-                        text-decoration: none;
-                        color: #333;
-                        color: #fff;
-                        .iconDropdownLink {
-                            display: inline-flex;
-                            align-items: center;
-                            margin-right: 5px;
-                            background-color: #01374d;
+                        li {
+                            display: block;
+                            box-sizing: border-box;
                             padding: 5px;
-                            border-radius: 3px;
-                            font-size: 1.1rem;
+                            white-space: nowrap;
+                            .dropdownLink {
+                                display: flex;
+                                align-items: center;
+                                padding: 5px;
+                                text-decoration: none;
+                                color: #333;
+                                color: #fff;
+                                display: inline-flex;
+                                align-items: center;
+                                .iconLink{
+                                    display: inline-flex;
+                                    align-items: center;
+                                    margin-left: 4px;
+                                }
+                                .iconDropdownLink {
+                                    display: inline-flex;
+                                    align-items: center;
+                                    margin-right: 5px;
+                                    background-color: #01374d;
+                                    padding: 5px;
+                                    border-radius: 3px;
+                                    font-size: 1.1rem;
+                                }
+                            }
+                            .dropdownLink:hover {
+                                background-color: #022c5c;
+                            }
+                            .subDropdownMenu {
+                                position: absolute;
+                                top: 0;
+                                left: 100%;
+                                width: auto;
+                                background-color: #012838;
+                                padding: 10px;
+                                min-width: 310px;
+                                opacity: 0;
+                                visibility: hidden;
+                                transform: translateY(-20px);
+                                transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s;
+                                z-index: 999;
+                                display: grid;
+                                grid-template-columns: 1fr 1fr; 
+                                gap: 10px;
+                                font-size: .9rem;
+                                font-weight: 400;
+                                box-shadow: 0 2px 8px 2px rgba(178,178,178,0.60);
+                                li {
+                                    display: block;
+                                    box-sizing: border-box;
+                                    padding: 5px;
+                                    white-space: nowrap;
+                                }
+                                .dropdownLink {
+                                    display: flex;
+                                    align-items: center;
+                                    padding: 5px;
+                                    text-decoration: none;
+                                    color: #333;
+                                    color: #fff;
+                                    display: inline-flex;
+                                    align-items: center;
+                                    .iconLink{
+                                        display: inline-flex;
+                                        align-items: center;
+                                        margin-left: 4px;
+                                    }
+                                    .iconDropdownLink {
+                                        display: inline-flex;
+                                        align-items: center;
+                                        margin-right: 5px;
+                                        background-color: #01374d;
+                                        padding: 5px;
+                                        border-radius: 3px;
+                                        font-size: 1.1rem;
+                                    }
+                                }
+                            }
                         }
-                    }
-                    .dropdownLink:hover {
-                        background-color: #022c5c;
+                        li:hover .subDropdownMenu{
+                            display: block;
+                            opacity: 1;
+                            visibility: visible;
+                            transform: translateX(0);
+                            transition: opacity 0.3s ease, transform 0.3s ease;
+                        }
                     }
                 }
             }
@@ -132,6 +196,7 @@
                 transform: translateY(0);
                 transition: opacity 0.3s ease, transform 0.3s ease;
             }
+            
         }
     }
     .activeHeader{

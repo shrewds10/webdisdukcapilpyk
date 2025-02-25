@@ -81,8 +81,35 @@ const Navbar = () => {
               </a>
               <ul className='dropdownMenu'>
                 <div className="group1">
-                  <li><a href="" className="dropdownLink"><span className='iconDropdownLink'><IoBookSharp/></span>Dokumen Kependudukan</a></li>
-                  <li><a href="" className="dropdownLink"><span className='iconDropdownLink'><ImBooks/></span>Dokumen Pencatatan Sipil</a></li>
+                  <li>
+                    <a href="" className="dropdownLink">
+                      <span className='iconDropdownLink'><IoBookSharp/></span>Dokumen Kependudukan
+                      <span className="iconLink"><IoIosArrowDown /></span>
+                    </a>
+                    <ul className="subDropdownMenu">
+                      <li><a href="#" className="dropdownLink">Penerbitan KTP-el</a></li>
+                      <li><a href="#" className="dropdownLink">Penerbitan Kartu Keluarga</a></li>
+                      <li><a href="#" className="dropdownLink">Penerbitan Surat Keterangan Pindah</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="" className="dropdownLink">
+                      <span className='iconDropdownLink'><ImBooks/></span>Dokumen Pencatatan Sipil
+                      <span className="iconLink"><IoIosArrowDown /></span>
+                    </a>
+                    <ul className="subDropdownMenu">
+                      <li><a href="#" className="dropdownLink">Penerbitan Kutipan Akta Kelahiran</a></li>
+                      <li><a href="#" className="dropdownLink">Penerbitan Kutipan Akta Kematian</a></li>
+                      <li><a href="#" className="dropdownLink">Penerbitan Kutipan Akta Perkawinan</a></li>
+                      <li><a href="#" className="dropdownLink">Penerbitan Kutipan Akta Perceraian</a></li>
+                      <li><a href="#" className="dropdownLink">Pencatatan Pembatalan Perkawinan</a></li>
+                      <li><a href="#" className="dropdownLink">Pencatatan Pembatalan Perceraian</a></li>
+                      <li><a href="#" className="dropdownLink">Penerbitan Akta Pengangkatan Anak</a></li>
+                      <li><a href="#" className="dropdownLink">Penerbitan Kutipan Akta Pengesahan Anak</a></li>
+                      <li><a href="#" className="dropdownLink">Penerbitan Kutipan Akta Pengakuan Anak</a></li>
+                      <li><a href="#" className="dropdownLink">Pencatatan Perubahan Nama</a></li>
+                    </ul>
+                  </li>
                 </div>
               </ul>
             </li>
