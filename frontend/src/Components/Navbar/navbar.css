@@ -52,6 +52,9 @@
   font-size: 30px;
   color: var(--whiteColor);
 }
+.navBarSection .navBar .navLists .navItem {
+  position: relative;
+}
 .navBarSection .navBar .navLists .navItem .navLink {
   display: inline-flex;
   align-items: center;
@@ -61,9 +64,143 @@
   align-items: center;
   margin-left: 4px;
 }
-.navBarSection .navBar .navLists .navItem .navLink .iconLink:hover {
+.navBarSection .navBar .navLists .navItem .navLink:hover .iconLink {
   transition: transform 0.3s ease;
   transform: rotate(180deg);
+}
+.navBarSection .navBar .navLists .navItem .dropdownMenu {
+  margin-top: 10px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: auto;
+  background-color: #012838;
+  padding: 10px;
+  min-width: 310px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s;
+  z-index: 999;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  box-shadow: 0 2px 8px 2px rgba(178, 178, 178, 0.6);
+}
+.navBarSection .navBar .navLists .navItem .dropdownMenu .group1,
+.navBarSection .navBar .navLists .navItem .dropdownMenu .group2 {
+  display: flex;
+  flex-direction: column;
+}
+.navBarSection .navBar .navLists .navItem .dropdownMenu .group1 li,
+.navBarSection .navBar .navLists .navItem .dropdownMenu .group2 li {
+  display: block;
+  box-sizing: border-box;
+  padding: 5px;
+  white-space: nowrap;
+}
+.navBarSection .navBar .navLists .navItem .dropdownMenu .group1 li .dropdownLink,
+.navBarSection .navBar .navLists .navItem .dropdownMenu .group2 li .dropdownLink {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  text-decoration: none;
+  color: #333;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+}
+.navBarSection .navBar .navLists .navItem .dropdownMenu .group1 li .dropdownLink .iconLink,
+.navBarSection .navBar .navLists .navItem .dropdownMenu .group2 li .dropdownLink .iconLink {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 4px;
+}
+.navBarSection .navBar .navLists .navItem .dropdownMenu .group1 li .dropdownLink .iconDropdownLink,
+.navBarSection .navBar .navLists .navItem .dropdownMenu .group2 li .dropdownLink .iconDropdownLink {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 5px;
+  background-color: #01374d;
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 1.1rem;
+}
+.navBarSection .navBar .navLists .navItem .dropdownMenu .group1 li .dropdownLink:hover,
+.navBarSection .navBar .navLists .navItem .dropdownMenu .group2 li .dropdownLink:hover {
+  background-color: #022c5c;
+}
+.navBarSection .navBar .navLists .navItem .dropdownMenu .group1 li .subDropdownMenu,
+.navBarSection .navBar .navLists .navItem .dropdownMenu .group2 li .subDropdownMenu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: auto;
+  background-color: #012838;
+  padding: 10px;
+  min-width: 310px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s;
+  z-index: 999;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  box-shadow: 0 2px 8px 2px rgba(178, 178, 178, 0.6);
+}
+.navBarSection .navBar .navLists .navItem .dropdownMenu .group1 li .subDropdownMenu li,
+.navBarSection .navBar .navLists .navItem .dropdownMenu .group2 li .subDropdownMenu li {
+  display: block;
+  box-sizing: border-box;
+  padding: 5px;
+  white-space: nowrap;
+}
+.navBarSection .navBar .navLists .navItem .dropdownMenu .group1 li .subDropdownMenu .dropdownLink,
+.navBarSection .navBar .navLists .navItem .dropdownMenu .group2 li .subDropdownMenu .dropdownLink {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  text-decoration: none;
+  color: #333;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+}
+.navBarSection .navBar .navLists .navItem .dropdownMenu .group1 li .subDropdownMenu .dropdownLink .iconLink,
+.navBarSection .navBar .navLists .navItem .dropdownMenu .group2 li .subDropdownMenu .dropdownLink .iconLink {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 4px;
+}
+.navBarSection .navBar .navLists .navItem .dropdownMenu .group1 li .subDropdownMenu .dropdownLink .iconDropdownLink,
+.navBarSection .navBar .navLists .navItem .dropdownMenu .group2 li .subDropdownMenu .dropdownLink .iconDropdownLink {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 5px;
+  background-color: #01374d;
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 1.1rem;
+}
+.navBarSection .navBar .navLists .navItem .dropdownMenu .group1 li:hover .subDropdownMenu,
+.navBarSection .navBar .navLists .navItem .dropdownMenu .group2 li:hover .subDropdownMenu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.navBarSection .navBar .navLists .navItem:hover .dropdownMenu {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 .navBarSection .activeHeader {
   background: #fff;
