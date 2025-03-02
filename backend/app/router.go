@@ -11,18 +11,22 @@ type RouterController struct {
 	LiveReport                 controller.LiveReportController
 	User                       controller.UserController
 	Berita                     controller.BeritaController
+	Layanan                    controller.LayananController
 }
 
 func NewFooBarController(
 	agr controller.AgrLajuPertumbuhanPendudukController,
 	user controller.UserController,
 	live controller.LiveReportController,
-	berita controller.BeritaController) *RouterController {
+	berita controller.BeritaController,
+	layanan controller.LayananController) *RouterController {
 	return &RouterController{
 		AgrLajuPertumbuhanPenduduk: agr,
 		User:                       user,
 		LiveReport:                 live,
-		Berita:                     berita}
+		Berita:                     berita,
+		Layanan:                    layanan,
+	}
 }
 
 func NewRouter(controller *RouterController) *httprouter.Router {
