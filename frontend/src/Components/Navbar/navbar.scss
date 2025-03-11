@@ -207,6 +207,33 @@
         }
         .navLists{
             .navItem{
+                .dropdownMenu {
+                    background-color: #fff;
+                    .group1,
+                    .group2 {
+                        li {
+                            .dropdownLink {
+                                color: #5a5959bb;
+                                .iconDropdownLink {
+                                    background-color: #2e3031;
+                                }
+                            }
+                            .dropdownLink:hover {
+                                background-color: #adb3b9;
+                            }
+                            .subDropdownMenu {
+                                background-color: #7e7b7b;
+                                }
+                                .dropdownLink {
+                                    color: #333;
+                                    color: #fff;
+                                    .iconDropdownLink {
+                                        background-color: #ffffff;
+                                    }
+                                }
+                            }
+                        }
+                }               
                 .dropdown-arrow{
                     font-size: 1.2rem;
                     font-weight: initial;
@@ -230,7 +257,7 @@
         }
         background: #fff;
         background-size: cover;
-        box-shadow: 0 2px 8px 2px rgba(178,178,178,0.45);
+        box-shadow: 0 2px 8px 2px rgba(178,178,178,0.45);                  
     }
 }
 
