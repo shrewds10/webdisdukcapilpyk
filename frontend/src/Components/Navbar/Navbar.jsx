@@ -48,7 +48,6 @@ const Navbar = () => {
             <h3>Disdukcapil <br/>Kota Payakumbuh</h3>           
           </div>
         </a>
-
         <div className={active}>
           <ul className="navLists flex">
             <li className="navItem">
@@ -118,6 +117,15 @@ const Navbar = () => {
                       <li><a href="#" className="dropdownLink">Penerbitan Akta Pengangkatan Anak</a></li>
                       <li><a href="#" className="dropdownLink">Penerbitan Kutipan Akta Pengesahan Anak</a></li>
                       <li><a href="#" className="dropdownLink">Penerbitan Kutipan Akta Pengakuan Anak</a></li>
+                      <li>
+                        <a href="#" className="dropdownLink">
+                          Pencatatan Perubahan Status Pewarganegaraan
+                        </a>
+                        <ul className="subDropDownMenu2">
+                          <li><a href="" className="dropdownLink">Perubahan Status Kewarganegaraan WNA menjadi WNI</a></li>
+                          <li><a href="" className="dropdownLink">Perubahan Status Kewarganegaraan WNI menjadi WNA</a></li>
+                        </ul>
+                      </li>
                       <li><a href="#" className="dropdownLink">Pencatatan Perubahan Nama</a></li>
                     </ul>
                   </li>
@@ -137,8 +145,7 @@ const Navbar = () => {
           <div onClick={closeNav} className="closeNavbar">
             <AiFillCloseCircle className='icon'/>
           </div>
-        </div>
-        
+        </div>        
         <div onClick={showNav} className="toggleNavbar">
           <TbGridDots className='icon'/>
         </div>
