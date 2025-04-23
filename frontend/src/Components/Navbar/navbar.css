@@ -100,6 +100,7 @@
 }
 .navBarSection .navBar .navLists .navItem .dropdownMenu .group1 li,
 .navBarSection .navBar .navLists .navItem .dropdownMenu .group2 li {
+  position: relative;
   display: block;
   box-sizing: border-box;
   padding: 5px;
@@ -139,11 +140,12 @@
 .navBarSection .navBar .navLists .navItem .dropdownMenu .group1 li .subDropdownMenu,
 .navBarSection .navBar .navLists .navItem .dropdownMenu .group2 li .subDropdownMenu {
   position: absolute;
-  top: 0;
+  top: -10px;
   right: 100%;
   width: auto;
   background-color: #012838;
   padding: 10px;
+  margin-right: 10px;
   min-width: 310px;
   opacity: 0;
   visibility: hidden;
@@ -194,10 +196,12 @@
 .navBarSection .navBar .navLists .navItem .dropdownMenu .group1 li .subDropdownMenu .subDropDownMenu2,
 .navBarSection .navBar .navLists .navItem .dropdownMenu .group2 li .subDropdownMenu .subDropDownMenu2 {
   position: absolute;
+  top: 0;
   left: 100%;
   width: auto;
   background-color: #012838;
   padding: 10px;
+  margin-left: 10px;
   min-width: 310px;
   opacity: 0;
   visibility: hidden;
