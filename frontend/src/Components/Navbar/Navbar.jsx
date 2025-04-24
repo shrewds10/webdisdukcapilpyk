@@ -133,7 +133,7 @@ const Navbar = () => {
               </ul>
             </li>
             <li className="navItem">
-              <a href="" className="navLink">Berita</a>
+              <a href="/news" className="navLink">Berita</a>
             </li>
             <li className="navItem">
               <a href="" className="navLink">Kontak dan Pengaduan</a>
