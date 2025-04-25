@@ -1,6 +1,7 @@
 import React from 'react'
 import './news.css'
-import imgKTP from "../../Assets/berita 1.jpg"
+// import imgKTP from "../../Assets/berita 1.jpg"
+import berita1 from "../../Assets/berita1.jpeg"
 import imgKK from "../../Assets/berita 2.jpg"
 import imgIKD from "../../Assets/berita 3.jpg"
 import imgKIA from "../../Assets/KIA.png"
@@ -11,13 +12,13 @@ import Navbar from '../../Components/Navbar/Navbar'
 const news = [ 
   {
     id: 1,
-    img: imgKK,
+    img: berita1,
     title: "Lorem Ipsum",
     description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
   },
   {
     id: 2,
-    img: imgKTP,
+    img: imgKK,
     title: "Lorem Ipsum",
     description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
   },
@@ -66,8 +67,8 @@ const News = () => {
                                     news.length > 0 &&(
                                         <div className="descBerita">
                                             <img src={news[0].img} alt="Image Name" />
-                                            <h1>{news[0].title}</h1>
-                                            {/* <p>{news[0].description}</p> */}
+                                            <h2>{news[0].title}</h2>
+                                            <p>{news[0].description}</p>
                                         </div>
                                     )
                                 }                           
@@ -81,8 +82,6 @@ const News = () => {
                                                 <div className="singleBerita">
                                                     <div className="descBerita">
                                                         <img src={news[1].img} alt="Image Name"/>
-                                                        <h1>{news[1].title}</h1>
-                                                        {/* <p>{news[1].description}</p> */}
                                                     </div>
                                                 </div>
                                             )
@@ -95,8 +94,6 @@ const News = () => {
                                                     <div className="singleBerita">
                                                         <div className="descBerita">
                                                             <img src={news[2].img} alt="Image Name" />
-                                                            <h1>{news[2].title}</h1>
-                                                            {/* <p>{news[2].description}</p> */}
                                                         </div>
                                                     </div>
                                                 )
@@ -108,8 +105,6 @@ const News = () => {
                                                     <div className="singleBerita">
                                                         <div className="descBerita">
                                                             <img src={news[0].img} alt="Image Name" />
-                                                            <h1>{news[0].title}</h1>
-                                                            {/* <p>{news[0].description}</p> */}
                                                         </div>
                                                     </div>
                                                 )
