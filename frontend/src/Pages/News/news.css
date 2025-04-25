@@ -25,19 +25,79 @@
   aspect-ratio: 1/1;
   height: 400px;
 }
+.News .secContainer .mainContent .mainSide .side1 .descSide1 .descBerita, .News .secContainer .mainContent .mainSide .side2 .descSide1 .descBerita {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border-radius: 3%;
+}
 .News .secContainer .mainContent .mainSide .side1 .descSide1 .descBerita img, .News .secContainer .mainContent .mainSide .side2 .descSide1 .descBerita img {
   height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  border-radius: 3%;
 }
-.News .secContainer .mainContent .mainSide .side1 .descSide1 .descBerita h2, .News .secContainer .mainContent .mainSide .side2 .descSide1 .descBerita h2 {
-  background-color: grey;
+.News .secContainer .mainContent .mainSide .side1 .descSide1 .descBerita:hover img, .News .secContainer .mainContent .mainSide .side2 .descSide1 .descBerita:hover img {
+  transform: scale(1.1);
+  transition: 1s ease;
+}
+.News .secContainer .mainContent .mainSide .side1 .descSide1 .descBerita .overlay, .News .secContainer .mainContent .mainSide .side2 .descSide1 .descBerita .overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: left;
+}
+.News .secContainer .mainContent .mainSide .side1 .descSide1 .descBerita .overlay h2, .News .secContainer .mainContent .mainSide .side2 .descSide1 .descBerita .overlay h2 {
+  margin: 0;
+  box-sizing: 1.1rem;
 }
 .News .secContainer .mainContent .mainSide .side1 .subSide, .News .secContainer .mainContent .mainSide .side2 .subSide {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
+.News .secContainer .mainContent .mainSide .side1 .subSide .subSide1 .singleBerita, .News .secContainer .mainContent .mainSide .side2 .subSide .subSide1 .singleBerita {
+  cursor: pointer;
+}
+.News .secContainer .mainContent .mainSide .side1 .subSide .subSide1 .singleBerita .descBerita, .News .secContainer .mainContent .mainSide .side2 .subSide .subSide1 .singleBerita .descBerita {
+  position: relative;
+  overflow: hidden;
+  border-radius: 3%;
+}
 .News .secContainer .mainContent .mainSide .side1 .subSide .subSide1 .singleBerita .descBerita img, .News .secContainer .mainContent .mainSide .side2 .subSide .subSide1 .singleBerita .descBerita img {
   height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  border-radius: 5%;
+  cursor: pointer;
+}
+.News .secContainer .mainContent .mainSide .side1 .subSide .subSide1 .singleBerita .descBerita:hover img, .News .secContainer .mainContent .mainSide .side2 .subSide .subSide1 .singleBerita .descBerita:hover img {
+  transform: scale(1.1);
+  transition: 1s ease;
+}
+.News .secContainer .mainContent .mainSide .side1 .subSide .subSide1 .singleBerita .descBerita .overlay, .News .secContainer .mainContent .mainSide .side2 .subSide .subSide1 .singleBerita .descBerita .overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 5px;
+  box-sizing: border-box;
+  text-align: left;
+}
+.News .secContainer .mainContent .mainSide .side1 .subSide .subSide1 .singleBerita .descBerita .overlay h2, .News .secContainer .mainContent .mainSide .side2 .subSide .subSide1 .singleBerita .descBerita .overlay h2 {
+  margin: 0;
+  box-sizing: 1.1rem;
+  font-size: 20px;
+}
+.News .secContainer .mainContent .mainSide .side1 .subSide .subSide1 .singleBerita .descBerita .overlay p, .News .secContainer .mainContent .mainSide .side2 .subSide .subSide1 .singleBerita .descBerita .overlay p {
+  font-size: 15px;
 }
 .News .secContainer .mainContent .mainSide .side1 .subSide .subSide2, .News .secContainer .mainContent .mainSide .side2 .subSide .subSide2 {
   display: flex;
@@ -46,6 +106,39 @@
 .News .secContainer .mainContent .mainSide .side1 .subSide .subSide2 .descSubSide2, .News .secContainer .mainContent .mainSide .side1 .subSide .subSide2 .descSubSide3, .News .secContainer .mainContent .mainSide .side2 .subSide .subSide2 .descSubSide2, .News .secContainer .mainContent .mainSide .side2 .subSide .subSide2 .descSubSide3 {
   flex: 1;
 }
+.News .secContainer .mainContent .mainSide .side1 .subSide .subSide2 .descSubSide2 .singleBerita .descBerita, .News .secContainer .mainContent .mainSide .side1 .subSide .subSide2 .descSubSide3 .singleBerita .descBerita, .News .secContainer .mainContent .mainSide .side2 .subSide .subSide2 .descSubSide2 .singleBerita .descBerita, .News .secContainer .mainContent .mainSide .side2 .subSide .subSide2 .descSubSide3 .singleBerita .descBerita {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border-radius: 3%;
+}
 .News .secContainer .mainContent .mainSide .side1 .subSide .subSide2 .descSubSide2 .singleBerita .descBerita img, .News .secContainer .mainContent .mainSide .side1 .subSide .subSide2 .descSubSide3 .singleBerita .descBerita img, .News .secContainer .mainContent .mainSide .side2 .subSide .subSide2 .descSubSide2 .singleBerita .descBerita img, .News .secContainer .mainContent .mainSide .side2 .subSide .subSide2 .descSubSide3 .singleBerita .descBerita img {
-  height: 173px;
+  height: 180px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  border-radius: 3%;
+  cursor: pointer;
+}
+.News .secContainer .mainContent .mainSide .side1 .subSide .subSide2 .descSubSide2 .singleBerita .descBerita:hover img, .News .secContainer .mainContent .mainSide .side1 .subSide .subSide2 .descSubSide3 .singleBerita .descBerita:hover img, .News .secContainer .mainContent .mainSide .side2 .subSide .subSide2 .descSubSide2 .singleBerita .descBerita:hover img, .News .secContainer .mainContent .mainSide .side2 .subSide .subSide2 .descSubSide3 .singleBerita .descBerita:hover img {
+  transform: scale(1.1);
+  transition: 1s ease;
+}
+.News .secContainer .mainContent .mainSide .side1 .subSide .subSide2 .descSubSide2 .singleBerita .descBerita .overlay, .News .secContainer .mainContent .mainSide .side1 .subSide .subSide2 .descSubSide3 .singleBerita .descBerita .overlay, .News .secContainer .mainContent .mainSide .side2 .subSide .subSide2 .descSubSide2 .singleBerita .descBerita .overlay, .News .secContainer .mainContent .mainSide .side2 .subSide .subSide2 .descSubSide3 .singleBerita .descBerita .overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 5px;
+  box-sizing: border-box;
+  text-align: left;
+}
+.News .secContainer .mainContent .mainSide .side1 .subSide .subSide2 .descSubSide2 .singleBerita .descBerita .overlay h2, .News .secContainer .mainContent .mainSide .side1 .subSide .subSide2 .descSubSide3 .singleBerita .descBerita .overlay h2, .News .secContainer .mainContent .mainSide .side2 .subSide .subSide2 .descSubSide2 .singleBerita .descBerita .overlay h2, .News .secContainer .mainContent .mainSide .side2 .subSide .subSide2 .descSubSide3 .singleBerita .descBerita .overlay h2 {
+  margin: 0;
+  box-sizing: 1.1rem;
+  font-size: 15px;
+}
+.News .secContainer .mainContent .mainSide .side1 .subSide .subSide2 .descSubSide2 .singleBerita .descBerita .overlay p, .News .secContainer .mainContent .mainSide .side1 .subSide .subSide2 .descSubSide3 .singleBerita .descBerita .overlay p, .News .secContainer .mainContent .mainSide .side2 .subSide .subSide2 .descSubSide2 .singleBerita .descBerita .overlay p, .News .secContainer .mainContent .mainSide .side2 .subSide .subSide2 .descSubSide3 .singleBerita .descBerita .overlay p {
+  font-size: 12px;
 }/*# sourceMappingURL=news.css.map */

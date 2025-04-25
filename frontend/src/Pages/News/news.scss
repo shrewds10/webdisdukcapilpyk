@@ -27,11 +27,35 @@
                     height: 400px;
                     .descSide1{
                         .descBerita{
+                            cursor: pointer;
+                            position: relative;
+                            overflow: hidden;
+                            border-radius: 3%;
                             img{
                                 height: 400px;
+                                object-fit: cover;
+                                display: block;
+                                border-radius: 3%;                                
                             }
-                            h2{
-                                background-color: grey;
+                            &:hover{
+                                img{
+                                    transform: scale(1.1);
+                                    transition: 1s ease;
+                                }
+                            }
+                            .overlay{
+                                position: absolute;
+                                bottom: 0;
+                                width: 100%;
+                                background: rgba(0,0,0, 0.6);
+                                color: white;
+                                padding: 10px;
+                                box-sizing: border-box;
+                                text-align: left;
+                                h2{
+                                    margin: 0;
+                                    box-sizing: 1.1rem;
+                                }
                             }
                         }
                     }
@@ -41,9 +65,41 @@
                         gap: 20px;
                         .subSide1{
                             .singleBerita{
+                                cursor: pointer;
                                 .descBerita{
+                                    position: relative;
+                                    overflow: hidden;
+                                    border-radius: 3%;
                                     img{
                                         height: 200px;
+                                        object-fit: cover;
+                                        display: block;
+                                        border-radius: 5%;
+                                        cursor: pointer;
+                                    }
+                                    &:hover{
+                                        img{
+                                            transform: scale(1.1);
+                                            transition: 1s ease;
+                                        }
+                                    }
+                                    .overlay{
+                                        position: absolute;
+                                        bottom: 0;
+                                        width: 100%;
+                                        background: rgba(0,0,0, 0.6);
+                                        color: white;
+                                        padding: 5px;
+                                        box-sizing: border-box;
+                                        text-align: left;
+                                        h2{
+                                            margin: 0;
+                                            box-sizing: 1.1rem;
+                                            font-size: 20px;
+                                        }
+                                        p{
+                                            font-size: 15px;
+                                        }
                                     }
                                 }
                             }
@@ -55,8 +111,40 @@
                                 flex: 1;
                                 .singleBerita{
                                     .descBerita{
+                                        cursor: pointer;
+                                        position: relative;
+                                        overflow: hidden;
+                                        border-radius: 3%;
                                         img{
-                                            height: 173px;
+                                            height: 180px;
+                                            object-fit: cover;
+                                            display: block;
+                                            border-radius: 3%;
+                                            cursor: pointer;
+                                        }
+                                        &:hover{
+                                            img{
+                                                transform: scale(1.1);
+                                                transition: 1s ease;
+                                            }
+                                        }
+                                        .overlay{
+                                            position: absolute;
+                                            bottom: 0;
+                                            width: 100%;
+                                            background: rgba(0,0,0, 0.6);
+                                            color: white;
+                                            padding: 5px;
+                                            box-sizing: border-box;
+                                            text-align: left;
+                                            h2{
+                                                margin: 0;
+                                                box-sizing: 1.1rem;
+                                                font-size: 15px;
+                                            }
+                                            p{
+                                                font-size: 12px;
+                                            }
                                         }
                                     }
                                 }
