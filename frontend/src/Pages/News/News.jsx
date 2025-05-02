@@ -137,7 +137,25 @@ const News = () => {
                             </div>
                         </div>
                         <div className="secondSide">
-
+                            <div className="descSide">
+                                <div>
+                                {
+                                    news.map(({id, title, img, description})=>{
+                                        return(
+                                            <div className="singleBerita">
+                                                <div className="descBerita">
+                                                    <img src={img} alt="Image Name" />
+                                                    <div className="overlay">
+                                                        <h3>{title}</h3>
+                                                        <p>{truncateText(description, 30)}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        )
+                                    })
+                                }                         
+                                </div>
+                            </div>                    
                         </div>
                     </div>
                 </div>

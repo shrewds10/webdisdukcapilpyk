@@ -141,4 +141,22 @@
 }
 .News .secContainer .mainContent .mainSide .side1 .subSide .subSide2 .descSubSide2 .singleBerita .descBerita .overlay p, .News .secContainer .mainContent .mainSide .side1 .subSide .subSide2 .descSubSide3 .singleBerita .descBerita .overlay p, .News .secContainer .mainContent .mainSide .side2 .subSide .subSide2 .descSubSide2 .singleBerita .descBerita .overlay p, .News .secContainer .mainContent .mainSide .side2 .subSide .subSide2 .descSubSide3 .singleBerita .descBerita .overlay p {
   font-size: 12px;
+}
+.News .secContainer .mainContent .secondSide .descSide {
+  width: 200px;
+  height: 200px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+}
+.News .secContainer .mainContent .secondSide .descSide .singleBerita {
+  display: flex;
+  flex-direction: row;
+}
+.News .secContainer .mainContent .secondSide .descSide .singleBerita .descBerita img {
+  width: 200px;
+  height: 170px;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }/*# sourceMappingURL=news.css.map */
