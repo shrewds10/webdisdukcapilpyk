@@ -51,10 +51,10 @@
   background-color: #f8f8f8;
   transition: border-color 0.3s ease;
   appearance: none;
-  -webkit-appearance: none; /* For Safari */
-  -moz-appearance: none; /* For Firefox */
+  -webkit-appearance: none;
+  -moz-appearance: none;
   cursor: pointer;
-  position: relative; /* For positioning the custom arrow */
+  position: relative;
 }
 .mcInformation .information .secContainer .dropdownContainer select option {
   padding: 10px;

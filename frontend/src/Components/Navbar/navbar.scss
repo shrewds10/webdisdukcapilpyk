@@ -59,6 +59,10 @@
         .navLists{
             .navItem{
                 position: relative;
+                .dropdownMenuRight {
+                    left: auto;
+                    right: 0;
+                }
                 .navLink{
                     display: inline-flex;
                     align-items: center;
@@ -97,6 +101,7 @@
                         display: flex;
                         flex-direction: column; 
                         li {
+                            position: relative;
                             display: block;
                             box-sizing: border-box;
                             padding: 5px;
@@ -130,11 +135,12 @@
                             }
                             .subDropdownMenu {
                                 position: absolute;
-                                top: 0;
-                                left: 100%;
+                                top: -10px;
+                                right: 100%;
                                 width: auto;
                                 background-color: #012838;
                                 padding: 10px;
+                                margin-right: 10px;
                                 min-width: 310px;
                                 opacity: 0;
                                 visibility: hidden;
@@ -177,6 +183,40 @@
                                         font-size: 1.1rem;
                                     }
                                 }
+                                .subDropDownMenu2{
+                                    position: absolute;
+                                    top: 0;
+                                    left: 100%;
+                                    width: auto;
+                                    background-color: #012838;
+                                    padding: 10px;
+                                    margin-left: 10px;
+                                    min-width: 310px;
+                                    opacity: 0;
+                                    visibility: hidden;
+                                    transform: translateY(auto);
+                                    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s;
+                                    z-index: 999;
+                                    display: grid;
+                                    grid-template-columns: 1fr 1fr; 
+                                    gap: 10px;
+                                    font-size: .9rem;
+                                    font-weight: 400;
+                                    box-shadow: 0 2px 8px 2px rgba(178,178,178,0.60);
+                                    li {
+                                        display: block;
+                                        box-sizing: border-box;
+                                        padding: 5px;
+                                        white-space: nowrap;
+                                    }
+                                }
+                            }
+                            li:hover .subDropDownMenu2{
+                                display: block;
+                                opacity: 1;
+                                visibility: visible;
+                                transform: translateX(0);
+                                transition: opacity 0.3s ease, transform 0.3s ease;
                             }
                         }
                         li:hover .subDropdownMenu{
@@ -195,8 +235,7 @@
                 visibility: visible;
                 transform: translateY(0);
                 transition: opacity 0.3s ease, transform 0.3s ease;
-            }
-            
+            }  
         }
     }
     .activeHeader{
@@ -207,6 +246,40 @@
         }
         .navLists{
             .navItem{
+                .dropdownMenu {
+                    background-color: #fff;
+                    .group1,
+                    .group2 {
+                        li {
+                            .dropdownLink {
+                                color: #524f4f;
+                                .iconDropdownLink {
+                                    background-color: #ffffff;
+                                }
+                            }
+                            .dropdownLink:hover {
+                                background-color: #adb3b9;
+                            }
+                            .subDropdownMenu {
+                                background-color: #ffffff;
+                                color: #524f4f;
+                                color: #333;
+                                .dropdownLink{
+                                    color: #524f4f;
+                                }
+                                .subDropDownMenu2 {
+                                    background-color: #ffffff;
+                                    color: #524f4f;
+                                    color: #333;
+                                    .dropdownLink{
+                                        color: #524f4f;
+                                    }
+                                }
+                            }
+                        }
+                            
+                    }
+                }               
                 .dropdown-arrow{
                     font-size: 1.2rem;
                     font-weight: initial;
@@ -230,7 +303,7 @@
         }
         background: #fff;
         background-size: cover;
-        box-shadow: 0 2px 8px 2px rgba(178,178,178,0.45);
+        box-shadow: 0 2px 8px 2px rgba(178,178,178,0.45);                  
     }
 }
 
