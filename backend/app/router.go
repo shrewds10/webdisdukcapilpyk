@@ -2,7 +2,6 @@ package app
 
 import (
 	"backend/controller"
-	"backend/exception"
 
 	"github.com/julienschmidt/httprouter"
 )
@@ -11,16 +10,25 @@ type RouterController struct {
 	AgrLajuPertumbuhanPenduduk controller.AgrLajuPertumbuhanPendudukController
 	LiveReport                 controller.LiveReportController
 	User                       controller.UserController
+	Berita                     controller.BeritaController
+	Layanan                    controller.LayananController
 }
 
 func NewFooBarController(
 	agr controller.AgrLajuPertumbuhanPendudukController,
 	user controller.UserController,
-	live controller.LiveReportController) *RouterController {
+	live controller.LiveReportController,
+	berita controller.BeritaController,
+	// ,
+	// layanan controller.LayananController
+) *RouterController {
 	return &RouterController{
 		AgrLajuPertumbuhanPenduduk: agr,
 		User:                       user,
-		LiveReport:                 live}
+		LiveReport:                 live,
+		Berita:                     berita,
+		// Layanan:                    layanan,
+	}
 }
 
 func NewRouter(controller *RouterController) *httprouter.Router {
@@ -37,7 +45,9 @@ func NewRouter(controller *RouterController) *httprouter.Router {
 	router.POST("/api/livereport", controller.LiveReport.Create)
 	router.GET("/api/livereport", controller.LiveReport.FindAll)
 
-	router.PanicHandler = exception.ErrorHandler
+	router.POST("/api/berita", controller.Berita.Create)
+
+	// router.PanicHandler = exception.ErrorHandler
 
 	return router
 }

@@ -28,7 +28,8 @@ func InitializedController() *http.Server {
 	liveReportRepository := repository.NewLiveReportRepository()
 	liveReportService := service.NewLiveReportService(db, liveReportRepository)
 	liveReportController := controller.NewLiveReportController(liveReportService)
-	routerController := app.NewFooBarController(agrLajuPertumbuhanPendudukController, userController, liveReportController)
+	beritaController := controller.NewBeritaController()
+	routerController := app.NewFooBarController(agrLajuPertumbuhanPendudukController, userController, liveReportController, beritaController)
 	router := app.NewRouter(routerController)
 	server := NewServer(router)
 	return server

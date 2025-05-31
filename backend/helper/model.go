@@ -62,3 +62,13 @@ func ToLiveReportResponses(liveReportAll []entity.LiveReport) []web.LiveReportRe
 
 	return liveReportResponses
 }
+
+func ToLayananResponse(layananResponse entity.Layanan) web.LayananResponse {
+	return web.LayananResponse{
+		Id:               layananResponse.Id,
+		Id_jenis_layanan: layananResponse.Id_jenis_layanan,
+		Nama_layanan:     layananResponse.Nama_layanan,
+		Persyaratan:      layananResponse.Persyaratan,
+		Penjelasan:       layananResponse.Penjelasan,
+	}
+}
