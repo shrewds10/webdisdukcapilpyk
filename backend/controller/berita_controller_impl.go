@@ -3,7 +3,10 @@ package controller
 import (
 	"backend/helper"
 	"backend/model/web"
+	"io"
 	"net/http"
+	"os"
+	"path/filepath"
 	"strconv"
 
 	"github.com/julienschmidt/httprouter"
@@ -17,17 +20,29 @@ func NewBeritaController() BeritaController {
 }
 
 func (controller BeritaControllerImpl) Create(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
-	_, handler, err := request.FormFile("file")
-	filename := handler.Filename
-	helper.PanicIfError(err)
-	// defer image.Close()
-
+	
 	authorId := request.FormValue("Author_id")
 	author_id, err := strconv.Atoi(authorId)
 	helper.PanicIfError(err)
-
+	
 	categoryId := request.FormValue("Category_id")
 	category_id, err := strconv.Atoi(categoryId)
+	helper.PanicIfError(err)
+
+	uploadFile, handler, err := request.FormFile("file")
+	filename := handler.Filename
+	helper.PanicIfError(err)
+	defer uploadFile.Close()
+
+	dir, err := os.Getwd()
+	helper.PanicIfError(err)
+
+	filelocation := filepath.Join(dir, "images", filename)
+	targetFile, err := os.OpenFile(filelocation, os.O_WRONLY|os.O_CREATE, 0644)
+	helper.PanicIfError(err)
+	defer targetFile.Close()
+
+	_, err = io.Copy(targetFile, uploadFile)
 	helper.PanicIfError(err)
 
 	beritaCreateRequest := web.BeritaCreateRequest{}

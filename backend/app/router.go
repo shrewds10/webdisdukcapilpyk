@@ -19,13 +19,15 @@ func NewFooBarController(
 	user controller.UserController,
 	live controller.LiveReportController,
 	berita controller.BeritaController,
-	layanan controller.LayananController) *RouterController {
+	// ,
+	// layanan controller.LayananController
+) *RouterController {
 	return &RouterController{
 		AgrLajuPertumbuhanPenduduk: agr,
 		User:                       user,
 		LiveReport:                 live,
 		Berita:                     berita,
-		Layanan:                    layanan,
+		// Layanan:                    layanan,
 	}
 }
 
