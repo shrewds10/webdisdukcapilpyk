@@ -10,7 +10,7 @@ type RouterController struct {
 	AgrLajuPertumbuhanPenduduk controller.AgrLajuPertumbuhanPendudukController
 	LiveReport                 controller.LiveReportController
 	User                       controller.UserController
-	Berita                     controller.BeritaController
+	News                       controller.NewsController
 	Layanan                    controller.LayananController
 }
 
@@ -18,7 +18,7 @@ func NewFooBarController(
 	agr controller.AgrLajuPertumbuhanPendudukController,
 	user controller.UserController,
 	live controller.LiveReportController,
-	berita controller.BeritaController,
+	news controller.NewsController,
 	// ,
 	// layanan controller.LayananController
 ) *RouterController {
@@ -26,7 +26,7 @@ func NewFooBarController(
 		AgrLajuPertumbuhanPenduduk: agr,
 		User:                       user,
 		LiveReport:                 live,
-		Berita:                     berita,
+		News:                       news,
 		// Layanan:                    layanan,
 	}
 }
@@ -45,7 +45,8 @@ func NewRouter(controller *RouterController) *httprouter.Router {
 	router.POST("/api/livereport", controller.LiveReport.Create)
 	router.GET("/api/livereport", controller.LiveReport.FindAll)
 
-	router.POST("/api/berita", controller.Berita.Create)
+	router.POST("/api/news", controller.News.Create)
+	router.GET("/api/news/:newsId", controller.News.FindById)
 
 	// router.PanicHandler = exception.ErrorHandler
 

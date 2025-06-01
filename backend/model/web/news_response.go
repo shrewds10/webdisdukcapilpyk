@@ -1,6 +1,7 @@
 package web
 
-type BeritaCreateRequest struct {
+type NewsResponse struct {
+	Id            int
 	Title         string
 	Slug          string
 	Content       string

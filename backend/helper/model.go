@@ -72,3 +72,18 @@ func ToLayananResponse(layananResponse entity.Layanan) web.LayananResponse {
 		Penjelasan:       layananResponse.Penjelasan,
 	}
 }
+
+func ToNewsResponse(news entity.News) web.NewsResponse {
+	return web.NewsResponse{
+		Id:            news.Id,
+		Title:         news.Title,
+		Slug:          news.Slug,
+		Content:       news.Content,
+		Thumbnail_url: news.Thumbnail_url,
+		Author_id:     news.Author_id,
+		Category_id:   news.Category_id,
+		Status:        news.Status,
+		Create_at:     news.Create_at,
+		Update_at:     news.Update_at,
+	}
+}

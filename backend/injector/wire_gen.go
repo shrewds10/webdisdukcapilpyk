@@ -28,8 +28,10 @@ func InitializedController() *http.Server {
 	liveReportRepository := repository.NewLiveReportRepository()
 	liveReportService := service.NewLiveReportService(db, liveReportRepository)
 	liveReportController := controller.NewLiveReportController(liveReportService)
-	beritaController := controller.NewBeritaController()
-	routerController := app.NewFooBarController(agrLajuPertumbuhanPendudukController, userController, liveReportController, beritaController)
+	newsRepository := repository.NewNewsRepository()
+	newsService := service.NewNewsService(db, newsRepository)
+	newsController := controller.NewNewsController(newsService)
+	routerController := app.NewFooBarController(agrLajuPertumbuhanPendudukController, userController, liveReportController, newsController)
 	router := app.NewRouter(routerController)
 	server := NewServer(router)
 	return server
@@ -42,3 +44,5 @@ var agrlajupertumbuhanpendudukSet = wire.NewSet(repository.NewAgrLajuPertumbuhan
 var userSet = wire.NewSet(repository.NewUserRepository, service.NewUserService, controller.NewUserController)
 
 var liveReportSet = wire.NewSet(repository.NewLiveReportRepository, service.NewLiveReportService, controller.NewLiveReportController)
+
+var newsSet = wire.NewSet(repository.NewNewsRepository, service.NewNewsService, controller.NewNewsController)

@@ -31,9 +31,11 @@ var liveReportSet = wire.NewSet(
 	controller.NewLiveReportController,
 )
 
-// var beritaSet = wire.NewSet(
-// 	controller.NewBeritaController,
-// )
+var newsSet = wire.NewSet(
+	repository.NewNewsRepository,
+	service.NewNewsService,
+	controller.NewNewsController,
+)
 
 func InitializedController() *http.Server {
 	wire.Build(
@@ -41,7 +43,7 @@ func InitializedController() *http.Server {
 		agrlajupertumbuhanpendudukSet,
 		userSet,
 		liveReportSet,
-		controller.NewBeritaController,
+		newsSet,
 		app.NewFooBarController,
 		app.NewRouter,
 		NewServer,

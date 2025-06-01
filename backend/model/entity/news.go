@@ -1,6 +1,6 @@
 package entity
 
-type Berita struct {
+type News struct {
 	Id            int
 	Title         string
 	Slug          string
