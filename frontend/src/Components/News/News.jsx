@@ -8,25 +8,25 @@ import img3 from "../../Assets/berita 3.jpg"
 const news = [
   {
     id: 1,
-    img: img1,
+    img: "http://localhost:3000/images/WhatsApp%20Image%202025-06-03%20at%2007.39.17.jpeg",
     title: "Lorem ipsum dolor sit amet",
     desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. consectetur adipisicing elit. consectetur adipisicing elit. Nemo tenetur, asperiores quis cum provident corporis dolore quam doloribus laudantium nihil mollitia iste nesciunt tempora odit eaque maxime, distinctio placeat perspiciatis.",
   },
   {
     id: 2,
-    img: img2,
+    img: "http://localhost:3000/images/WhatsApp%20Image%202025-06-03%20at%2007.39.17.jpeg",
     title: "Lorem ipsum dolor sit amet",
     desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo tenetur, asperiores quis cum provident corporis dolore quam doloribus laudantium nihil mollitia iste nesciunt tempora odit eaque maxime, distinctio placeat perspiciatis.",
   },
   {
     id: 3,
-    img: img3,
+    img: "http://localhost:3000/images/WhatsApp%20Image%202025-06-03%20at%2007.39.17.jpeg",
     title: "Lorem ipsum dolor sit amet",
     desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo tenetur, asperiores quis cum provident corporis dolore quam doloribus laudantium nihil mollitia iste nesciunt tempora odit eaque maxime, distinctio placeat perspiciatis.",
   },
   {
     id: 4,
-    img: img3,
+    img: "http://localhost:3000/images/WhatsApp%20Image%202025-06-03%20at%2007.39.17.jpeg",
     title: "Lorem ipsum dolor sit amet",
     desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo tenetur, asperiores quis cum provident corporis dolore quam doloribus laudantium nihil mollitia iste nesciunt tempora odit eaque maxime, distinctio placeat perspiciatis.",
   },

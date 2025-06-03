@@ -2,6 +2,7 @@ package app
 
 import (
 	"backend/controller"
+	"net/http"
 
 	"github.com/julienschmidt/httprouter"
 )
@@ -47,6 +48,8 @@ func NewRouter(controller *RouterController) *httprouter.Router {
 
 	router.POST("/api/news", controller.News.Create)
 	router.GET("/api/news/:newsId", controller.News.FindById)
+
+	router.ServeFiles("/images/*filepath", http.Dir("images"))
 
 	// router.PanicHandler = exception.ErrorHandler
 

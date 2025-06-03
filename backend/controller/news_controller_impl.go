@@ -24,7 +24,6 @@ func NewNewsController(service service.NewsService) NewsController {
 }
 
 func (controller NewsControllerImpl) Create(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
-
 	authorId := request.FormValue("Author_id")
 	author_id, err := strconv.Atoi(authorId)
 	helper.PanicIfError(err)

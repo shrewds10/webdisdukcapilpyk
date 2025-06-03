@@ -7,8 +7,8 @@ import (
 
 type NewsService interface {
 	Create(ctx context.Context, request web.NewsCreateRequest) web.NewsResponse
-	// Update()
-	// Delete()
+	Update(ctx context.Context, request web.NewsUpdateRequest) web.WebResponse
+	Delete(ctx context.Context, newsId int)
 	FindById(ctx context.Context, newsId int) web.NewsResponse
-	// FindAll()
+	FindAll(ctx context.Context) []web.NewsResponse
 }

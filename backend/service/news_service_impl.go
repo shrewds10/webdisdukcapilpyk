@@ -44,6 +44,11 @@ func (service NewsServiceImpl) Create(ctx context.Context, request web.NewsCreat
 	return helper.ToNewsResponse(newsResponse)
 }
 
+func (service NewsServiceImpl) Update(ctx context.Context, request web.NewsUpdateRequest) web.NewsResponse {
+
+	return request
+}
+
 func (service NewsServiceImpl) FindById(ctx context.Context, newsId int) web.NewsResponse {
 	tx, err := service.db.Begin()
 	helper.PanicIfError(err)
