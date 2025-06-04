@@ -45,8 +45,26 @@ func (service NewsServiceImpl) Create(ctx context.Context, request web.NewsCreat
 }
 
 func (service NewsServiceImpl) Update(ctx context.Context, request web.NewsUpdateRequest) web.NewsResponse {
+	tx, err := service.db.Begin()
+	helper.PanicIfError(err)
+	defer helper.RollbackOrCommit(tx)
 
-	return request
+	agrLajuPertumbuhanPendudukUpdate, err := service.repository.FindById(ctx, tx, agrLajuPertumbuhanPenduduk.Kode, agrLajuPertumbuhanPenduduk.Semester, agrLajuPertumbuhanPenduduk.Tahun)
+
+	agrLajuPertumbuhanPendudukUpdate.Pria = agrLajuPertumbuhanPenduduk.Pria
+	agrLajuPertumbuhanPendudukUpdate.Wanita = agrLajuPertumbuhanPenduduk.Wanita
+
+	service.repository.Update(ctx, tx, agrLajuPertumbuhanPendudukUpdate)
+
+	agrLajuPertumbuhanPendudukResponse := web.AgrLajuPertumbuhanPendudukResponse{
+		Kode:     agrLajuPertumbuhanPendudukUpdate.Kode,
+		Semester: agrLajuPertumbuhanPendudukUpdate.Semester,
+		Tahun:    agrLajuPertumbuhanPendudukUpdate.Tahun,
+		Pria:     agrLajuPertumbuhanPendudukUpdate.Pria,
+		Wanita:   agrLajuPertumbuhanPendudukUpdate.Wanita,
+	}
+
+	return agrLajuPertumbuhanPendudukResponse
 }
 
 func (service NewsServiceImpl) FindById(ctx context.Context, newsId int) web.NewsResponse {
