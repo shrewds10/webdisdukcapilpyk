@@ -49,22 +49,41 @@ func (service NewsServiceImpl) Update(ctx context.Context, request web.NewsUpdat
 	helper.PanicIfError(err)
 	defer helper.RollbackOrCommit(tx)
 
-	agrLajuPertumbuhanPendudukUpdate, err := service.repository.FindById(ctx, tx, agrLajuPertumbuhanPenduduk.Kode, agrLajuPertumbuhanPenduduk.Semester, agrLajuPertumbuhanPenduduk.Tahun)
+	newsUpdate, err := service.repository.FindById(ctx, tx, request.Id)
+	newsUpdate.Title = request.Title
+	newsUpdate.Slug = request.Slug
+	newsUpdate.Content = request.Content
+	newsUpdate.Thumbnail_url = request.Thumbnail_url
+	newsUpdate.Status = request.Status
+	newsUpdate.Author_id = request.Author_id
+	newsUpdate.Category_id = request.Category_id
+	newsUpdate.Create_at = request.Create_at
+	newsUpdate.Update_at = request.Update_at
 
-	agrLajuPertumbuhanPendudukUpdate.Pria = agrLajuPertumbuhanPenduduk.Pria
-	agrLajuPertumbuhanPendudukUpdate.Wanita = agrLajuPertumbuhanPenduduk.Wanita
+	service.repository.Update(ctx, tx, newsUpdate)
 
-	service.repository.Update(ctx, tx, agrLajuPertumbuhanPendudukUpdate)
-
-	agrLajuPertumbuhanPendudukResponse := web.AgrLajuPertumbuhanPendudukResponse{
-		Kode:     agrLajuPertumbuhanPendudukUpdate.Kode,
-		Semester: agrLajuPertumbuhanPendudukUpdate.Semester,
-		Tahun:    agrLajuPertumbuhanPendudukUpdate.Tahun,
-		Pria:     agrLajuPertumbuhanPendudukUpdate.Pria,
-		Wanita:   agrLajuPertumbuhanPendudukUpdate.Wanita,
+	news := web.NewsResponse{
+		Id:            newsUpdate.Id,
+		Title:         newsUpdate.Title,
+		Slug:          newsUpdate.Slug,
+		Content:       newsUpdate.Content,
+		Thumbnail_url: newsUpdate.Thumbnail_url,
+		Author_id:     newsUpdate.Category_id,
+		Category_id:   newsUpdate.Author_id,
+		Status:        newsUpdate.Status,
+		Create_at:     newsUpdate.Create_at,
+		Update_at:     newsUpdate.Update_at,
 	}
 
-	return agrLajuPertumbuhanPendudukResponse
+	return news
+}
+
+func (service NewsServiceImpl) Delete(ctx context.Context, newsId int) {
+	tx, err := service.db.Begin()
+	helper.PanicIfError(err)
+	defer helper.RollbackOrCommit(tx)
+
+	service.repository.Delete(ctx, tx, newsId)
 }
 
 func (service NewsServiceImpl) FindById(ctx context.Context, newsId int) web.NewsResponse {
@@ -78,4 +97,14 @@ func (service NewsServiceImpl) FindById(ctx context.Context, newsId int) web.New
 	}
 
 	return helper.ToNewsResponse(news)
+}
+
+func (service NewsServiceImpl) FindAll(ctx context.Context) []web.WebResponse {
+	tx, err := service.db.Begin()
+	helper.PanicIfError(err)
+	defer helper.RollbackOrCommit(tx)
+
+	news := service.repository.FindAll(ctx, tx)
+
+	return helper.ToNewsResponse(writer, news)
 }
