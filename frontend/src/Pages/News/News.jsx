@@ -12,7 +12,7 @@ import Navbar from '../../Components/Navbar/Navbar'
 const news = [ 
   {
     id: 1,
-    img: "http://localhost:3000/images/WhatsApp%20Image%202025-06-03%20at%2007.39.17.jpeg",
+    img: berita1,
     title: "Lorem ipsum dolor sit amet",
     description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
   },
@@ -138,16 +138,18 @@ const News = () => {
                         </div>
                         <div className="secondSide">
                             <div className="descSide">
-                                <div>
+                                <div className='news'>
                                 {
                                     news.map(({id, title, img, description})=>{
                                         return(
                                             <div className="singleBerita">
                                                 <div className="descBerita">
                                                     <img src={img} alt="Image Name" />
+                                                    <div className="category">
+                                                        <p>Category</p><span>01/01/2025</span>
+                                                    </div>
                                                     <div className="overlay">
-                                                        <h3>{title}</h3>
-                                                        <p>{truncateText(description, 30)}</p>
+                                                        <h3>{title}</h3>                                                        
                                                     </div>
                                                 </div>
                                             </div>

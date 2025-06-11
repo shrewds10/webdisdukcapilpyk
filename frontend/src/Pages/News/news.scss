@@ -17,7 +17,7 @@
                 display: flex;
                 gap: 20px;
                 img{
-                    border-radius: 3%;
+                    // border-radius: 3%;
                     width: 100%;
                     object-fit: cover;
                 }
@@ -30,12 +30,12 @@
                             cursor: pointer;
                             position: relative;
                             overflow: hidden;
-                            border-radius: 3%;
+                            // border-radius: 3%;
                             img{
                                 height: 400px;
                                 object-fit: cover;
                                 display: block;
-                                border-radius: 3%;                                
+                                // border-radius: 3%;                                
                             }
                             &:hover{
                                 img{
@@ -69,12 +69,12 @@
                                 .descBerita{
                                     position: relative;
                                     overflow: hidden;
-                                    border-radius: 3%;
+                                    // border-radius: 3%;
                                     img{
                                         height: 200px;
                                         object-fit: cover;
                                         display: block;
-                                        border-radius: 5%;
+                                        // border-radius: 5%;
                                         cursor: pointer;
                                     }
                                     &:hover{
@@ -114,12 +114,12 @@
                                         cursor: pointer;
                                         position: relative;
                                         overflow: hidden;
-                                        border-radius: 3%;
+                                        // border-radius: 3%;
                                         img{
                                             height: 180px;
                                             object-fit: cover;
                                             display: block;
-                                            border-radius: 3%;
+                                            // border-radius: 3%;
                                             cursor: pointer;
                                         }
                                         &:hover{
@@ -155,20 +155,47 @@
             }
             .secondSide{
                 .descSide{
-                    width: 200px;
-                    height: 200px;
-                    margin-top: 20px;
                     display: flex;
                     flex-direction: row;
-                    .singleBerita{
+                    margin-top: 50px;
+                    .news{
                         display: flex;
-                        flex-direction: row;
-                        .descBerita{
-                            img{
-                                width: 200px;
-                                height: 170px;
-                                border-radius: 10px;
-                                object-fit: cover;
+                        flex-wrap: wrap;
+                        gap: 20px;
+                        .singleBerita{
+                            width: calc(33.33% - 13.33px);
+                            box-sizing: border-box;
+                            .descBerita{
+                                position: relative;
+                                cursor: pointer;
+                                .overlay{
+                                    box-sizing: border-box;
+                                    text-align: left;
+                                    h2{
+                                        margin: 0;
+                                        box-sizing: 1.1rem;
+                                        font-size: 15px;
+                                    }
+                                    p{
+                                        font-size: 12px;
+                                    }
+                                }
+                                .category{
+                                    text-align: left;
+                                    display: flex;
+                                    gap: 20px;
+                                    p{
+                                        background-color: #585555;
+                                        color: white;
+                                        padding: 0 20px;
+                                        // border-radius: 5px;
+                                    }
+                                }
+                                img{
+                                    width: 100%;
+                                    height: 170px;
+                                    object-fit: cover;
+                                }
                             }
                         }
                     }
