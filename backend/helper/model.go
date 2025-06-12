@@ -87,3 +87,11 @@ func ToNewsResponse(news entity.News) web.NewsResponse {
 		Update_at:     news.Update_at,
 	}
 }
+
+func ToNewsResponses(newsAll []entity.News) []web.NewsResponse {
+	var newsResponses []web.NewsResponse
+	for _, news := range newsAll {
+		newsResponses = append(newsResponses, ToNewsResponse(news))
+	}
+	return newsResponses
+}

@@ -50,6 +50,8 @@ func (service NewsServiceImpl) Update(ctx context.Context, request web.NewsUpdat
 	defer helper.RollbackOrCommit(tx)
 
 	newsUpdate, err := service.repository.FindById(ctx, tx, request.Id)
+	helper.PanicIfError(err)
+
 	newsUpdate.Title = request.Title
 	newsUpdate.Slug = request.Slug
 	newsUpdate.Content = request.Content
@@ -99,12 +101,12 @@ func (service NewsServiceImpl) FindById(ctx context.Context, newsId int) web.New
 	return helper.ToNewsResponse(news)
 }
 
-func (service NewsServiceImpl) FindAll(ctx context.Context) []web.WebResponse {
+func (service NewsServiceImpl) FindAll(ctx context.Context) []web.NewsResponse {
 	tx, err := service.db.Begin()
 	helper.PanicIfError(err)
 	defer helper.RollbackOrCommit(tx)
 
 	news := service.repository.FindAll(ctx, tx)
 
-	return helper.ToNewsResponse(writer, news)
+	return helper.ToNewsResponses(news)
 }

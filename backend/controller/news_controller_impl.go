@@ -70,6 +70,44 @@ func (controller NewsControllerImpl) Create(writer http.ResponseWriter, request 
 	helper.JsonEncode(writer, newsResponse)
 }
 
+func (controller NewsControllerImpl) Update(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
+	newsUpdateRequest := web.NewsUpdateRequest{}
+	helper.JsonDecode(request, &newsUpdateRequest)
+
+	newsId := params.ByName("newsId")
+	id, err := strconv.Atoi(newsId)
+	helper.PanicIfError(err)
+
+	newsUpdateRequest.Id = id
+
+	categoryResponse := controller.service.Update(request.Context(), newsUpdateRequest)
+	webResponse := web.WebResponse{
+		Code:   200,
+		Status: "OK",
+		Data:   categoryResponse,
+	}
+
+	helper.JsonEncode(writer, webResponse)
+}
+
+func (controller NewsControllerImpl) Delete(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
+	query := request.URL.Query()
+	id := query.Get("newsId")
+
+	newsId, err := strconv.Atoi(id)
+	helper.PanicIfError(err)
+
+	controller.service.Delete(request.Context(), newsId)
+
+	newsResponse := web.WebResponse{
+		Code:   200,
+		Status: "OK",
+		Data:   "",
+	}
+
+	helper.JsonEncode(writer, newsResponse)
+}
+
 func (controller NewsControllerImpl) FindById(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
 	newsId := params.ByName("newsId")
 	Id, err := strconv.Atoi(newsId)
@@ -84,4 +122,15 @@ func (controller NewsControllerImpl) FindById(writer http.ResponseWriter, reques
 	}
 
 	helper.JsonEncode(writer, newsResponse)
+}
+
+func (controller NewsControllerImpl) FindAll(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
+	newsResponses := controller.service.FindAll(request.Context())
+	webResponse := web.WebResponse{
+		Code:   200,
+		Status: "OK",
+		Data:   newsResponses,
+	}
+
+	helper.JsonEncode(writer, webResponse)
 }
