@@ -18,6 +18,7 @@ import Moto from './Pages/Profil/Moto'
 import VisiMisi from './Pages/Profil/VisiMisi'
 import MaklumatPelayanan from './Pages/Profil/MaklumatPelayanan'
 import News from './Pages/News/News'
+import Kontak from './Pages/Kontak/Kontak'
 
 
 const App = () => {
@@ -41,6 +42,7 @@ const App = () => {
         <Route path="/visimisi" element={<VisiMisi/>}/>
         <Route path="/maklumatpelayanan" element={<MaklumatPelayanan/>}/>
         <Route path="/news" element={<News/>}/>
+        <Route path="/kontak" element={<Kontak/>}/>
       </Routes>
     </Router>    
   )

@@ -136,7 +136,7 @@ const Navbar = () => {
               <a href="/news" className="navLink">Berita</a>
             </li>
             <li className="navItem">
-              <a href="" className="navLink">Kontak dan Pengaduan</a>
+              <a href="/kontak" className="navLink">Kontak dan Pengaduan</a>
             </li>
             <li className="navItem">
               <a href="" className="navLink">FAQ</a>
