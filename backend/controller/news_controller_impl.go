@@ -91,13 +91,11 @@ func (controller NewsControllerImpl) Update(writer http.ResponseWriter, request 
 }
 
 func (controller NewsControllerImpl) Delete(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
-	query := request.URL.Query()
-	id := query.Get("newsId")
-
-	newsId, err := strconv.Atoi(id)
+	newsId := params.ByName("newsId")
+	id, err := strconv.Atoi(newsId)
 	helper.PanicIfError(err)
 
-	controller.service.Delete(request.Context(), newsId)
+	controller.service.Delete(request.Context(), id)
 
 	newsResponse := web.WebResponse{
 		Code:   200,

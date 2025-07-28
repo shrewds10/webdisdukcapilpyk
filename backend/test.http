@@ -47,3 +47,21 @@ Accept: application/json
 ### Get All
 GET http://localhost:3000/api/agrlajupertumbuhanpendudukall
 Accept: application/json
+
+
+### Update category by id
+PUT http://localhost:3000/api/news/5
+Accept: application/json
+Content-Type: application/json
+
+{
+  	"Title": "Test",
+	"Slug": "test01122",
+	"Content": "Test text",
+	"Thumbnail_url": "Laporan Harian (23).png",
+	"Author_id": 1,
+	"Category_id": 1,
+	"Status": "published",
+	"Create_at": "2025-01-01 00:00:00",
+	"Update_at": "2025-01-01 00:00:00"
+}

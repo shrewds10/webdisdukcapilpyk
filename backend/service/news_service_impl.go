@@ -85,7 +85,12 @@ func (service NewsServiceImpl) Delete(ctx context.Context, newsId int) {
 	helper.PanicIfError(err)
 	defer helper.RollbackOrCommit(tx)
 
-	service.repository.Delete(ctx, tx, newsId)
+	news, err := service.repository.FindById(ctx, tx, newsId)
+	if err != nil {
+		panic(exception.NewNotFoundError(err.Error()))
+	}
+
+	service.repository.Delete(ctx, tx, news.Id)
 }
 
 func (service NewsServiceImpl) FindById(ctx context.Context, newsId int) web.NewsResponse {

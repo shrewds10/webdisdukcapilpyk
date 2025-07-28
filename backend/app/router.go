@@ -47,7 +47,10 @@ func NewRouter(controller *RouterController) *httprouter.Router {
 	router.GET("/api/livereport", controller.LiveReport.FindAll)
 
 	router.POST("/api/news", controller.News.Create)
+	router.PUT("/api/news/:newsId", controller.News.Update)
+	router.DELETE("/api/news/:newsId", controller.News.Delete)
 	router.GET("/api/news/:newsId", controller.News.FindById)
+	router.GET("/api/news/", controller.News.FindAll)
 
 	router.ServeFiles("/images/*filepath", http.Dir("images"))
 

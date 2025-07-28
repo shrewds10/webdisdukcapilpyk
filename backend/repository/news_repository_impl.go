@@ -25,20 +25,11 @@ func (repository NewsRepositoryImpl) Create(ctx context.Context, tx *sql.Tx, new
 }
 
 func (repository NewsRepositoryImpl) Update(ctx context.Context, tx *sql.Tx, news entity.News) entity.News {
-	sqlQuery := "UPDATE news SET title = ?, slug = ?, content = ?, thumbnail_url = ?, author_id = ?, category_id = ?, status = ?, create_at = ?, update_at = ? WHERE id = ?"
+	sqlQuery := "UPDATE news SET Title = ?, Slug = ?, Content = ?, Thumbnail_url = ?, Author_id = ?, Category_id = ?, Status = ?, Create_at = ?, Update_at = ? WHERE Id = ?"
 
-	_, err := tx.ExecContext(ctx, sqlQuery,
-		news.Title,
-		news.Slug,
-		news.Content,
-		news.Thumbnail_url,
-		news.Author_id,
-		news.Category_id,
-		news.Status,
-		news.Create_at,
-		news.Update_at,
-	)
+	_, err := tx.ExecContext(ctx, sqlQuery, news.Title, news.Slug, news.Content, news.Thumbnail_url, news.Author_id, news.Category_id, news.Status, news.Create_at, news.Update_at, news.Id)
 	helper.PanicIfError(err)
+
 	return news
 }
 
