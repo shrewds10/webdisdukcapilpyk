@@ -1,6 +1,6 @@
 import React from 'react';
 import "./persyaratan.css"
-import Navbar from '../../Components/Navbar/Navbar'
+import Navbar from '../../../Components/Navbar/Navbar'
 
 const persyaratan = [ 
     {
@@ -8,22 +8,23 @@ const persyaratan = [
       id_jenis_persyaratan: 1,
       title: "PENCATATAN KEMATIAN DALAM WILAYAH NKRI",
       peryaratan: [
-        "Fotokopi Salinan putusan pengadilan yang telah mempunyai kekuatan hukum tetap;",
-        "Kutipan akta perkawinan asli;",
-        "KTP-el Asli; dan",
-        "KK Asli.",
+        "Fotokopi surat kematian dari dokter atau kepala desa/lurah atau yang disebut dengan nama lain, atau surat keterangan kepolisian bagi kematian seseorang yang tidak jelas identitasnya, atau salinan penetapan pengadilan bagi seseorang yang tidak jelas keberadaannya karena hilang atau mati tetapi tidak ditemukan jenazahnya, atau surat pernyataan kematian dari maskapai penerbangan bagi seseorang yang tidak jelas keberadaannya karena hilang atau mati tetapi tidak ditemukan jenazahnya sesuai dengan ketentuan peraturan perundang-undangan, atau surat keteterangan kematian dari Perwakilan RI bagi penduduk yang kematiannya di luar wilayah NKRI;",
+        "Fotokopi Dokumen Perjalanan Republik Indonesia bagi WNI bukan Penduduk atau Fotokopi Dokumen Perjalanan bagi Orang Asing.",
+        "Fotokopi KK/KTP yang meninggal dunia.",
       ],
       penjelasan: [
-        "WNI mengisi formulir F-2.01",
-        "Untuk pelayanan secara offline/tatap muka, persyaratan salinan putusan pengadilan yang telah mempunyai kekuatan hukum tetap yang diserahkan berupa fotokopi bukan asli (asli hanya diperlihatkan)",
-        "Dinas tidak menarik salinan putusan asli",
-        "WNI melampirkan KK Asli untuk verifikasi data yang tercantum dalam formulir F-2.01 serta untuk dilakukan perubahan data (status perkawinan menjadi Cerai Hidup).",
-        "Untuk pelayanan online/Daring, persyaratan yang discan/ difoto untuk diunggah harus aslinya",
-        "Tidak perlu melampirkan fotokopi KTP-el 2 Saksi karena identitas saksi sudah tercantum dalam formulir F-2.01",
-        "Dinas menarik kutipan akta perkawinan asli, KK Asli dan KTP-el Asli yang lama.",
-        "Dinas memusnahkan KTP-el asli yang lama.",
-        "Dalam hal pemohon tidak dapat menyerahkan kutipan akta perkawinan atau bukti pencatatan perkawinan, pemohon membuat surat pernyataan (SPTJM) yang menyatakan kutipan akta perkawinan tidak dimiliki dengan alasan sesuai dengan ketentuan peraturan perundang-undangan.",
-        "Dinas menerbitkan Kutipan Akta Perceraian, KTP-el dan KK baru dengan status perkawinan yang sudah dimutakhirkan datanya",
+        "WNI mengisi F-2.01.",
+        "Orang Asing mengisi formulir F-2.01.",
+        "Untuk pelayanan secara offline/tatap muka, persyaratan surat kematian yang diserahkan berupa fotokopi bukan asli (asli hanya diperlihatkan).",
+        "Dinas tidak menarik surat kematian asli.",
+        "WNI melampirkan fotokopi KK untuk verifikasi data yang tercantum dalam formulir F-2.01.",
+        "Untuk pelayanan online/Daring, persyaratan yang discan/ difoto untuk diunggah harus aslinya.",
+        "WNI dan Orang Asing tidak perlu melampirkan fotokopi KTP-el saksi, karena identitasnya sudah tercantum dalam formulir F-2.01.",
+        "Orang Asing menyerahkan fotokopi Dokumen Perjalanan atau fotokopi ITAS/SKTT atau fotokopi ITAP/KTP-el.",
+        "WNI bukan penduduk menyerahkan fotokopi dokumen perjalanan RI yang meninggal dunia.",
+        "Pencatatan Kematian dilaporkan tidak hanya oleh anak atau ahli waris tetapi dapat juga dilaporkan oleh keluarga lainnya, termasuk ketua RT.",
+        "Dalam hal subjek akta tidak tercantum dalam KK dan database kependudukan, kutipan akta kematian diterbitkan tanpa NIK.",
+        "Dinas menerbitkan kutipan akta kematian.",
       ],
       lampiran: [
         
@@ -31,7 +32,7 @@ const persyaratan = [
     },
 ]
 
-const AktaPerceraian = () => {
+const AktaKematian = () => {
     return(
         <>
           <Navbar/>
@@ -39,7 +40,7 @@ const AktaPerceraian = () => {
               <div className="secContainer">
                   <div className="secIntro">
                       <div className="title">
-                          <h1>Penerbitan Kutipan Akta Perkawinan</h1>
+                          <h1>Persyaratan Penerbitan Kutipan Akta Kematian</h1>
                       </div>
                   </div>
                   <div className="mainContent">
@@ -88,4 +89,4 @@ const AktaPerceraian = () => {
       )
   }
   
-  export default AktaPerceraian
+  export default AktaKematian

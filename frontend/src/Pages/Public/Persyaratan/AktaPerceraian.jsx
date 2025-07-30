@@ -1,6 +1,6 @@
 import React from 'react';
 import "./persyaratan.css"
-import Navbar from '../../Components/Navbar/Navbar'
+import Navbar from '../../../Components/Navbar/Navbar'
 
 const persyaratan = [ 
     {
@@ -8,26 +8,22 @@ const persyaratan = [
       id_jenis_persyaratan: 1,
       title: "PENCATATAN KEMATIAN DALAM WILAYAH NKRI",
       peryaratan: [
-        "Fotokopi surat keterangan telah terjadinya perkawinan dari pemuka agama atau penghayat kepercayaan terhadap Tuhan Yang Maha Esa;",
-        "pas foto berwarna suami dan istri;",
-        "KTP-el Asli;",
-        "KK Asli;",
-        "bagi janda atau duda karena cerai mati melampirkan fotokopi akta kematian pasangannya; atau",
-        "Bagi janda atau duda karena cerai hidup melampirkan fotokopi akta perceraian.",
+        "Fotokopi Salinan putusan pengadilan yang telah mempunyai kekuatan hukum tetap;",
+        "Kutipan akta perkawinan asli;",
+        "KTP-el Asli; dan",
+        "KK Asli.",
       ],
       penjelasan: [
-        "WNI mengisi formulir F-2.01.",
-        "Untuk pelayanan secara offline/tatap muka, persyaratan surat keterangan perkawinan yang diserahkan berupa fotokopi bukan asli (asli hanya diperlihatkan)",
-        "Dinas tidak menarik surat keterangan perkawinan asli.",
-        "WNI melampirkan KK Asli untuk verifikasi data yang tercantum dalam formulir F-2.01 serta untuk dilakukan perubahan data (status kawin)",
-        "Untuk pelayanan online/Daring, persyaratan yang discan/ difoto untuk diunggah harus aslinya.",
-        "WNI tidak perlu melampirkan fotokopi KTP-el 2 Saksi karena identitasnya sudah tercantum dalam formulir F-2.01.",
-        "Ukuran Pasfoto 4×6 suami dan istri sebanyak 1 lembar.",
-        "Dinas menerbitkan kutipan akta perkawinan, KTP-el dengan status Kawin dan KK yang sudah dimutakhirkan datanya.",
+        "WNI mengisi formulir F-2.01",
+        "Untuk pelayanan secara offline/tatap muka, persyaratan salinan putusan pengadilan yang telah mempunyai kekuatan hukum tetap yang diserahkan berupa fotokopi bukan asli (asli hanya diperlihatkan)",
+        "Dinas tidak menarik salinan putusan asli",
+        "WNI melampirkan KK Asli untuk verifikasi data yang tercantum dalam formulir F-2.01 serta untuk dilakukan perubahan data (status perkawinan menjadi Cerai Hidup).",
+        "Untuk pelayanan online/Daring, persyaratan yang discan/ difoto untuk diunggah harus aslinya",
+        "Tidak perlu melampirkan fotokopi KTP-el 2 Saksi karena identitas saksi sudah tercantum dalam formulir F-2.01",
+        "Dinas menarik kutipan akta perkawinan asli, KK Asli dan KTP-el Asli yang lama.",
         "Dinas memusnahkan KTP-el asli yang lama.",
-        "Apabila hasil verifikasi menunjukan bahwa perkawinan berlangsung sebelum berusia 19 tahun, Dinas meminta fotokopi Penetapan Pengadilan tentang Dispensasi Perkawinan.",
-        "Apabila hasil verifikasi menunjukan bahwa suami melangsungkan perkawinan kedua dst, Dinas meminta fotokopi Penetapan Pengadilan tentang Izin Perkawinan dari istri sah",
-        "Dalam hal salah satu atau kedua suami istri meninggal dunia sebelum pencatatan perkawinan, pencatatan perkawinan dilaksanakan dengan memenuhi persyaratan berupa Surat Pernyataan Tanggung Jawab Mutlak Kebenaran Data sebagai Pasangan Suami Istri.",
+        "Dalam hal pemohon tidak dapat menyerahkan kutipan akta perkawinan atau bukti pencatatan perkawinan, pemohon membuat surat pernyataan (SPTJM) yang menyatakan kutipan akta perkawinan tidak dimiliki dengan alasan sesuai dengan ketentuan peraturan perundang-undangan.",
+        "Dinas menerbitkan Kutipan Akta Perceraian, KTP-el dan KK baru dengan status perkawinan yang sudah dimutakhirkan datanya",
       ],
       lampiran: [
         
@@ -35,7 +31,7 @@ const persyaratan = [
     },
 ]
 
-const AktaPerkawinan = () => {
+const AktaPerceraian = () => {
     return(
         <>
           <Navbar/>
@@ -92,4 +88,4 @@ const AktaPerkawinan = () => {
       )
   }
   
-  export default AktaPerkawinan
+  export default AktaPerceraian

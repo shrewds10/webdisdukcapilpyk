@@ -1,6 +1,6 @@
 import React from 'react'
 import './kontak.css'
-import Navbar from '../../Components/Navbar/Navbar'
+import Navbar from '../../../Components/Navbar/Navbar'
 
 const Kontak = () => {
   return (

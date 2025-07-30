@@ -1,7 +1,7 @@
 import React from 'react';
 import "./profil.css"
-import Navbar from '../../Components/Navbar/Navbar'
-import imgMoto from "../../Assets/cantik logo.png"
+import Navbar from '../../../Components/Navbar/Navbar'
+import imgMoto from "../../../Assets/cantik logo.png"
 
 const Moto = () => {
     return(

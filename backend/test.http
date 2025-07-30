@@ -56,7 +56,7 @@ Content-Type: application/json
 
 {
   	"Title": "Test",
-	"Slug": "test01122",
+	"Slug": "test5",
 	"Content": "Test text",
 	"Thumbnail_url": "Laporan Harian (23).png",
 	"Author_id": 1,

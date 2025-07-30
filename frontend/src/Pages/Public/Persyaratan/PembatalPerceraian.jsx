@@ -1,6 +1,6 @@
 import React from 'react';
 import "./persyaratan.css"
-import Navbar from '../../Components/Navbar/Navbar'
+import Navbar from '../../../Components/Navbar/Navbar'
 
 const persyaratan = [ 
     {
@@ -8,21 +8,21 @@ const persyaratan = [
       id_jenis_persyaratan: 1,
       title: "PENCATATAN KELAHIRAN WNI DALAM WILAYAH NKRI",
       peryaratan: [
-        "Fotokopi salinan putusan pengadilan yang berkekuatan hukum tetap;",
-        "Fotokopi kutipan akta perkawinan;",
+        "Fotokopi salinan putusan pengadilan yang mempunyai kekuatan hukum tetap;",
+        "Kutipan akta perceraian asli;",
         "KTP-el Asli; dan",
         "KK Asli.",
       ],
       penjelasan: [
-        "WNI mengisi formulir F-2.01.",
-        "Untuk pelayanan secara offline/tatap muka, persyaratan salinan putusan pengadilan yang berkekuatan hukum tetap yang diserahkan berupa fotokopi bukan asli (asli hanya diperlihatkan)",
-        "Dinas tidak menarik salinan putusan asli",
-        "WNI melampirkan KK Asli untuk verifikasi data yang tercantum dalam formulir F-2.01 serta untuk dilakukan perubahan data (status perkawinan kembali ke sebelumnya)",
-        "Untuk pelayanan online/Daring, persyaratan yang discan/ difoto untuk diunggah harus aslinya",
-        "Tidak perlu melampirkan fotokopi KTP-el 2 Saksi karena identitasnya sudah tercantum dalam formulir F-2.01",
-        "Dinas menarik kutipan akta perkawinan asli, KK Asli dan KTP-el Asli yang lama.",
+        "WNI mengisi F-2.01",
+        "Untuk pelayanan secara offline/tatap muka, persyaratan salinan putusan pengadilan yang mempunyai kekuatan hukum tetap yang diserahkan berupa fotokopi bukan asli (asli hanya diperlihatkan)",
+        "Dinas tidak menarik salinan putusan asli.",
+        "WNI melampirkan KK Asli untuk verifikasi data yang tercantum dalam formulir F-2.01 serta untuk dilakukan perubahan data (status kawin kembali menjadi Kawin).",
+        "Untuk pelayanan online/Daring, persyaratan yang discan/ difoto untuk diunggah harus aslinya.",
+        "Tidak perlu melampirkan fotokopi KTP-el 2 Saksi karena identitasnya sudah tercantum dalam formulir F-2.01.",
+        "Dinas menarik kutipan akta perceraian asli, KK Asli dan KTP-el Asli yang lama.",
         "Dinas memusnahkan KTP-el asli yang lama.",
-        "Dinas menerbitkan surat keterangan pembatalan perkawinan, KTP-el dan KK baru dengan status perkawinan yang sudah dimutakhirkan datanya.",
+        "Dinas menerbitkan surat keterangan pembatalan perceraian, kutipan akta perkawinan kedua, KTP-el dan KK baru dengan status perkawinan yang sudah dimutakhirkan datanya.",
       ],
       lampiran: [
         
@@ -30,7 +30,7 @@ const persyaratan = [
     },
 ]
 
-const PembatalanPerkawinan = () => {
+const PembatalPeceraian = () => {
     return(
         <>
           <Navbar/>
@@ -38,7 +38,7 @@ const PembatalanPerkawinan = () => {
               <div className="secContainer">
                   <div className="secIntro">
                       <div className="title">
-                          <h1>Pencatatan Pembatalan Perkawinan</h1>
+                          <h1>Pencatatan Pembatalan Perceraian</h1>
                       </div>
                   </div>
                   <div className="mainContent">
@@ -87,4 +87,4 @@ const PembatalanPerkawinan = () => {
       )
   }
   
-  export default PembatalanPerkawinan
+  export default PembatalPeceraian
