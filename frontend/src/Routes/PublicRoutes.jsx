@@ -19,6 +19,7 @@ import VisiMisi from '../Pages/Public/Profil/VisiMisi'
 import MaklumatPelayanan from '../Pages/Public/Profil/MaklumatPelayanan'
 import News from '../Pages/Public/News/News'
 import Kontak from '../Pages/Public/Kontak/Kontak'
+import LaporanHarian from '../Pages/Public/LaporanHarian/LaporanHarian'
 
 
 const PublicRoutes = () => {
@@ -42,6 +43,7 @@ const PublicRoutes = () => {
         <Route path="/maklumatpelayanan" element={<MaklumatPelayanan/>}/>
         <Route path="/news" element={<News/>}/>
         <Route path="/kontak" element={<Kontak/>}/>
+        <Route path="/laporanharian" element={<LaporanHarian/>}/>
     </Routes>
   )
 }

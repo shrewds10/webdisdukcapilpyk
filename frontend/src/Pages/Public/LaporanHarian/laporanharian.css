@@ -1,0 +1,70 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: sans-serif;
+  margin-top: 20px;
+}
+
+.dashboard-container {
+  position: relative;
+  width: 300px; /* Sesuaikan dengan ukuran gambar */
+  height: auto;
+}
+
+.background {
+  width: 100%;
+  display: block;
+}
+
+/* Styling umum untuk angka */
+.angka {
+  position: absolute;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+
+/* Posisi sesuai gambar kamu */
+.kk {
+  top: 15px;
+  right: 20px;
+}
+
+.pindah {
+  top: 65px;
+  right: 20px;
+}
+
+.datang {
+  top: 115px;
+  right: 20px;
+}
+
+.total {
+  top: 165px;
+  right: 20px;
+}
+
+.hari {
+  top: 215px;
+  right: 20px;
+}
+
+/* Form input */
+.input-form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px;
+}
+
+.input-form label {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-form input {
+  width: 100px;
+}/*# sourceMappingURL=laporanharian.css.map */
