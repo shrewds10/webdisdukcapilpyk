@@ -1,9 +1,9 @@
 import React from 'react'
 import './news.css'
 import { BsArrowRightShort } from "react-icons/bs";
-import img1 from "../../Assets/berita 1.jpg"
-import img2 from "../../Assets/berita 2.jpg"
-import img3 from "../../Assets/berita 3.jpg"
+import img1 from "../../../assets/berita 1.jpg"
+import img2 from "../../../assets/berita 2.jpg"
+import img3 from "../../../assets/berita 3.jpg"
 
 const news = [
   {

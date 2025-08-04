@@ -1,0 +1,14 @@
+.adminNavbar {
+  height: 50.7px;
+  border-bottom: 0.5px solid rgb(192, 192, 192);
+  display: flex;
+  align-items: center;
+}
+.adminNavbar .wrapper {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+.adminNavbar .items {
+  display: flex;
+}/*# sourceMappingURL=navbar.css.map */

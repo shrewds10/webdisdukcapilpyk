@@ -1,11 +1,11 @@
 import React from 'react'
 import './layanan.css'
-import imgKTP from "../../Assets/KTP.jpg"
-import imgKK from "../../Assets/KK.png"
-import imgIKD from "../../Assets/IKD.jpg"
-import imgKIA from "../../Assets/KIA.png"
-import imgAKTAKELAHIRAN from "../../Assets/AKTA KELAHIRAN.jpg"
-import imgAKTAKEMATIAN from "../../Assets/AKTA KEMATIAN.jpeg"
+import imgKTP from "../../../assets/KTP.jpg"
+import imgKK from "../../../assets/KK.png"
+import imgIKD from "../../../assets/IKD.jpg"
+import imgKIA from "../../../assets/KIA.png"
+import imgAKTAKELAHIRAN from "../../../assets/AKTA KELAHIRAN.jpg"
+import imgAKTAKEMATIAN from "../../../assets/AKTA KEMATIAN.jpeg"
 
 const layanan = [ 
   {

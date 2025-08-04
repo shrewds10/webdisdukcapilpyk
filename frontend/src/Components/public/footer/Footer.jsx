@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="logoDiv">
           <div className="footerLogo">
             <a href="" className="logo">
-             <img src={require('../../Assets/Logo Kota Payakumbuh.png')} alt="" />              
+             <img src={require('../../../assets/Logo Kota Payakumbuh.png')} alt="" />              
             </a>
           </div>
           <div className="socials flex">

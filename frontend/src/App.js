@@ -1,12 +1,14 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import "./app.css"
-import PublicRoutes from './Routes/PublicRoutes'
+import PublicRoutes from './routes/PublicRoutes'
+import AdminRoutes from './routes/AdminRoutes'
 
 
 const App = () => {
   return (
     <Router>
-      {PublicRoutes()}
+      <PublicRoutes/>
+      <AdminRoutes/>
     </Router>    
   )
 }

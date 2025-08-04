@@ -1,6 +1,6 @@
 import React from 'react';
 import "./profil.css"
-import Navbar from '../../../Components/Navbar/Navbar'
+import Navbar from '../../../components/public/navbar/Navbar'
 
 const MaklumatPelayanan = () => {
     return(

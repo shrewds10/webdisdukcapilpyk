@@ -43,7 +43,7 @@ const Navbar = () => {
         <a href="/">
           <div className="logoDiv">
             <a href="/" className="logo">
-              <img src={require('../../Assets/Logo Kota Payakumbuh.png')} alt="" />   
+              <img src={require('../../../assets/Logo Kota Payakumbuh.png')} alt="" />   
             </a>
             <h3>Disdukcapil <br/>Kota Payakumbuh</h3>           
           </div>

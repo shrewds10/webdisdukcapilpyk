@@ -1,13 +1,13 @@
 import React from 'react'
 import './news.css'
-// import imgKTP from "../../Assets/berita 1.jpg"
-import berita1 from "../../../Assets/berita1.jpeg"
-import imgKK from "../../../Assets/berita 2.jpg"
-import imgIKD from "../../../Assets/berita 3.jpg"
-import imgKIA from "../../../Assets/KIA.png"
-import imgAKTAKELAHIRAN from "../../../Assets/AKTA KELAHIRAN.jpg"
-import imgAKTAKEMATIAN from "../../../Assets/AKTA KEMATIAN.jpeg"
-import Navbar from '../../../Components/Navbar/Navbar'
+// import imgKTP from "../../assets/berita 1.jpg"
+import berita1 from "../../../assets/berita1.jpeg"
+import imgKK from "../../../assets/berita 2.jpg"
+import imgIKD from "../../../assets/berita 3.jpg"
+import imgKIA from "../../../assets/KIA.png"
+import imgAKTAKELAHIRAN from "../../../assets/AKTA KELAHIRAN.jpg"
+import imgAKTAKEMATIAN from "../../../assets/AKTA KEMATIAN.jpeg"
+import Navbar from '../../../components/public/navbar/Navbar'
 
 const news = [ 
   {

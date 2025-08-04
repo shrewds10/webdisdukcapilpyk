@@ -1,4 +1,4 @@
-import Information from "../../../Components/Information/Information"
+import Information from "../../../components/public/information/Information"
 
 const InformationPage = () => {
     return <>

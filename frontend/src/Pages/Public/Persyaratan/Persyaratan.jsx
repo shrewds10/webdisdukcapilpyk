@@ -1,4 +1,4 @@
-import Navbar from '../../../Components/Navbar/Navbar'
+import Navbar from '../../../components/public/navbar/Navbar'
 import Ktp from './Ktp'
 
 const PersyaratanPage = () => {

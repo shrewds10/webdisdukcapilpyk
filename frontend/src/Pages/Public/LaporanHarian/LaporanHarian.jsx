@@ -1,7 +1,7 @@
 import './laporanharian.css'
 import React, { useState, useRef } from 'react';
 import html2canvas from 'html2canvas';
-import Lap from "../../../Assets/Laporan Harian.png"
+import Lap from "../../../assets/Laporan Harian.png"
 
 function LaporanHarian() {
   const [data, setData] = useState({
