@@ -65,3 +65,34 @@ Content-Type: application/json
 	"Create_at": "2025-01-01 00:00:00",
 	"Update_at": "2025-01-01 00:00:00"
 }
+
+
+### Create category by id
+POST http://localhost:3000/api/users
+Accept: application/json
+Content-Type: application/json
+
+{
+  	"Nama": "Test",
+	"Username": "test511",
+	"Email": "Test 1text",
+	"Password": "Laporan Harian (23).png",
+	"Role": "admin",
+	"Create_at": "2025-01-01 00:00:00",
+	"Update_at": "2025-01-01 00:00:00"
+}
+
+### Update category by id
+PUT http://localhost:3000/api/users/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  	"Nama": "Test1111",
+	"Username": "test5",
+	"Email": "Test text",
+	"Password": "Laporan Harian (23).png",
+	"Role": "admin",
+	"Create_at": "2025-01-01 00:00:00",
+	"Update_at": "2025-01-01 00:00:00"
+}

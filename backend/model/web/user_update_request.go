@@ -1,6 +1,6 @@
 package web
 
-type UserResponse struct {
+type UserUpdateRequest struct {
 	Id        int
 	Nama      string
 	Username  string

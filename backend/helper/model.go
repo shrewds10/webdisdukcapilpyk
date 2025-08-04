@@ -7,10 +7,22 @@ import (
 
 func ToUserResponse(user entity.User) web.UserResponse {
 	return web.UserResponse{
-		Id:    user.Id,
-		Name:  user.Name,
-		Email: user.Email,
+		Id:        user.Id,
+		Nama:      user.Nama,
+		Email:     user.Email,
+		Password:  user.Password,
+		Role:      user.Role,
+		Create_at: user.Create_at,
+		Update_at: user.Update_at,
 	}
+}
+
+func ToUserResponses(userAll []entity.User) []web.UserResponse {
+	var userResponses []web.UserResponse
+	for _, user := range userAll {
+		userResponses = append(userResponses, ToUserResponse(user))
+	}
+	return userResponses
 }
 
 func ToAgrLajuPertumbuhanPendudukResponse(agrLajuPertumbuhanPendudukResponse entity.AgrLajuPertumbuhanPenduduk) web.AgrLajuPertumbuhanPendudukResponse {

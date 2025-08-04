@@ -36,12 +36,16 @@ func NewRouter(controller *RouterController) *httprouter.Router {
 	router := httprouter.New()
 
 	router.POST("/api/users", controller.User.Create)
+	router.PUT("/api/users", controller.User.Update)
+	router.DELETE("/api/users/:userId", controller.User.Delete)
+	router.GET("/api/users/:userId", controller.User.FindById)
+	router.GET("/api/users", controller.User.FindAll)
 
 	router.POST("/api/agrlajupertumbuhanpenduduk", controller.AgrLajuPertumbuhanPenduduk.Create)
-	router.GET("/api/agrlajupertumbuhanpenduduk", controller.AgrLajuPertumbuhanPenduduk.FindById)
-	router.GET("/api/agrlajupertumbuhanpendudukall", controller.AgrLajuPertumbuhanPenduduk.FindAll)
 	router.PUT("/api/agrlajupertumbuhanpendudukupdate", controller.AgrLajuPertumbuhanPenduduk.Update)
 	router.DELETE("/api/agrlajupertumbuhanpenduduk", controller.AgrLajuPertumbuhanPenduduk.Delete)
+	router.GET("/api/agrlajupertumbuhanpenduduk", controller.AgrLajuPertumbuhanPenduduk.FindById)
+	router.GET("/api/agrlajupertumbuhanpendudukall", controller.AgrLajuPertumbuhanPenduduk.FindAll)
 
 	router.POST("/api/livereport", controller.LiveReport.Create)
 	router.GET("/api/livereport", controller.LiveReport.FindAll)
