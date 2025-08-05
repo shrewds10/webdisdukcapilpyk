@@ -9,6 +9,7 @@ const HomePage = () => {
     return <>
         <Navbar/>
         <Home/>
+        <Home/>
         <Layanan/>
         <News/>
         <Footer/>
