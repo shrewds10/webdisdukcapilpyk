@@ -3,4 +3,7 @@
 }
 .adminHome .homeContainer {
   flex: 6;
+}
+.adminHome .homeContainer .widgets {
+  display: flex;
 }/*# sourceMappingURL=home.css.map */
