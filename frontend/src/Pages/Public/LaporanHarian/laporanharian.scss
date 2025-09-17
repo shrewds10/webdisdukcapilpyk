@@ -1,70 +1,161 @@
 .app-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: sans-serif;
-  margin-top: 20px;
+  flex-direction: row;
+  align-items: flex-start;
+  font-family: Arial, sans-serif;
+  gap: 20px;
+  .dashboard-container {
+    position: relative;
+    width: 500px;
+    height: auto;
+    .background {
+      width: 100%;
+      display: block;
+      z-index: 0;
+    }
+    .angka {
+      position: absolute;
+      font-size: 18px;
+      font-weight: bold;
+      color: black;
+      font-style: italic;
+      z-index: 1;
+    }
+
+    .hari{
+      top: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 11px;
+      width: 480px;
+    }
+
+    .perekaman {
+      top: 155px;
+      right: 20px;
+      z-index: 2;
+    }
+    
+    .persenPer {
+      top: 207px;
+      right: 10px;
+      font-size: 12px;
+    }
+    
+    .pencetakan {
+      top: 250px;
+      right: 20px;
+    }
+    
+    .pemusnahan {
+      top: 295px;
+      right: 20px;
+    }
+    
+    .stokBlanko {
+      top: 343px;
+      right: 13px;
+      font-size: 15px;
+    }
+    
+    .kelahiranKecil {
+      top: 155px;
+      left: 282px;
+    }
+    
+    .kelahiranBesar {
+      top: 195px;
+      left: 282px;
+    }
+    
+    .kematian {
+      top: 234px;
+      left: 282px;
+    }
+    
+    .cetakKIA {
+      top: 275px;
+      left: 282px;
+    }
+    
+    .persenKIA {
+      top: 322px;
+      left: 270px;
+      font-size: 12px;
+    }
+    
+    .kartuKeluarga {
+      top: 152px;
+      left: 120px;
+    }
+    
+    .pindah {
+      top: 190px;
+      left: 120px;
+    }
+    
+    .datang {
+      top: 232px;
+      left: 120px;
+    }
+    
+    .aktivasiCapil {
+      top: 268px;
+      left: 120px;
+    }
+    
+    .aktivasiMpp {
+      top: 300px;
+      left: 120px;
+    }
+    
+    .totalAktivasi {
+      font-size: 15px;
+      top: 339px;
+      left: 110px;
+    }
+    
+    .totalLayanan {
+      top: 375px;
+      left: 208px;
+    }
+  }
 }
 
-.dashboard-container {
-  position: relative;
-  width: 300px; /* Sesuaikan dengan ukuran gambar */
-  height: auto;
-}
-
-.background {
-  width: 100%;
-  display: block;
-}
-
-/* Styling umum untuk angka */
-.angka {
-  position: absolute;
-  font-size: 20px;
-  font-weight: bold;
-  color: black;
-}
-
-/* Posisi sesuai gambar kamu */
-.kk {
-  top: 15px;
-  right: 20px;
-}
-
-.pindah {
-  top: 65px;
-  right: 20px;
-}
-
-.datang {
-  top: 115px;
-  right: 20px;
-}
-
-.total {
-  top: 165px;
-  right: 20px;
-}
-
-.hari {
-  top: 215px;
-  right: 20px;
-}
-
-/* Form input */
 .input-form {
-  margin-top: 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 300px;
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 10px 20px; 
+  width: 100%;
+  max-width: 600px;  
 }
 
 .input-form label {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  font-size: 14px;
 }
 
 .input-form input {
-  width: 100px;
+  margin-top: 5px;
+  padding: 6px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.download-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 14px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.download-button:hover {
+  background-color: #0056b3;
 }
