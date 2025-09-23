@@ -12,7 +12,7 @@ const Widget = ({type}) => {
       data={
         title:"USERS",
         counter:100,
-        link:"See all users",
+        link:"Lihat semua user",
         icon:(
           <FaRegUser 
             className='icon' 
@@ -28,7 +28,7 @@ const Widget = ({type}) => {
       data={
         title:"BERITA",
         counter:100,
-        link:"See all news",
+        link:"Lihat semua berita",
         icon:(
           <IoNewspaperOutline 
             className='icon' 
@@ -44,7 +44,7 @@ const Widget = ({type}) => {
       data={
         title:"DOKUMEN",
         counter:100,
-        link:"See all documents",
+        link:"Lihat semua dokumen",
         icon:(
           <IoDocumentsOutline 
             className='icon' 
@@ -60,7 +60,7 @@ const Widget = ({type}) => {
       data={
         title:"STAFF",
         counter:100,
-        link:"See all staff",
+        link:"Lihat semua pegawai",
         icon:(
           <MdPeopleAlt 
             className='icon' 
