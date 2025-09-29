@@ -1,12 +1,12 @@
 import './laporanharian.css'
-import React, { useState, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Lap from "../../../assets/Laporan Harian.png"
 import { toPng } from 'html-to-image';
 
 function LaporanHarian() {
   const [data, setData] = useState({
     perekaman: null,
-    persenPer: 98.0081,
+    persenPer: 98.4001,
     pencetakan: null,
     pemusnahan: null,
     stokBlanko: 1025,
@@ -23,6 +23,46 @@ function LaporanHarian() {
     totalAktivasi: 9320,
   });
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://192.168.76.25/dkb/api/agregat/laporan_harian.php/?kode=harian');
+        const text = await response.text();
+
+        const parts = text.split('][');
+        if (parts.length >= 1) {
+          const firstArray = JSON.parse(parts[0] + ']'); 
+          const firstItem = firstArray[0]; 
+
+          setData({
+            perekaman: Number(firstItem.PEREKAMAN),
+            persenPer: Number(firstItem.PERSEN_REKAM),
+            pencetakan: Number(firstItem.PENCETAKAN),
+            pemusnahan: Number(firstItem.PEMUSNAHAN),
+            stokBlanko: Number(firstItem.BLANGKO_KTP),
+            kelahiranKecil: Number(firstItem.AKTA_LAHIR_17),
+            kelahiranBesar: Number(firstItem.AKTA_LAHIR_18),
+            kematian: Number(firstItem.AKTA_MATI),
+            cetakKIA: Number(firstItem.KIA),
+            persenKIA: Number(firstItem.PERSEN_KIA),
+            kartuKeluarga: Number(firstItem.KK),
+            pindah: Number(firstItem.PINDAH),
+            datang: Number(firstItem.DATANG),
+            aktivasiCapil: Number(firstItem.IKD_DINAS),
+            aktivasiMpp: Number(firstItem.IKD_MPP),
+            totalAktivasi: Number(firstItem.TOTAL_IKD),
+          });
+        }
+      } catch (error) {
+        console.error('Gagal mengambil data:', error);
+      }
+    };
+
+    fetchData();
+    const interval = setInterval(fetchData, 10000);
+    return () => clearInterval(interval);
+  }, []);
+
   const dashboardRef = useRef(null);
 
   const handleChange = (e) => {
@@ -38,7 +78,7 @@ function LaporanHarian() {
   await new Promise(resolve => setTimeout(resolve, 500));
 
   const node = dashboardRef.current;
-  const scale = 3; 
+  const scale = 3;
   const style = getComputedStyle(node);
   const width = parseInt(style.width);
   const height = parseInt(style.height);
@@ -70,9 +110,9 @@ function LaporanHarian() {
     const day = date.getDay(); 
 
     if (day >= 1 && day <= 4) {
-      return '16.00'; 
+      return '18.00'; 
     } else if (day === 5) {
-      return '16.30'; 
+      return '18.30'; 
     } else if (day === 0) {
       return '12.30'; 
     } else {
@@ -91,7 +131,7 @@ function LaporanHarian() {
           className="background"
         />
         <div className="angka hari">{dateFormat} hingga pukul {jam} WIB</div>
-        <div className="angka perekaman">{data.perekaman}</div>
+        <div className="angka perekaman" onChange={handleChange}>{data.perekaman}</div>
         <div className="angka persenPer">{data.persenPer}%</div>
         <div className="angka pencetakan">{data.pencetakan}</div>
         <div className="angka pemusnahan">{data.pemusnahan}</div>
@@ -175,7 +215,7 @@ function LaporanHarian() {
           Total Aktivasi IKD :
           <input type="number" name="totalAktivasi" value={data.totalAktivasi} onChange={handleChange} />
         </label>
-      </form>
+      </form> 
 
       <button onClick={downloadImage} className="download-button">
         Download Gambar
