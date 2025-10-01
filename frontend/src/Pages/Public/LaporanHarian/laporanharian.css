@@ -1,9 +1,10 @@
 .app-container {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  font-family: Arial, sans-serif;
-  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  font-family: sans-serif;
+  gap: 10px;
+  width: 100%;
 }
 .app-container .dashboard-container {
   position: relative;
@@ -140,4 +141,46 @@
 
 .download-button:hover {
   background-color: #0056b3;
+}
+
+@media (max-width: 480px) {
+  .app-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .dashboard-container {
+    width: 100%;
+    padding: 0 10px;
+  }
+  .dashboard-container .hari {
+    width: 100%;
+    font-size: 10px;
+  }
+  .dashboard-container .angka {
+    font-size: 14px;
+  }
+  .dashboard-container .persenPer,
+  .dashboard-container .persenKIA,
+  .dashboard-container .totalAktivasi,
+  .dashboard-container .stokBlanko {
+    font-size: 11px;
+  }
+  .input-form {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: none;
+  }
+  .input-form label {
+    font-size: 13px;
+  }
+  .input-form input {
+    font-size: 13px;
+    padding: 5px;
+  }
+  .download-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
 }/*# sourceMappingURL=laporanharian.css.map */

@@ -131,7 +131,7 @@ function LaporanHarian() {
           className="background"
         />
         <div className="angka hari">{dateFormat} hingga pukul {jam} WIB</div>
-        <div className="angka perekaman" onChange={handleChange}>{data.perekaman}</div>
+        <div className="angka perekaman">{data.perekaman}</div>
         <div className="angka persenPer">{data.persenPer}%</div>
         <div className="angka pencetakan">{data.pencetakan}</div>
         <div className="angka pemusnahan">{data.pemusnahan}</div>
@@ -150,7 +150,7 @@ function LaporanHarian() {
         <div className="angka totalLayanan">{data.perekaman+data.pencetakan+data.pemusnahan+data.kelahiranKecil+data.kelahiranBesar+data.kematian+data.cetakKIA+data.kartuKeluarga+data.pindah+data.datang+data.aktivasiCapil+data.aktivasiMpp}</div>
       </div>
 
-      <form className="input-form">
+      {/* <form className="input-form">
         <label>
           Perekaman:
           <input type="number" name="perekaman" value={data.perekaman} onChange={handleChange} />
@@ -215,7 +215,7 @@ function LaporanHarian() {
           Total Aktivasi IKD :
           <input type="number" name="totalAktivasi" value={data.totalAktivasi} onChange={handleChange} />
         </label>
-      </form> 
+      </form>  */}
 
       <button onClick={downloadImage} className="download-button">
         Download Gambar
