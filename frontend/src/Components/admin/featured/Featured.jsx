@@ -37,18 +37,33 @@ class Featured extends Component {
     return (
       <div className="featured">
         <div className="top">
-          <h1 className="title">Jumlah Penduduk</h1>
-          <MdMoreVert/>
+          <div className="title">
+            <h1>Jumlah Penduduk</h1>
+          </div>
         </div>
-        <div className='donutChart'>
-          <Chart
-            options={this.state.pieChartOptions}
-            series={this.state.pieChartOptions.series}
-            type="pie"
-            height={340}
-            width={340}
-          />
-        </div>       
+        <div className="bottom">
+          <div className="featureChart">
+            <div className='donutChart'>
+              <Chart
+                options={this.state.pieChartOptions}
+                series={this.state.pieChartOptions.series}
+                type="pie"
+                height={340}
+                width={340}
+              />
+            </div>       
+          </div>
+          <div className="featuredItem">
+            <div className="item">
+              <div className="itemTitle">Pria</div>
+              <div className="itemAmount">72.517</div>
+            </div>
+            <div className="item">
+              <div className="itemTitle">Wanita</div>
+              <div className="itemAmount">72.517</div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

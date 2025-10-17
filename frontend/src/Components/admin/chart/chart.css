@@ -1,4 +1,13 @@
-.chart {
+.barChart {
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  padding: 10px;
   display: flex;
+  flex-direction: column;
   flex: 2;
+  align-items: center;
+}
+.barChart .secTitle h1 {
+  color: gray;
+  font-size: 16px;
+  font-weight: 500;
 }/*# sourceMappingURL=chart.css.map */
