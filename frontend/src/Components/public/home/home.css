@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lobster&family=Smooch+Sans:wght@100..900&display=swap");
+:root {
+  --PrimaryColor: hsl(26, 93%, 50%);
+  --HoverColor: hsl(26, 90%, 42%);
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(0, 0%, 18%);
+  --textColor: hsl(240, 1%, 48%);
+  --whiteColorDeam: hsl(0, 0%, 93%);
+  --greyBg: hsl(0, 0%, 96%);
+  --greyText: rgb(190, 190, 190);
+  --inputColor: hsl(330, 12%, 97%);
+}
+
+.home {
+  height: 100vh;
+  background: linear-gradient(rgba(33, 33, 33, 0.522), rgba(33, 33, 33, 0.522)), url(../../../assets/3387646.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  position: relative;
+}
+.home .firContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: flex-start;
+  margin-top: 50px;
+}
+.home .secContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  flex: 1;
+}
+.home .secContainer .homeText {
+  position: relative;
+  color: var(--whiteColor);
+  font-weight: 700;
+  line-height: 2.5rem;
+  font-size: 37px;
+  text-align: left;
+}
+.home .secContainer .homeText .title {
+  font-family: "Dancing Script", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+.home .secContainer .homeText .secTitle {
+  margin-top: 20px;
+  font-size: 42px;
+  line-height: 0.8;
+  font-family: "Smooch Sans", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+.home .secContainer .homeText .secTitle br {
+  margin-bottom: 310px;
+}
+.home .secContainer .population {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+.home .secContainer .population .descPopulation {
+  margin-top: 10px;
+}
+.home .secContainer .population .descPopulation .desc {
+  display: flex;
+  justify-content: left;
+  margin-right: 20px;
+  width: 250px;
+  height: 100px;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 2px 8px 2px rgba(178, 178, 178, 0.6);
+  background-color: white;
+}
+.home .secContainer .population .descPopulation .desc .totalPopulation,
+.home .secContainer .population .descPopulation .desc .man,
+.home .secContainer .population .descPopulation .desc .woman {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+}
+.home .secContainer .population .descPopulation .desc .totalPopulation h3,
+.home .secContainer .population .descPopulation .desc .man h3,
+.home .secContainer .population .descPopulation .desc .woman h3 {
+  text-align: left;
+  font-size: 17px;
+}
+.home .secContainer .population .descPopulation .desc .totalPopulation p,
+.home .secContainer .population .descPopulation .desc .man p,
+.home .secContainer .population .descPopulation .desc .woman p {
+  text-align: left;
+  font-size: 16px;
+}
+.home .secContainer .population .descPopulation .desc .totalPopulation .sumber,
+.home .secContainer .population .descPopulation .desc .man .sumber,
+.home .secContainer .population .descPopulation .desc .woman .sumber {
+  margin: 0px;
+  font-size: 8px;
+}
+.home .secContainer .population .descPopulation .desc .totalPopulation {
+  color: white;
+}
+.home .secContainer .population .descPopulation .desc .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-top: 7px;
+  margin-right: 7px;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  color: white;
+}
+.home .secContainer .population .descPopulation .desc .iconPeople {
+  background-color: white;
+  color: rgb(0, 71, 202);
+}
+.home .secContainer .population .descPopulation .desc .iconMan {
+  background-color: #19738a;
+}
+.home .secContainer .population .descPopulation .desc .iconWoman {
+  background-color: #c006c0;
+}
+.home .secContainer .population .descPopulation .descPeople {
+  background-color: rgb(2, 72, 202);
+}
+.home .secContainer .moto {
+  height: 60vh;
+  width: 80%;
+  border-radius: 1rem;
+  padding: 2rem;
+  background: var(--whiteColor);
+  position: absolute;
+  gap: 1rem;
+  justify-content: center;
+  bottom: -35%;
+  transform: translate(-50%);
+  left: 50%;
+  box-shadow: 0 2px 8px 4px rgba(178, 178, 178, 0.45);
+}
+.home .secContainer .moto h3 {
+  text-align: center;
+}
+.home .secContainer .moto p {
+  text-align: center;
+}
+.home .thiContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  flex: 2;
+  z-index: 1;
+}
+.home .thiContainer .slideshow-container {
+  position: relative;
+}
+.home .thiContainer .slideshow-container .slide img {
+  width: 85%;
+  border-radius: 1rem;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 2px 8px 2px rgba(178, 178, 178, 0.6);
+  transition: background-color 100ms ease-in-out;
+}/*# sourceMappingURL=home.css.map */

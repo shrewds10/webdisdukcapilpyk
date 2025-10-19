@@ -5,9 +5,9 @@ import (
 	"backend/model/web"
 	"backend/service"
 	"net/http"
+	"strconv"
 
 	"github.com/julienschmidt/httprouter"
-	"github.com/xuri/excelize/v2"
 )
 
 type UserControllerImpl struct {
@@ -20,32 +20,76 @@ func NewUserController(userService service.UserService) UserController {
 	}
 }
 
-func (controller UserControllerImpl) Create(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
-	file, _, err := request.FormFile("file")
-	helper.PanicIfError(err)
+func (controller *UserControllerImpl) Create(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
+	userCreateRequest := web.UserCreateRequest{}
+	helper.JsonDecode(request, &userCreateRequest)
 
-	xlsx, err := excelize.OpenReader(file)
-	helper.PanicIfError(err)
-	defer file.Close()
-
-	rows, _ := xlsx.GetRows("Sheet1")
-	var users []web.UserCreateRequest
-	for i, row := range rows {
-		user := web.UserCreateRequest{}
-		if i == 0 {
-			continue
-		}
-		user.Name = row[0]
-		user.Email = row[1]
-		users = append(users, user)
-	}
-
-	user := controller.service.Create(request.Context(), users)
-	userResponse := web.WebResponse{
+	userResponse := controller.service.Create(request.Context(), userCreateRequest)
+	webResponse := web.WebResponse{
 		Code:   200,
 		Status: "OK",
-		Data:   user,
+		Data:   userResponse,
 	}
 
-	helper.JsonEncode(writer, userResponse)
+	helper.JsonEncode(writer, webResponse)
+}
+
+func (controller *UserControllerImpl) Update(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
+	userUpdateRequest := web.UserUpdateRequest{}
+	helper.JsonDecode(request, &userUpdateRequest)
+
+	userId := params.ByName("userId")
+	id, err := strconv.Atoi(userId)
+	helper.PanicIfError(err)
+
+	userUpdateRequest.Id = id
+
+	categoryResponse := controller.service.Update(request.Context(), userUpdateRequest)
+	webResponse := web.WebResponse{
+		Code:   200,
+		Status: "OK",
+		Data:   categoryResponse,
+	}
+
+	helper.JsonEncode(writer, webResponse)
+}
+
+func (controller *UserControllerImpl) Delete(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
+	userId := params.ByName("userId")
+	id, err := strconv.Atoi(userId)
+	helper.PanicIfError(err)
+
+	controller.service.Delete(request.Context(), id)
+	webResponse := web.WebResponse{
+		Code:   200,
+		Status: "OK",
+	}
+
+	helper.JsonEncode(writer, webResponse)
+}
+
+func (controller *UserControllerImpl) FindById(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
+	userId := params.ByName("userId")
+	id, err := strconv.Atoi(userId)
+	helper.PanicIfError(err)
+
+	userResponse := controller.service.FindById(request.Context(), id)
+	webResponse := web.WebResponse{
+		Code:   200,
+		Status: "OK",
+		Data:   userResponse,
+	}
+
+	helper.JsonEncode(writer, webResponse)
+}
+
+func (controller *UserControllerImpl) FindAll(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
+	userResponses := controller.service.FindAll(request.Context())
+	webResponse := web.WebResponse{
+		Code:   200,
+		Status: "OK",
+		Data:   userResponses,
+	}
+
+	helper.JsonEncode(writer, webResponse)
 }

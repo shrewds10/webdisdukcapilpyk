@@ -1,0 +1,54 @@
+:root {
+  --PrimaryColor: hsl(26, 93%, 50%);
+  --HoverColor: hsl(26, 90%, 42%);
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(0, 0%, 18%);
+  --textColor: hsl(240, 1%, 48%);
+  --whiteColorDeam: hsl(0, 0%, 93%);
+  --greyBg: hsl(0, 0%, 96%);
+  --greyText: rgb(190, 190, 190);
+  --inputColor: hsl(330, 12%, 97%);
+}
+
+.kontak .secContainer .secIntro .title {
+  margin-top: 60px;
+  font-size: 30px;
+  color: rgb(0, 0, 0);
+}
+.kontak .secContainer .mainContent {
+  display: flex;
+  flex-direction: row;
+}
+.kontak .secContainer .mainContent .pengaduan {
+  flex: 1;
+}
+.kontak .secContainer .mainContent .pengaduan .formPengaduan {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+}
+.kontak .secContainer .mainContent .pengaduan .formPengaduan .title {
+  text-align: left;
+}
+.kontak .secContainer .mainContent .pengaduan .formPengaduan .formGroup {
+  display: flex;
+  flex-direction: column;
+}
+.kontak .secContainer .mainContent .pengaduan .formPengaduan .formGroup label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.kontak .secContainer .mainContent .pengaduan .formPengaduan .formGroup input, .kontak .secContainer .mainContent .pengaduan .formPengaduan .formGroup textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.kontak .secContainer .mainContent .pengaduan .formPengaduan button {
+  padding: 0.7rem 1.5rem;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}/*# sourceMappingURL=kontak.css.map */

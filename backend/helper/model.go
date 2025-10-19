@@ -7,10 +7,22 @@ import (
 
 func ToUserResponse(user entity.User) web.UserResponse {
 	return web.UserResponse{
-		Id:    user.Id,
-		Name:  user.Name,
-		Email: user.Email,
+		Id:        user.Id,
+		Nama:      user.Nama,
+		Email:     user.Email,
+		Password:  user.Password,
+		Role:      user.Role,
+		Create_at: user.Create_at,
+		Update_at: user.Update_at,
 	}
+}
+
+func ToUserResponses(userAll []entity.User) []web.UserResponse {
+	var userResponses []web.UserResponse
+	for _, user := range userAll {
+		userResponses = append(userResponses, ToUserResponse(user))
+	}
+	return userResponses
 }
 
 func ToAgrLajuPertumbuhanPendudukResponse(agrLajuPertumbuhanPendudukResponse entity.AgrLajuPertumbuhanPenduduk) web.AgrLajuPertumbuhanPendudukResponse {
@@ -72,3 +84,29 @@ func ToLayananResponse(layananResponse entity.Layanan) web.LayananResponse {
 		Penjelasan:       layananResponse.Penjelasan,
 	}
 }
+<<<<<<< HEAD
+=======
+
+func ToNewsResponse(news entity.News) web.NewsResponse {
+	return web.NewsResponse{
+		Id:            news.Id,
+		Title:         news.Title,
+		Slug:          news.Slug,
+		Content:       news.Content,
+		Thumbnail_url: news.Thumbnail_url,
+		Author_id:     news.Author_id,
+		Category_id:   news.Category_id,
+		Status:        news.Status,
+		Create_at:     news.Create_at,
+		Update_at:     news.Update_at,
+	}
+}
+
+func ToNewsResponses(newsAll []entity.News) []web.NewsResponse {
+	var newsResponses []web.NewsResponse
+	for _, news := range newsAll {
+		newsResponses = append(newsResponses, ToNewsResponse(news))
+	}
+	return newsResponses
+}
+>>>>>>> 4cf54d18ea3962da852d30ffce9b30c94ee43d69

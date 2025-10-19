@@ -47,3 +47,52 @@ Accept: application/json
 ### Get All
 GET http://localhost:3000/api/agrlajupertumbuhanpendudukall
 Accept: application/json
+
+
+### Update category by id
+PUT http://localhost:3000/api/news/5
+Accept: application/json
+Content-Type: application/json
+
+{
+  	"Title": "Test",
+	"Slug": "test5",
+	"Content": "Test text",
+	"Thumbnail_url": "Laporan Harian (23).png",
+	"Author_id": 1,
+	"Category_id": 1,
+	"Status": "published",
+	"Create_at": "2025-01-01 00:00:00",
+	"Update_at": "2025-01-01 00:00:00"
+}
+
+
+### Create category by id
+POST http://localhost:3000/api/users
+Accept: application/json
+Content-Type: application/json
+
+{
+  	"Nama": "Test",
+	"Username": "test511",
+	"Email": "Test 1text",
+	"Password": "Laporan Harian (23).png",
+	"Role": "admin",
+	"Create_at": "2025-01-01 00:00:00",
+	"Update_at": "2025-01-01 00:00:00"
+}
+
+### Update category by id
+PUT http://localhost:3000/api/users/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  	"Nama": "Test1111",
+	"Username": "test5",
+	"Email": "Test text",
+	"Password": "Laporan Harian (23).png",
+	"Role": "admin",
+	"Create_at": "2025-01-01 00:00:00",
+	"Update_at": "2025-01-01 00:00:00"
+}

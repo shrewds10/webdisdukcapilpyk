@@ -1,7 +1,12 @@
 package web
 
 type UserResponse struct {
-	Id    int
-	Name  string
-	Email string
+	Id        int
+	Nama      string
+	Username  string
+	Email     string
+	Password  string
+	Role      string
+	Create_at string
+	Update_at string
 }

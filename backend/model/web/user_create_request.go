@@ -1,6 +1,11 @@
 package web
 
 type UserCreateRequest struct {
-	Name  string
-	Email string
+	Nama      string
+	Username  string
+	Email     string
+	Password  string
+	Role      string
+	Create_at string
+	Update_at string
 }
