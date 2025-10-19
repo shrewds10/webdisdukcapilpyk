@@ -5,6 +5,7 @@ import Navbar from "../../../components/admin/navbar/Navbar";
 import Widget from "../../../components/admin/widget/Widget";
 import Chart from "../../../components/admin/chart/Chart";
 import Featured from "../../../components/admin/featured/Featured";
+import Table from "../../../components/admin/table/Table";
 
 const HomeAdmin = () => {
     return(
@@ -21,6 +22,10 @@ const HomeAdmin = () => {
                 <div className="charts">
                     <Featured/>
                     <Chart/>
+                </div>
+                <div className="listContainer">
+                    <div className="listTitle">Berita Terbaru</div>
+                    <Table/>
                 </div>
             </div>
         </div>

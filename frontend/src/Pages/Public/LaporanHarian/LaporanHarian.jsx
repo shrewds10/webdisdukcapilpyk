@@ -26,7 +26,7 @@ function LaporanHarian() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://192.168.76.25/dkb/api/agregat/laporan_harian.php/?kode=harian');
+        const response = await fetch('http://103.138.127.34:8001/dkb/api/agregat/laporan_harian.php/?kode=harian');
         const text = await response.text();
 
         const parts = text.split('][');
