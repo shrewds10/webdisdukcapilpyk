@@ -24,7 +24,7 @@ const HomeAdmin = () => {
                     <Chart/>
                 </div>
                 <div className="listContainer">
-                    <div className="listTitle">Berita Terbaru</div>
+                    <div className="listTitle">Berita Terbaru1</div>
                     <Table/>
                 </div>
             </div>

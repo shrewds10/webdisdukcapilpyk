@@ -5,7 +5,7 @@ const HomeAdmin = () => {
     return(
         <div className="adminHome">
             <h1 className="title">
-                Admin Dukcapil Login
+                Admin Dukcapil
             </h1>
         </div>
     )
