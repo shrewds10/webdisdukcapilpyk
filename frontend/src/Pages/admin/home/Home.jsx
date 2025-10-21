@@ -5,7 +5,7 @@ import Navbar from "../../../components/admin/navbar/Navbar";
 import Widget from "../../../components/admin/widget/Widget";
 import Chart from "../../../components/admin/chart/Chart";
 import Featured from "../../../components/admin/featured/Featured";
-import Table from "../../../components/admin/table/Table";
+import TableUser from "../../../components/admin/table/Table_User"
 
 const HomeAdmin = () => {
     return(
@@ -24,8 +24,8 @@ const HomeAdmin = () => {
                     <Chart/>
                 </div>
                 <div className="listContainer">
-                    <div className="listTitle">Berita Terbaru1</div>
-                    <Table/>
+                    <div className="listTitle">Berita Terbaru</div>
+                    <TableUser/>
                 </div>
             </div>
         </div>

@@ -1,0 +1,16 @@
+.status {
+  padding: 5px;
+  border-radius: 5px;
+}
+.status.draft {
+  color: red;
+  background-color: rgb(250, 200, 200);
+}
+.status.published {
+  color: green;
+  background-color: rgb(215, 252, 186);
+}
+.status.archived {
+  color: rgb(231, 93, 0);
+  background-color: rgb(255, 226, 188);
+}/*# sourceMappingURL=table_user.css.map */
