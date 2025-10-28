@@ -1,9 +1,9 @@
 import React from "react";
-import "./home.css"
+import "./new.css"
 
-const HomeAdmin = () => {
+const New = () => {
     return(
-        <div className="adminHome">
+        <div className="adminNew">
             <h1 className="title">
                 Admin Dukcapil
             </h1>
@@ -11,4 +11,4 @@ const HomeAdmin = () => {
     )
 }
 
-export default HomeAdmin
+export default New

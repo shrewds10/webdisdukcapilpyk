@@ -1,6 +1,7 @@
-.adminHome {
-  background-color: rgb(0, 72, 120);
+.adminList {
+  display: flex;
+  width: 100%;
 }
-.adminHome .title {
-  color: white;
+.adminList .listContainer {
+  flex: 6;
 }/*# sourceMappingURL=list.css.map */

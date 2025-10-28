@@ -1,9 +1,9 @@
 import React from "react";
-import "./home.css"
+import "./login.css"
 
-const HomeAdmin = () => {
+const Login = () => {
     return(
-        <div className="adminHome">
+        <div className="adminLogin">
             <h1 className="title">
                 Admin Dukcapil
             </h1>
@@ -11,4 +11,4 @@ const HomeAdmin = () => {
     )
 }
 
-export default HomeAdmin
+export default Login
