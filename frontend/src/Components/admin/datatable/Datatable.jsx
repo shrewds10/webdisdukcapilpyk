@@ -3,10 +3,6 @@ import { DataGrid } from '@mui/x-data-grid';
 import Paper from '@mui/material/Paper';
 import './datatable.css'
 
-const title = [
-    {judul: 'User',}
-]
-
 const columns = [
   { field: 'id', headerName: 'No', width: 70 },
   { field: 'firstName', headerName: 'Nama Depan', width: 150 },
@@ -58,10 +54,9 @@ const Datatable = () => {
       renderCell: () => {
         return(
           <div className="cellAction">
-            <span>
-              <div className="viewButton">View</div>
-              <div className="editButton">Edit</div>
-            </span>
+            <div className="viewButton">View</div>
+            <div className="editButton">Edit</div>
+            <div className="deleteButton">Delete</div>
           </div>
         );
       },
