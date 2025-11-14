@@ -1,5 +1,5 @@
 .datatable {
-  height: 600px;
+  height: 550px;
   padding: 20px;
 }
 .datatable .cellAction {
@@ -14,4 +14,5 @@
   border-radius: 3px;
   border: 1px solid darkgray;
   line-height: 1;
+  cursor: pointer;
 }/*# sourceMappingURL=datatable.css.map */

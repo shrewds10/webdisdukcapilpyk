@@ -43,7 +43,7 @@ const rows = [
   { id: 9, email: 'email@gmail.com',lastName: 'Roxie', firstName: 'Harvey', age: 65 },
 ];
 
-const paginationModel = { page: 0, pageSize: 5 };
+const paginationModel = { page: 0, pageSize: 7 };
 
 const Datatable = () => {
   const actionColumn = [
@@ -64,12 +64,12 @@ const Datatable = () => {
   ];
   return (
     <div className='datatable'>
-        <Paper sx={{ height: 400, width: '100%' }}>
+        <Paper sx={{ height: 500, width: '100%' }}>
             <DataGrid
                 rows={rows}
                 columns={columns.concat(actionColumn)}
                 initialState={{ pagination: { paginationModel } }}
-                pageSizeOptions={[5, 10]}
+                pageSizeOptions={[7, 14]}
                 checkboxSelection
                 sx={{ border: 0 }}
             />

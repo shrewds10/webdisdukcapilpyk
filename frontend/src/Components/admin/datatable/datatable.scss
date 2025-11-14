@@ -1,5 +1,5 @@
 .datatable{
-    height: 600px;
+    height: 550px;
     padding: 20px;
     .cellAction{
         display: flex;
@@ -12,6 +12,7 @@
             border-radius: 3px;
             border: 1px solid darkgray;
             line-height: 1;
+            cursor: pointer;
         }        
     }
 }

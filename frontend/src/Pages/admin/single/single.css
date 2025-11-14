@@ -1,6 +1,7 @@
 .adminSingle {
-  background-color: rgb(0, 72, 120);
+  display: flex;
+  width: 100%;
 }
-.adminSingle .title {
-  color: white;
+.adminSingle .singleContainer {
+  flex: 6;
 }/*# sourceMappingURL=single.css.map */

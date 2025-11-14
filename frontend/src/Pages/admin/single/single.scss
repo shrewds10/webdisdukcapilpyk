@@ -1,6 +1,7 @@
 .adminSingle{
-    background-color: rgb(0, 72, 120);
-    .title{
-        color: white;
+    display: flex;
+    width: 100%;
+    .singleContainer{
+        flex: 6;
     }
 }
