@@ -4,4 +4,34 @@
 }
 .adminSingle .singleContainer {
   flex: 6;
+}
+.adminSingle .singleContainer .top {
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+}
+.adminSingle .singleContainer .top .left {
+  flex: 1;
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  padding: 20px;
+  position: relative;
+}
+.adminSingle .singleContainer .top .left .editButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  cursor: pointer;
+}
+.adminSingle .singleContainer .top .left .item {
+  display: flex;
+  gap: 20px;
+}
+.adminSingle .singleContainer .top .left .item .itemImg {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+.adminSingle .singleContainer .top .right {
+  flex: 2;
 }/*# sourceMappingURL=single.css.map */

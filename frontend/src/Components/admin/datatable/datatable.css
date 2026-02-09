@@ -2,6 +2,18 @@
   height: 550px;
   padding: 20px;
 }
+.datatable .cellWithImg {
+  display: flex;
+  align-items: center;
+}
+.datatable .cellWithImg .cellImg {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 10px;
+}
 .datatable .cellAction {
   display: flex;
   align-items: center;
@@ -15,4 +27,13 @@
   border: 1px solid darkgray;
   line-height: 1;
   cursor: pointer;
+}
+.datatable .cellAction .viewButton {
+  color: green;
+}
+.datatable .cellAction .editButton {
+  color: gray;
+}
+.datatable .cellAction .deleteButton {
+  color: red;
 }/*# sourceMappingURL=datatable.css.map */

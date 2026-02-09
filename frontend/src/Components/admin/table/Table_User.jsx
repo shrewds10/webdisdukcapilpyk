@@ -62,7 +62,6 @@ const TableUser = () => {
             <TableCell align="left">Kategori</TableCell>
             <TableCell align="left">Editor</TableCell>
             <TableCell align="left">Status</TableCell>
-            <TableCell align="left">Action</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
