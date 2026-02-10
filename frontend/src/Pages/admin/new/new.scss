@@ -1,6 +1,44 @@
 .adminNew{
-    background-color: rgb(0, 72, 120);
-    .title{
-        color: white;
+    display: flex;
+    width: 100%;
+    .newContainer{
+        flex: 6;
+        .top{
+            -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+            box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);            
+            padding: 10px;
+            margin: 20px;
+            .title{
+                font-size: 20px;
+                color: gray;
+            }
+        }
+        .bottom{
+            display: flex;
+            -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+            box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);            
+            padding: 10px;
+            margin: 20px;
+            .left{                
+                .leftImg{
+                    height: 200px;
+                    width: 200px;
+                    border-radius: 50%;
+                    background-color: gray;
+                    object-fit: cover;
+                }
+            }
+            .right{
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                .formInput{
+                    width: 45%;
+                }
+                input{
+                    width: 100%;
+                }
+            }
+        }
     }
 }

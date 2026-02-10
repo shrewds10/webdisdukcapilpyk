@@ -21,7 +21,7 @@ const HomeAdmin = () => {
                 </div>
                 <div className="charts">
                     <Featured/>
-                    <Chart/>
+                    <Chart height={350} width={650}/>
                 </div>
                 <div className="listContainer">
                     <div className="listTitle">Berita Terbaru</div>

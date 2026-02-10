@@ -1,6 +1,41 @@
 .adminNew {
-  background-color: rgb(0, 72, 120);
+  display: flex;
+  width: 100%;
 }
-.adminNew .title {
-  color: white;
+.adminNew .newContainer {
+  flex: 6;
+}
+.adminNew .newContainer .top {
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  padding: 10px;
+  margin: 20px;
+}
+.adminNew .newContainer .top .title {
+  font-size: 20px;
+  color: gray;
+}
+.adminNew .newContainer .bottom {
+  display: flex;
+  box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+  padding: 10px;
+  margin: 20px;
+}
+.adminNew .newContainer .bottom .left .leftImg {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background-color: gray;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.adminNew .newContainer .bottom .right {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.adminNew .newContainer .bottom .right .formInput {
+  width: 45%;
+}
+.adminNew .newContainer .bottom .right input {
+  width: 100%;
 }/*# sourceMappingURL=new.css.map */

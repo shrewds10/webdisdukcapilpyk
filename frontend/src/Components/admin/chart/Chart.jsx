@@ -1,3 +1,4 @@
+import { width } from "@mui/system";
 import "./chart.css"
 import React, { Component } from "react";
 import Chart from "react-apexcharts";
@@ -11,8 +12,6 @@ class Charts extends Component {
             data: [2986, 2377, 1384, 1313, 864]
           }],
             chart: {
-            height: 450,
-            weight: 800,
             type: 'bar',
             events: {
               click: function(chart, w, e) {
@@ -50,6 +49,7 @@ class Charts extends Component {
     }
   
     render() {
+      const {height, width} = this.props;
       return (
         <div className="barChart">
           <div className="secTitle">
@@ -60,8 +60,8 @@ class Charts extends Component {
               options={this.state.barChartOptions}
               series={this.state.barChartOptions.series}
               type="bar"
-              height={340}
-              width={640}
+              height={height}
+              width={width}
             />
           </div>
         </div>  
