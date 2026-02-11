@@ -29,13 +29,27 @@
      object-fit: cover;
 }
 .adminNew .newContainer .bottom .right {
+  flex: 2;
+}
+.adminNew .newContainer .bottom .right form {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  justify-content: space-around;
 }
-.adminNew .newContainer .bottom .right .formInput {
-  width: 45%;
+.adminNew .newContainer .bottom .right form .formInput {
+  width: 40%;
 }
-.adminNew .newContainer .bottom .right input {
+.adminNew .newContainer .bottom .right form input {
   width: 100%;
+  border: none;
+  border-bottom: 1px solid rgb(161, 154, 154);
+}
+.adminNew .newContainer .bottom .right form button {
+  width: 150px;
+  padding: 10px;
+  background-color: teal;
+  color: white;
+  border: none;
+  cursor: pointer;
 }/*# sourceMappingURL=new.css.map */

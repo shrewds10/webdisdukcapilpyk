@@ -17,37 +17,32 @@ const New = () => {
                         <img src="https://static.vecteezy.com/system/resources/previews/004/581/264/non_2x/camera-icon-photography-symbol-illustration-free-vector.jpg" alt="avatar" className="leftImg" />
                     </div>
                     <div className="right">
-                        <div className="formInput">
-                            <input type="file" />
-                        </div>
-                        <div className="formInput">
-                            <label>Nama</label>
-                            <input type="text" />
-                        </div>
-                        <div className="formInput">
-                            <label>Nomor HP</label>
-                            <input type="text" />
-                        </div>
-                        <div className="formInput">
-                            <label>Alamat</label>
-                            <input type="text" />
-                        </div>
-                        <div className="formInput">
-                            <label>Username</label>
-                            <input type="text" />
-                        </div>
-                        <div className="formInput">
-                            <label>Email</label>
-                            <input type="text" />
-                        </div>
-                        <div className="formInput">
-                            <label>Password</label>
-                            <input type="text" />
-                        </div>
-                        <div className="formInput">
-                            <label>Konfirmasi Password</label>
-                            <input type="text" />
-                        </div>
+                        <form action="">
+                            <div className="formInput">
+                                <input type="file" style={{display:"none"}}/>
+                            </div>
+                            <div className="formInput">
+                                <label>Email</label>
+                                <input type="text" />
+                            </div>
+                            <div className="formInput">
+                                <label>Nama</label>
+                                <input type="text" />
+                            </div>
+                            <div className="formInput">
+                                <label>Alamat</label>
+                                <input type="text" />
+                            </div>
+                            <div className="formInput">
+                                <label>Password</label>
+                                <input type="text" />
+                            </div>
+                            <div className="formInput">
+                                <label>Konfirmasi Password</label>
+                                <input type="text" />
+                            </div>
+                            <button>Kirim</button>
+                        </form>
                     </div>
                 </div>
             </div>
