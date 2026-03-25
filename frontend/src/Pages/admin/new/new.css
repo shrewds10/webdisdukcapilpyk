@@ -45,6 +45,9 @@
   border: none;
   border-bottom: 1px solid rgb(161, 154, 154);
 }
+.adminNew .newContainer .bottom .right form span {
+  font-size: 30px;
+}
 .adminNew .newContainer .bottom .right form button {
   width: 150px;
   padding: 10px;

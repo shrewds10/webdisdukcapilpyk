@@ -14,13 +14,13 @@ function LaporanHarian() {
     kelahiranBesar: null,
     kematian: null,
     cetakKIA: null,
-    persenKIA: 67.16,
+    persenKIA: 67.26,
     kartuKeluarga: null,    
     pindah: null,    
     datang: null,    
     aktivasiCapil: null,    
     aktivasiMpp: null,    
-    totalAktivasi: 9320,
+    totalAktivasi: 29320,
   });
 
   useEffect(() => {
