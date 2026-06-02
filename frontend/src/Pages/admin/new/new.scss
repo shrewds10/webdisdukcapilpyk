@@ -30,6 +30,7 @@
             }
             .right{
                 flex: 2;
+                max-width: 900px;
                 form{
                     display: flex;
                     flex-wrap: wrap;
@@ -41,10 +42,26 @@
                     input{
                         width: 100%;
                         border: none;
+                        outline: none;
                         border-bottom: 1px solid rgb(161, 154, 154);
                     }
                     span{
                         font-size: 30px;
+                    }
+                    .passwordInput{
+                        position: relative;
+                        span{
+                            position: absolute;
+                            right: 0px;
+                            top: 20px;
+                            transform: translateY(-60%);
+                            cursor: pointer;
+                        }
+                    }
+                    .buttonContainer{
+                        width: 91%;
+                        display: flex;   
+                        justify-content: flex-end;
                     }
                     button{
                         width: 150px;

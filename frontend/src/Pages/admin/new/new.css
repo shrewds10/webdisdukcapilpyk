@@ -30,6 +30,7 @@
 }
 .adminNew .newContainer .bottom .right {
   flex: 2;
+  max-width: 900px;
 }
 .adminNew .newContainer .bottom .right form {
   display: flex;
@@ -43,10 +44,26 @@
 .adminNew .newContainer .bottom .right form input {
   width: 100%;
   border: none;
+  outline: none;
   border-bottom: 1px solid rgb(161, 154, 154);
 }
 .adminNew .newContainer .bottom .right form span {
   font-size: 30px;
+}
+.adminNew .newContainer .bottom .right form .passwordInput {
+  position: relative;
+}
+.adminNew .newContainer .bottom .right form .passwordInput span {
+  position: absolute;
+  right: 0px;
+  top: 20px;
+  transform: translateY(-60%);
+  cursor: pointer;
+}
+.adminNew .newContainer .bottom .right form .buttonContainer {
+  width: 91%;
+  display: flex;
+  justify-content: flex-end;
 }
 .adminNew .newContainer .bottom .right form button {
   width: 150px;

@@ -35,11 +35,11 @@ const New = ({inputs,title}) => {
                             </div>
                             {inputs.map((input)=> (
                                 <div className="formInput">
-                                    <label>{input.label}</label>
+                                    <label></label>
                                     <input type={input.type} placeholder={input.placeholder} />
                                 </div>
                             ))}
-                            <div className="formInput">
+                            <div className="formInput passwordInput">
                                 <input 
                                     type={showPassword ? 'text' : 'password'} 
                                     value={password}
@@ -54,7 +54,12 @@ const New = ({inputs,title}) => {
                                     {showPassword ? <BiHide/> : <BiShow/>}
                                 </span>
                             </div>
-                            <button>Kirim</button>                      
+                            <div className="formInput confirmPassword">
+                                <input type="password" placeholder="Konfirmasi Password"/>
+                            </div>
+                            <div className="buttonContainer">
+                                <button>Kirim</button>                      
+                            </div>
                         </form>
                     </div>
                 </div>
